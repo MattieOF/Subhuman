@@ -1,10 +1,10 @@
 function get_file_formatted_datetime()
 {
-	var str = string(current_day) + "_" + string(current_month) + "_" + string(current_year) + "-" + string(current_hour) + "_" + string(current_minute) + "_" + string(current_second);
-	return str;
+	return (string(current_day) + "_" + string(current_month) + "_" + string(current_year) + "-" + 
+		string(current_hour) + "_" + string(current_minute) + "_" + string(current_second));
 }
 
-/// @arg str
+/// @param {string} str - String to be formatted
 function format_string()
 {
 	var _str = argument[0];
@@ -18,7 +18,7 @@ function format_string()
 	return _str;
 }
 
-/// @arg str
+/// @param {string} str - String to be formatted
 function log_format_string()
 {
 	var _str = argument[0];

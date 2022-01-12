@@ -3,6 +3,7 @@
     {"id":{"name":"TODO","path":"notes/TODO/TODO.yy",},"order":0,},
     {"id":{"name":"scrGameOptions","path":"scripts/scrGameOptions/scrGameOptions.yy",},"order":0,},
     {"id":{"name":"oMoveTestDiag","path":"objects/oMoveTestDiag/oMoveTestDiag.yy",},"order":3,},
+    {"id":{"name":"scrJsonUtility","path":"scripts/scrJsonUtility/scrJsonUtility.yy",},"order":6,},
     {"id":{"name":"oFPS","path":"objects/oFPS/oFPS.yy",},"order":0,},
     {"id":{"name":"sSpecificColliderTest","path":"sprites/sSpecificColliderTest/sSpecificColliderTest.yy",},"order":3,},
     {"id":{"name":"scrControls","path":"scripts/scrControls/scrControls.yy",},"order":5,},
