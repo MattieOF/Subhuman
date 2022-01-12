@@ -1,5 +1,5 @@
 /// @description Destroy if oFPS already exists, show FPS if in debug mode, init color
-if (instance_number(oFPS) != 1) instance_destroy(id);
+destroy_if_instance_exists();
 
 if (global.debug == 1)
 {

@@ -1,6 +1,6 @@
 /// @description Set up values
 
-if (instance_number(oScreenshot) != 1) instance_destroy(id);
+destroy_if_instance_exists();
 
 // 0 - Don't display
 // 1 - Show text
