@@ -1,5 +1,6 @@
 /// @description State debug, animations, quit ui logic, and toggle distort
 
+// Menu debug
 if (global.debug)
 {
 	if (keyboard_check_pressed(vk_left))
@@ -8,12 +9,21 @@ if (global.debug)
 		if (state == 1) pressEnterAlpha = 1;
 	}
 	if (keyboard_check_pressed(vk_right)) state++;
+	if (keyboard_check_pressed(vk_delete)) state = 69;
 }
 
+// Fade out press enter
 if (state == 1)
 {
 	if (pressEnterAlpha > 0) pressEnterAlpha -= pressEnterFadePerStep;
 	else state = 2;
+}
+
+// Delete debug menu
+if (state == 69)
+{
+	if (keyboard_check_pressed(ord("0"))) state = 0;
+	if (keyboard_check_pressed(ord("1"))) { reset_controls(); state = 0; }
 }
 
 if (control_check(controls.quit)) 

@@ -1,4 +1,4 @@
-/// @description Movement
+/// @description Movement and shooting
 
 // Check input
 // var left = keyboard_check(vk_left) || keyboard_check(ord("A"));
@@ -45,3 +45,8 @@ if (!place_free(x, y + vmove))
 
 x += hmove;
 y += vmove;
+
+// Shooting
+
+if (control_check_pressed(controls.attackPrimary))
+	show_debug_message("Shoot!");

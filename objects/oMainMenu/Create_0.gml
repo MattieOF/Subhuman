@@ -11,5 +11,9 @@ quitProgress = 0;
 0 = press enter
 1 = press enter fading out
 2 = main menu (for now: go to rmMovementTest)
+
+69 = delete debug menu
+		0 = cancel
+		1 = reset controls
 */
 state = 0;

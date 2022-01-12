@@ -1,22 +1,30 @@
 // Type definitions
+
+/// @description Enum representing all controls that can be pressed
 enum controls
 {
 	moveUp,
 	moveDown,
 	moveLeft,
 	moveRight,
+	attackPrimary,
 	quit,
 	screenshot,
 	toggleDistort,
 	toggleFPS
 }
 
+/// @description Enum representing the types of a control (key, mouse)
 enum controlType
 {
 	key,
 	mouse
 }
 
+/// @description Create a control struct, with a control type and a control value
+/// @param {controlType} type - Type of the control, should be either key or mouse
+/// @param value - Value of the control, should be a keyboard key code or a mousebutton id depending on the type
+/// @returns {Control} A struct representing the control
 function Control(_type, _value) constructor
 {
 	type = _type;
@@ -30,7 +38,8 @@ control_defaults();
 load_controls();
 
 // Function defs.
-// Todo: document
+
+
 function control_defaults()
 {
 	// Controls struct def
@@ -41,6 +50,7 @@ function control_defaults()
 	set_control(controls.moveDown,       new Control(controlType.key, ord("S")));
 	set_control(controls.moveLeft,       new Control(controlType.key, ord("A")));
 	set_control(controls.moveRight,      new Control(controlType.key, ord("D")));
+	set_control(controls.attackPrimary,  new Control(controlType.mouse, mb_left));
 	set_control(controls.quit,           new Control(controlType.key, vk_escape));
 	set_control(controls.toggleFPS,      new Control(controlType.key, vk_f1));
 	set_control(controls.toggleDistort,  new Control(controlType.key, vk_f2));

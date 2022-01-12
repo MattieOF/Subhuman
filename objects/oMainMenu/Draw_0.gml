@@ -20,6 +20,12 @@ switch (state) {
 	case 2:
 		room_goto(rmMovementTest);
 		break;
+	case 69:
+		// Debug menu
+		draw_text(room_width / 2, 250, "Delete Debug Menu");
+		draw_text(room_width / 2, room_height / 2, "0 - Cancel");
+		draw_text(room_width / 2, (room_height / 2) + 30, "1 - Reset controls");
+		break;
     default:
 		show_debug_message("state switch broken!");
         break;
