@@ -25,3 +25,6 @@ else
 	quitProgress = 0;
 	layer_set_visible(layer_get_id("DarkenEffect"), false);
 }
+
+if (control_check_pressed(controls.toggleDistort))
+	set_menu_effect_enabled(!global.distortEnabled);

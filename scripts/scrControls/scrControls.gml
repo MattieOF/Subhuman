@@ -6,7 +6,9 @@ enum controls
 	moveLeft,
 	moveRight,
 	quit,
-	screenshot
+	screenshot,
+	toggleDistort,
+	toggleFPS
 }
 
 enum controlType
@@ -33,15 +35,15 @@ function control_defaults()
 	global.controls = {};
 
 	// Init default controls
-	set_control(controls.moveUp,      new Control(controlType.key, ord("W")));
-	set_control(controls.moveDown,    new Control(controlType.key, ord("S")));
-	set_control(controls.moveLeft,    new Control(controlType.key, ord("A")));
-	set_control(controls.moveRight,   new Control(controlType.key, ord("D")));
-	set_control(controls.quit,        new Control(controlType.key, vk_escape));
-	set_control(controls.screenshot,  new Control(controlType.key, vk_f5));
+	set_control(controls.moveUp,         new Control(controlType.key, ord("W")));
+	set_control(controls.moveDown,       new Control(controlType.key, ord("S")));
+	set_control(controls.moveLeft,       new Control(controlType.key, ord("A")));
+	set_control(controls.moveRight,      new Control(controlType.key, ord("D")));
+	set_control(controls.quit,           new Control(controlType.key, vk_escape));
+	set_control(controls.toggleFPS,      new Control(controlType.key, vk_f1));
+	set_control(controls.toggleDistort,  new Control(controlType.key, vk_f2));
+	set_control(controls.screenshot,     new Control(controlType.key, vk_f5));
 }
-
-
 
 // Function defs.
 // Todo: document
