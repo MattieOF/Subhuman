@@ -1,3 +1,5 @@
+/// @description State debug, animations, quit ui logic, and toggle distort
+
 if (global.debug)
 {
 	if (keyboard_check_pressed(vk_left))
