@@ -29,6 +29,8 @@ control_defaults();
 // If not, save defaults to file.
 load_controls();
 
+// Function defs.
+// Todo: document
 function control_defaults()
 {
 	// Controls struct def
@@ -45,8 +47,15 @@ function control_defaults()
 	set_control(controls.screenshot,     new Control(controlType.key, vk_f5));
 }
 
-// Function defs.
-// Todo: document
+function reset_controls(backup = true, filename = "controls.json")
+{
+	if (backup == true && file_exists(filename))
+		file_copy(filename, filename + ".old");
+		
+	control_defaults();
+	save_controls(filename);
+}
+
 function set_control(controlId, controlValue)
 {
 	global.controls[$ controlId] = controlValue;
