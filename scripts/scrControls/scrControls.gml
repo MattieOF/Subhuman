@@ -39,7 +39,7 @@ load_controls();
 
 // Function defs.
 
-
+/// @description Reset controls to default
 function control_defaults()
 {
 	// Controls struct def
@@ -57,6 +57,9 @@ function control_defaults()
 	set_control(controls.screenshot,     new Control(controlType.key, vk_f5));
 }
 
+/// @description Save backup of controls file, reset controls to default, and save again.
+/// @param {bool} [backup] - If the current controls file should be backed up or not
+/// @param {string} [filename] - Filename of the controls file. Include the extension.
 function reset_controls(backup = true, filename = "controls.json")
 {
 	if (backup == true && file_exists(filename))
@@ -66,16 +69,25 @@ function reset_controls(backup = true, filename = "controls.json")
 	save_controls(filename);
 }
 
+/// @description Set a control
+/// @param {controls} controlId - Control from controls enum to set binding of
+/// param {Control} controlValue - Use new Control(type, value) to create a value for this
 function set_control(controlId, controlValue)
 {
 	global.controls[$ controlId] = controlValue;
 }
 
-function get_control(controlId, controlValue)
+/// @description Get a control struct
+/// @param {controls} controlId - ID (from the controls enum) of the control to get the struct for
+/// @returns Control struct for the provided control
+function get_control(controlId)
 {
 	return global.controls[$ controlId];
 }
 
+/// @description Check if a control is currently down
+/// @param {controls} controlId - ID of the control to check
+/// @returns {bool} If the control is currently pressed or not
 function control_check(controlId)
 {
 	var control = global.controls[$ controlId];
@@ -92,6 +104,9 @@ function control_check(controlId)
 	}
 }
 
+/// @description Check if a control is down this frame
+/// @param {controls} controlId - ID of the control to check
+/// @returns {bool} If the control was pressed this frame or not
 function control_check_pressed(controlId)
 {
 	var control = global.controls[$ controlId];
@@ -108,6 +123,9 @@ function control_check_pressed(controlId)
 	}
 }
 
+/// @description Check if a control was released this frame
+/// @param {controls} controlId - ID of the control to check
+/// @returns {bool} If the control was released this frame or not
 function control_check_released(controlId)
 {
 	var control = global.controls[$ controlId];
@@ -124,6 +142,8 @@ function control_check_released(controlId)
 	}
 }
 
+/// @description Load controls from disk using json_parse.
+/// @param {string} [filename] - Filename of the controls file. Include the extension. Default is "controls.json".
 function load_controls(filename = "controls.json")
 {
 	if (!file_exists(filename)) 
@@ -137,6 +157,8 @@ function load_controls(filename = "controls.json")
 	file_text_close(file);
 }
 
+/// @description Delete the file if it exists, and save the controls to the file using json_stringify
+/// @param {string} [filename] - Filename of the controls file. Include the extension. Default is "controls.json".
 function save_controls(filename = "controls.json")
 {
 	if (file_exists(filename)) file_delete(filename);
