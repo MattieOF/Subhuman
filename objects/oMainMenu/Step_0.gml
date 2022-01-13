@@ -56,7 +56,22 @@ if (state == 69)
 	if (keyboard_check_pressed(ord("1"))) { reset_controls(); reset_debug_menu(); }
 }
 
-if (control_check(controls.quit)) 
+if (control_check_pressed(controls.quit))
+{
+	switch (state)
+	{
+		case 6:
+			close_options();
+			break;
+		case 7:
+			close_accessibility_options();
+			break;
+		default:
+			canQuit = true;
+	}
+} else if (quitProgress == 0) canQuit = false;
+
+if (canQuit && control_check(controls.quit)) 
 {
 	quitProgress += 0.02;	
 	layer_set_visible(layer_get_id("DarkenEffect"), true);

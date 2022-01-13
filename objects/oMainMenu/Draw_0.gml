@@ -28,6 +28,8 @@ switch (state) {
 		break;
 	case 6:
 		break;
+	case 7:
+		break;
 	case 69:
 		// Debug menu
 		draw_text(room_width / 2, 250, "Delete Debug Menu");

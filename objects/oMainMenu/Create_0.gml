@@ -18,6 +18,7 @@ currentMainMenuFade = 0;
 4 = main menu fading out
 5 = go to rmgame
 6 = options
+7 = accessibility options
 
 69 = delete debug menu
 		0 = cancel
@@ -25,6 +26,7 @@ currentMainMenuFade = 0;
 */
 state = 0;
 global.mainMenu = id;
+canQuit = false;
 
 function start_game()
 {
@@ -45,6 +47,20 @@ function close_options()
 	global.mainMenu.state = 3;
 	instance_deactivate_layer("Options");
 	instance_activate_layer("MainMenu");
+}
+
+function open_accessibility_options()
+{
+	global.mainMenu.state = 7;
+	instance_deactivate_layer("Options");
+	instance_activate_layer("AccessibilityOptions");
+}
+
+function close_accessibility_options()
+{
+	global.mainMenu.state = 6;
+	instance_deactivate_layer("AccessibilityOptions");
+	instance_activate_layer("Options");
 }
 
 function show_debug_menu()
@@ -81,10 +97,21 @@ instance_deactivate_layer("MainMenu");
 
 start_stack("Options", room_width / 2, 250);
 add_to_stack(create_label(0, 0, "Options"));
-add_stack_spacing(100);
+add_stack_spacing(50);
 add_to_stack(create_checkbox(0, 0, "Fullscreen", set_fullscreen, window_get_fullscreen()));
 if (global.debug) add_to_stack(create_checkbox(0, 0, "Debug Mode", set_debugmode, global.debug));
-add_stack_spacing(35);
+add_stack_spacing(20);
+add_to_stack(create_button(0, 0, 150, 50, "Accessibility", open_accessibility_options));
+global.ui_currentY = room_height - 60;
 add_to_stack(create_button(0, 0, 150, 50, "Back", close_options));
 end_stack();
 instance_deactivate_layer("Options");
+
+start_stack("AccessibilityOptions", room_width / 2, 250);
+add_to_stack(create_label(0, 0, "Accessibility Options"));
+add_stack_spacing(50);
+add_to_stack(create_checkbox(0, 0, "Menu Distortion Effect", set_menu_effect_enabled, global.distortEnabled));
+global.ui_currentY = room_height - 60;
+add_to_stack(create_button(0, 0, 150, 50, "Back", close_accessibility_options));
+end_stack();
+instance_deactivate_layer("AccessibilityOptions");
