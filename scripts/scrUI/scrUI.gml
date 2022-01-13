@@ -17,6 +17,7 @@ global.ui_currentStackDir = undefined;
 global.ui_currentLayerName = undefined;
 
 global.ui_objButton = oButton;
+global.ui_objLabel = oLabel;
 
 function create_button(_x, _y, _width, _height, _text, _onPress, _callAs = undefined, _layer = undefined, _normalColor = $FFE6E6E6, 
 	_hoverColor = $FF999999, _clickedColor = $FF676767, _alpha = 1, _scale = 1)
@@ -41,6 +42,28 @@ function create_button(_x, _y, _width, _height, _text, _onPress, _callAs = undef
 	btn.textScale = _scale;
 	
 	return btn;
+}
+
+function create_label(_x, _y, _text, _layer = undefined, _color = $FFE6E6E6, 
+	_valign = fa_center, _halign = fa_center, _alpha = 1, _scale = 1)
+{
+	if (_layer == undefined)
+	{
+		if (global.ui_currentLayerName == undefined) global.ui_currentLayerName = "UI";
+		if (layer_exists(global.ui_currentLayerName)) _layer = layer_get_id(global.ui_currentLayerName);
+		else _layer = layer_create(-100, global.ui_currentLayerName);
+	}
+	
+	var lbl = instance_create_layer(_x, _y, _layer, global.ui_objLabel);
+	lbl.text = _text;
+	lbl.color = _color;
+	lbl.alpha = _alpha;
+	lbl.scale = _scale;
+	lbl.valign = _valign;
+	lbl.halign = _halign;
+	with (lbl) {  event_user(0); } // Set width and height
+	
+	return lbl;
 }
 
 function start_stack(name, x, y, padding = 5, dir = stackDir.vertical)
@@ -93,6 +116,19 @@ function add_to_stack(objId)
 			break;
 		case stackDir.vertical:
 			global.ui_currentY += (objId.height + global.ui_currentPadding);
+			break;
+	}
+}
+
+function add_stack_spacing(spacing)
+{
+	switch(global.ui_currentStackDir)
+	{
+		case stackDir.horizontal:
+			global.ui_currentX += spacing;
+			break;
+		case stackDir.vertical:
+			global.ui_currentY += spacing;
 			break;
 	}
 }

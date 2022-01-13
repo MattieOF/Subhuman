@@ -26,6 +26,8 @@ switch (state) {
 	case 5:
 		room_goto(rmMovementTest);
 		break;
+	case 6:
+		break;
 	case 69:
 		// Debug menu
 		draw_text(room_width / 2, 250, "Delete Debug Menu");

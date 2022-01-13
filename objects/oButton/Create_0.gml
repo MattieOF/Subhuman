@@ -7,6 +7,7 @@ function draw()
 
 	draw_set_color(color);
 	draw_set_alpha(alpha);
+	draw_set_font(font);
 	draw_roundrect(x - halfWidth, y - halfHeight, x + halfWidth, y + halfHeight, false);
 	if (selected) 
 	{
@@ -25,3 +26,4 @@ function draw()
 color = normalColor;
 selected = true;
 callAs = id;
+if (font == noone) font = -1;

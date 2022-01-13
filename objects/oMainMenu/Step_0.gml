@@ -21,7 +21,8 @@ if (state == 1)
 	if (pressEnterAlpha > 0) pressEnterAlpha -= pressEnterFadePerStep;
 	else 
 	{
-		layer_set_visible("MainMenu", true);
+		instance_activate_layer("MainMenu");
+		set_layer_interactable("MainMenu", false);
 		state = 2;
 	}
 }
@@ -44,7 +45,7 @@ if (state == 4)
 	if (currentMainMenuFade < 0)
 	{
 		state = 5;
-		layer_set_visible("MainMenu", false);
+		instance_deactivate_layer("MainMenu");
 	}
 }
 
