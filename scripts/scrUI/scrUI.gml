@@ -18,7 +18,7 @@ global.ui_currentLayerName = undefined;
 
 global.ui_objButton = oButton;
 
-function create_button(_x, _y, _width, _height, _text, _onPress, _layer = undefined, _normalColor = $FFE6E6E6, 
+function create_button(_x, _y, _width, _height, _text, _onPress, _callAs = undefined, _layer = undefined, _normalColor = $FFE6E6E6, 
 	_hoverColor = $FF999999, _clickedColor = $FF676767, _alpha = 1, _scale = 1)
 {
 	if (_layer == undefined)
@@ -28,9 +28,10 @@ function create_button(_x, _y, _width, _height, _text, _onPress, _layer = undefi
 		else _layer = layer_create(-100, global.ui_currentLayerName);
 	}
 	
-	var btn = instance_create_layer(x, y, _layer, global.ui_objButton);
+	var btn = instance_create_layer(_x, _y, _layer, global.ui_objButton);
 	btn.width = _width;
 	btn.height = _height;
+	if (_callAs != undefined) btn.callAs = _callAs;
 	btn.text = _text;
 	btn.onPress = _onPress;
 	btn.normalColor = _normalColor;

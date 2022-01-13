@@ -24,3 +24,4 @@ function draw()
 
 color = normalColor;
 selected = true;
+callAs = id;

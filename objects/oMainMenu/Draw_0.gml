@@ -18,6 +18,12 @@ switch (state) {
 		draw_sprite_ext(sPressEnter, pressEnterFrame, room_width / 2, room_height / 2, 1, 1, 0, c_white, pressEnterAlpha);
 		break;
 	case 2:
+		break;
+	case 3:
+		break;
+	case 4:
+		break;
+	case 5:
 		room_goto(rmMovementTest);
 		break;
 	case 69:
