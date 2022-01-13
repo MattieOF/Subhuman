@@ -9,7 +9,10 @@ if (global.debug)
 		if (state == 1) pressEnterAlpha = 1;
 	}
 	if (keyboard_check_pressed(vk_right)) state++;
-	if (keyboard_check_pressed(vk_delete)) state = 69;
+	if (keyboard_check_pressed(vk_delete)) 
+	{
+		show_debug_menu();
+	}
 }
 
 // Fade out press enter
@@ -48,8 +51,8 @@ if (state == 4)
 // Delete debug menu
 if (state == 69)
 {
-	if (keyboard_check_pressed(ord("0"))) state = 0;
-	if (keyboard_check_pressed(ord("1"))) { reset_controls(); state = 0; }
+	if (keyboard_check_pressed(ord("0"))) reset_debug_menu();
+	if (keyboard_check_pressed(ord("1"))) { reset_controls(); reset_debug_menu(); }
 }
 
 if (control_check(controls.quit)) 
