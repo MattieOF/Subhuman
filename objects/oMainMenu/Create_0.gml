@@ -76,7 +76,7 @@ instance_deactivate_layer("MainMenu");
 start_stack("Options", room_width / 2, 250);
 add_to_stack(create_label(0, 0, "Options"));
 add_stack_spacing(100);
-add_to_stack(create_checkbox(0, 0, "Fullscreen", set_fullscreen));
+add_to_stack(create_checkbox(0, 0, "Fullscreen", set_fullscreen, window_get_fullscreen()));
 add_stack_spacing(35);
 add_to_stack(create_button(0, 0, 150, 50, "Back", close_options));
 end_stack();

@@ -68,7 +68,7 @@ function create_label(_x, _y, _text, _layer = undefined, _color = $FFE6E6E6, _fo
 	return lbl;
 }
 
-function create_checkbox(_x, _y, _text, _onToggle, _layer = undefined, _textColor = $FFE6E6E6, _checkboxColor = $FFE6E6E6,
+function create_checkbox(_x, _y, _text, _onToggle, _checked = true, _layer = undefined, _textColor = $FFE6E6E6, _checkboxColor = $FFE6E6E6,
 	_hoverColor = $FF999999, _clickedColor = $FF676767, _font = noone, _alpha = 1, _scale = 1)
 {
 	if (_layer == undefined)
@@ -81,6 +81,7 @@ function create_checkbox(_x, _y, _text, _onToggle, _layer = undefined, _textColo
 	var chbx = instance_create_layer(_x, _y, _layer, global.ui_objCheckbox);
 	chbx.text = _text;
 	chbx.onToggle = _onToggle;
+	chbx.checked = _checked;
 	chbx.color = _textColor;
 	chbx.normalCheckboxColor = _checkboxColor;
 	chbx.hoveredCheckboxColor = _hoverColor;
