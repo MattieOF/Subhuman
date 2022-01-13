@@ -41,6 +41,7 @@ function open_options()
 
 function close_options()
 {
+	save_options_globals();
 	global.mainMenu.state = 3;
 	instance_deactivate_layer("Options");
 	instance_activate_layer("MainMenu");
@@ -65,6 +66,11 @@ function set_fullscreen(value)
 	window_set_fullscreen(value);
 }
 
+function set_debugmode(value)
+{
+	global.debug = value;
+}
+
 start_stack("MainMenu", room_width / 2, room_height / 2);
 add_to_stack(create_button(0, 0, 150, 50, "New Game", start_game, id));
 add_to_stack(create_button(0, 0, 150, 50, "Options", open_options));
@@ -77,6 +83,7 @@ start_stack("Options", room_width / 2, 250);
 add_to_stack(create_label(0, 0, "Options"));
 add_stack_spacing(100);
 add_to_stack(create_checkbox(0, 0, "Fullscreen", set_fullscreen, window_get_fullscreen()));
+if (global.debug) add_to_stack(create_checkbox(0, 0, "Debug Mode", set_debugmode, global.debug));
 add_stack_spacing(35);
 add_to_stack(create_button(0, 0, 150, 50, "Back", close_options));
 end_stack();
