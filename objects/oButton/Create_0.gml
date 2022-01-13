@@ -4,5 +4,5 @@ function testPressed()
 }
 
 onPress = testPressed;
-ui = undefined;
 color = normalColor;
+selected = true;
