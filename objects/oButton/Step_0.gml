@@ -7,11 +7,7 @@ if (point_in_rectangle(mouse_x, mouse_y, x - halfWidth, y - halfHeight, x + half
 {
 	color = hoverColor;
 	if (mouse_check_button(mb_left) || keyboard_check(vk_enter))
-	{
 		color = clickedColor;
-		if (mouse_check_button_pressed(mb_left) || keyboard_check_pressed(vk_enter)) 
-		{
-			if (onPress != undefined) onPress();
-		}
-	}
+	else if (mouse_check_button_released(mb_left) || keyboard_check_released(vk_enter)) 
+		if (onPress != undefined) onPress();
 } else color = normalColor;
