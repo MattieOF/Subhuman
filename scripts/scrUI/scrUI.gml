@@ -18,6 +18,7 @@ global.ui_currentLayerName = undefined;
 
 global.ui_objButton = oButton;
 global.ui_objLabel = oLabel;
+global.ui_objCheckbox = oCheckbox;
 
 function create_button(_x, _y, _width, _height, _text, _onPress, _callAs = undefined, _layer = undefined, _normalColor = $FFE6E6E6, 
 	_hoverColor = $FF999999, _clickedColor = $FF676767, _alpha = 1, _scale = 1)
@@ -44,7 +45,7 @@ function create_button(_x, _y, _width, _height, _text, _onPress, _callAs = undef
 	return btn;
 }
 
-function create_label(_x, _y, _text, _layer = undefined, _color = $FFE6E6E6, 
+function create_label(_x, _y, _text, _layer = undefined, _color = $FFE6E6E6, _font = noone,
 	_valign = fa_center, _halign = fa_center, _alpha = 1, _scale = 1)
 {
 	if (_layer == undefined)
@@ -59,11 +60,37 @@ function create_label(_x, _y, _text, _layer = undefined, _color = $FFE6E6E6,
 	lbl.color = _color;
 	lbl.alpha = _alpha;
 	lbl.scale = _scale;
+	lbl.font = _font;
 	lbl.valign = _valign;
 	lbl.halign = _halign;
 	with (lbl) {  event_user(0); } // Set width and height
 	
 	return lbl;
+}
+
+function create_checkbox(_x, _y, _text, _onToggle, _layer = undefined, _textColor = $FFE6E6E6, _checkboxColor = $FFE6E6E6,
+	_hoverColor = $FF999999, _clickedColor = $FF676767, _font = noone, _alpha = 1, _scale = 1)
+{
+	if (_layer == undefined)
+	{
+		if (global.ui_currentLayerName == undefined) global.ui_currentLayerName = "UI";
+		if (layer_exists(global.ui_currentLayerName)) _layer = layer_get_id(global.ui_currentLayerName);
+		else _layer = layer_create(-100, global.ui_currentLayerName);
+	}
+	
+	var chbx = instance_create_layer(_x, _y, _layer, global.ui_objCheckbox);
+	chbx.text = _text;
+	chbx.onToggle = _onToggle;
+	chbx.color = _textColor;
+	chbx.normalCheckboxColor = _checkboxColor;
+	chbx.hoveredCheckboxColor = _hoverColor;
+	chbx.clickedCheckboxColor = _clickedColor;
+	chbx.font = _font;
+	chbx.alpha = _alpha;
+	chbx.scale = _scale;
+	with (chbx) {  event_user(0); } // Set width and height
+	
+	return chbx;
 }
 
 function start_stack(name, x, y, padding = 5, dir = stackDir.vertical)
