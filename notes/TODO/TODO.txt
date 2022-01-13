@@ -1,2 +1,1 @@
-- Figure out how to center checkbox correctly
-- Make checkbox have a default value
+
