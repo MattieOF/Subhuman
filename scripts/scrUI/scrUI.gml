@@ -18,9 +18,9 @@ function UI() constructor
 function Button(_x, _y) constructor
 {
 	ensure_ui_layer_exists();
-	instance_create_layer(_x, _y, global.uilayer, global.uiobj_button);
+	objectId = instance_create_layer(_x, _y, global.uilayer, global.uiobj_button);
 	type = uiItemType.button;
-	selectable = true;
+	selectable = true; // Todo: Implement
 }
 
 function ensure_ui_layer_exists()
@@ -128,4 +128,9 @@ function ui_select_previous(ui)
 	ind %= array_length(ui.items);
 	
 	ui_select(ui, ind);
+}
+
+function ui_element_set_alpha(ui, index, alpha)
+{
+	
 }

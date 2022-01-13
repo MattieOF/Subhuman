@@ -19,6 +19,7 @@
     {"id":{"name":"sPressEnter","path":"sprites/sPressEnter/sPressEnter.yy",},"order":0,},
     {"id":{"name":"scrIniExtensions","path":"scripts/scrIniExtensions/scrIniExtensions.yy",},"order":2,},
     {"id":{"name":"oMoveTestPlayer","path":"objects/oMoveTestPlayer/oMoveTestPlayer.yy",},"order":1,},
+    {"id":{"name":"scrDrawUtils","path":"scripts/scrDrawUtils/scrDrawUtils.yy",},"order":9,},
     {"id":{"name":"scrSetupGame","path":"scripts/scrSetupGame/scrSetupGame.yy",},"order":1,},
     {"id":{"name":"sTestPlayer","path":"sprites/sTestPlayer/sTestPlayer.yy",},"order":0,},
     {"id":{"name":"rmMovementTest","path":"rooms/rmMovementTest/rmMovementTest.yy",},"order":1,},
