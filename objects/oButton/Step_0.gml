@@ -1,3 +1,5 @@
+if (!interactable) return;
+
 var halfWidth = width / 2;
 var halfHeight = height / 2;
 

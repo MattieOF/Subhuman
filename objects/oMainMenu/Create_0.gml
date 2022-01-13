@@ -17,3 +17,13 @@ quitProgress = 0;
 		1 = reset controls
 */
 state = 0;
+
+function start_game()
+{
+	show_debug_message("start");
+}
+
+start_stack("MainMenu", room_width / 2, room_height / 2);
+add_to_stack(create_button(0, 0, 150, 50, "New Game", start_game));
+add_to_stack(create_button(0, 0, 150, 50, "Quit Game", quit_game));
+end_stack();
