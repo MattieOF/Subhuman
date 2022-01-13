@@ -49,7 +49,7 @@ start_stack("MainMenu", room_width / 2, room_height / 2);
 add_to_stack(create_button(0, 0, 150, 50, "New Game", start_game, id));
 add_to_stack(create_button(0, 0, 150, 50, "Options", undefined));
 add_to_stack(create_button(0, 0, 150, 50, "Extras", undefined));
-add_to_stack(create_button(0, 0, 150, 50, "Quit Game", quit_game));
+add_to_stack(create_button(0, 0, 150, 50, "Quit Game", quit_game,,,,c_red,make_color_rgb(50, 0, 0)));
 end_stack();
 set_layer_interactable("MainMenu", false);
 layer_set_visible("MainMenu", false);
