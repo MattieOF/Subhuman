@@ -27,6 +27,9 @@ currentMainMenuFade = 0;
 state = 0;
 global.mainMenu = id;
 canQuit = false;
+titleGraphic = sTitle;
+halfTitleGraphicWidth = sprite_get_width(titleGraphic) / 2;
+titleGraphicAlpha = 1;
 
 function start_game()
 {

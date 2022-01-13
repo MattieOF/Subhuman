@@ -10,6 +10,8 @@ if (global.debug == 1)
 draw_set_halign(fa_center);
 draw_set_valign(fa_center);
 
+draw_sprite_ext(titleGraphic, 0, room_width / 2 - halfTitleGraphicWidth, 50, 1, 1, 0, c_white, titleGraphicAlpha);
+
 switch (state) {
     case 0:
 		draw_sprite(sPressEnter, pressEnterFrame, room_width / 2, room_height / 2);

@@ -41,7 +41,9 @@ if (state == 2)
 if (state == 4)
 {
 	currentMainMenuFade--;
-	set_layer_alpha("MainMenu", currentMainMenuFade / mainMenuFadeTime);
+	var value = currentMainMenuFade / mainMenuFadeTime;
+	set_layer_alpha("MainMenu", value);
+	titleGraphicAlpha = value;
 	if (currentMainMenuFade < 0)
 	{
 		state = 5;
