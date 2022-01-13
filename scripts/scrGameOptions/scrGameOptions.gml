@@ -1,3 +1,4 @@
+/// @desc Reads options from the ini file into globals and set functions
 function read_options_to_globals()
 {
 	ini_open("Subhuman.ini");
@@ -7,6 +8,7 @@ function read_options_to_globals()
 	ini_close();
 }
 
+/// @desc Saves options stored in globals (or get functions) to the ini file
 function save_options_globals()
 {
 	ini_open("Subhuman.ini");
