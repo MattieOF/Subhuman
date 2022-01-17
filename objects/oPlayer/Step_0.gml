@@ -12,7 +12,8 @@ var up = control_check(controls.moveUp);
 var down = control_check(controls.moveDown);
 
 // Look in direction of mouse
-direction = point_direction(x, y, mouse_x, mouse_y);
+var targetAngle = point_direction(x, y, mouse_x, mouse_y);
+image_angle = approach_angle(image_angle, targetAngle, 30);
 
 // Movement
 var hmove = right - left;

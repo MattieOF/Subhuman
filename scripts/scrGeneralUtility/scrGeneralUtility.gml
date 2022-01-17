@@ -8,3 +8,15 @@ function destroy_if_instance_exists(objectIndex = undefined, threshold = 1, targ
 	if (target == undefined) target = id;
 	if (instance_number(id) > threshold) instance_destroy(target);
 }
+
+function approach(value, target, amount)
+{
+	return value + clamp(target - value, -amount, amount);
+}
+
+function approach_angle(value, target, amount, maximum = 360)
+{
+	var diff = target - value;
+	if (abs(diff) >= 350) return target;
+	return value + clamp(target - value, -amount, amount);
+}
