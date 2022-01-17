@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sTestPlayer",
-    "path": "sprites/sTestPlayer/sTestPlayer.yy",
+    "name": "sPlayer",
+    "path": "sprites/sPlayer/sPlayer.yy",
   },
   "solid": false,
   "visible": true,
@@ -28,11 +28,11 @@
   ],
   "overriddenProperties": [],
   "parent": {
-    "name": "MovementTest",
-    "path": "folders/Objects/MovementTest.yy",
+    "name": "Objects",
+    "path": "folders/Objects.yy",
   },
   "resourceVersion": "1.0",
-  "name": "oMoveTestPlayerAltMovement",
+  "name": "oPlayer",
   "tags": [],
   "resourceType": "GMObject",
 }

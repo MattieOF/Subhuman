@@ -26,7 +26,7 @@ switch (state) {
 	case 4:
 		break;
 	case 5:
-		room_goto(rmMovementTest);
+		room_goto(rmGame);
 		break;
 	case 6:
 		break;
