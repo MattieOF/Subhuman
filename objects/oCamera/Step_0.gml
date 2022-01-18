@@ -17,8 +17,6 @@ if (instance_exists(target))
 	
 	prevTargetX = target.x;
 	prevTargetY = target.y;
-	
-	log_format_string("x: {0}, y: {1}", cameraX, cameraY);
 }
 
 camera_set_view_pos(view_camera[0], cameraX, cameraY);

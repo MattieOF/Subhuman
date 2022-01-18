@@ -21,10 +21,11 @@ camera_set_view_size(view_camera[0], cameraWidth * zoom, cameraHeight * zoom);
 camera_set_view_pos(view_camera[0], cameraX, cameraY);
 
 displayScale = 2;
-displayWidth = cameraWidth * displayScale;
-displayHeight = cameraHeight * displayScale;
+global.displayWidth = cameraWidth * displayScale;
+global.displayHeight = cameraHeight * displayScale;
 
-window_set_size(displayWidth, displayHeight);
-surface_resize(application_surface, displayWidth, displayHeight);
+window_set_size(global.displayWidth, global.displayHeight);
+surface_resize(application_surface, global.displayWidth, global.displayHeight);
+display_set_gui_size(cameraWidth * zoom, cameraHeight * zoom);
 
 alarm[0] = 1;

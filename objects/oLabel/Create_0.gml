@@ -1,5 +1,6 @@
 function draw()
 {
+	log_format_string("DRAW {0}", text);
 	var values = new DrawValues();
 
 	draw_set_color(color);
