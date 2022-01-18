@@ -38,7 +38,6 @@
     {"id":{"name":"oMainMenu","path":"objects/oMainMenu/oMainMenu.yy",},"order":1,},
     {"id":{"name":"oScreenshot","path":"objects/oScreenshot/oScreenshot.yy",},"order":2,},
     {"id":{"name":"sPlayerCollision","path":"sprites/sPlayerCollision/sPlayerCollision.yy",},"order":5,},
-    {"id":{"name":"scrEasing","path":"scripts/scrEasing/scrEasing.yy",},"order":10,},
     {"id":{"name":"rmMainMenu","path":"rooms/rmMainMenu/rmMainMenu.yy",},"order":0,},
   ],
   "Options": [
