@@ -8,6 +8,7 @@
     {"id":{"name":"scrJsonUtility","path":"scripts/scrJsonUtility/scrJsonUtility.yy",},"order":6,},
     {"id":{"name":"oSprite","path":"objects/oSprite/oSprite.yy",},"order":3,},
     {"id":{"name":"oFPS","path":"objects/oFPS/oFPS.yy",},"order":0,},
+    {"id":{"name":"scrTwerp","path":"scripts/scrTwerp/scrTwerp.yy",},"order":11,},
     {"id":{"name":"sCheckmark","path":"sprites/sCheckmark/sCheckmark.yy",},"order":2,},
     {"id":{"name":"sSpecificColliderTest","path":"sprites/sSpecificColliderTest/sSpecificColliderTest.yy",},"order":3,},
     {"id":{"name":"scrControls","path":"scripts/scrControls/scrControls.yy",},"order":5,},
