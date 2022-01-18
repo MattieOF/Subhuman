@@ -12,11 +12,13 @@ view_enabled = true;
 view_visible[0] = true;
 
 camera_set_view_size(view_camera[0], cameraWidth, cameraHeight);
+camera_set_view_pos(view_camera[0], cameraX, cameraY);
 
 displayScale = 2;
 displayWidth = cameraWidth * displayScale;
 displayHeight = cameraHeight * displayScale;
 
-window_set_size(cameraWidth, cameraHeight);
+window_set_size(displayWidth, displayHeight);
 surface_resize(application_surface, displayWidth, displayHeight);
-window_center();
+
+alarm[0] = 1;
