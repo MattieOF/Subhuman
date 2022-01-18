@@ -3,8 +3,13 @@
 enabled = false;
 pauseMenuCol = make_color_rgb(100, 100, 100);
 
-start_stack("PauseMenu", 100, 200, 15, stackDir.vertical);
-var lbl = create_label(0, 0, "Pause Menu");
+// Create pause menu
+// Draw in world means its drawn during the draw gui event, letting it use screen x/y
+start_stack("PauseMenu", 100, 100, 15, stackDir.vertical);
+var title = create_image(0, 0, sTitle);
+title.drawInWorld = false;
+add_to_stack(title);
+var lbl = create_label(0, 0, "Pause Menu",,,,,fa_left);
 lbl.drawInWorld = false;
 add_to_stack(lbl);
 end_stack();

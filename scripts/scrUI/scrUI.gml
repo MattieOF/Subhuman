@@ -110,7 +110,9 @@ function create_image(_x, _y, _sprite, _frame = 0, _layer = undefined, _color = 
 	img.color = _color;
 	img.alpha = _alpha;
 	img.scale = _scale;
-	img.refresh_values();
+	with (img) { event_user(0); }
+	
+	return img;
 }
 
 function start_stack(name, x, y, padding = 5, dir = stackDir.vertical)
