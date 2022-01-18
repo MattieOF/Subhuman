@@ -1,4 +1,5 @@
 /// @description Initialise the camera
+/// Code from https://www.youtube.com/watch?v=LIjShsyOfEg
 
 cameraX = 0;
 cameraY = 0;
