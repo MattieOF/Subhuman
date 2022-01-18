@@ -11,9 +11,13 @@ var right = control_check(controls.moveRight);
 var up = control_check(controls.moveUp);
 var down = control_check(controls.moveDown);
 
+// Update sprite pos
+playerSprite.x = x;
+playerSprite.y = y;
+
 // Look in direction of mouse
 var targetAngle = point_direction(x, y, mouse_x, mouse_y);
-image_angle = approach_angle(image_angle, targetAngle, 30);
+playerSprite.image_angle = approach_angle(playerSprite.image_angle, targetAngle, 30);
 
 // Movement
 var hmove = right - left;
