@@ -37,6 +37,7 @@ switch (state) {
 		draw_text(room_width / 2, 250, "Delete Debug Menu");
 		draw_text(room_width / 2, room_height / 2, "0 - Cancel");
 		draw_text(room_width / 2, (room_height / 2) + 22, "1 - Reset controls");
+		draw_text(room_width / 2, (room_height / 2) + 44, "2 - Go to movement test");
 		break;
     default:
 		show_debug_message("state switch broken!");

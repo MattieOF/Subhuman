@@ -55,7 +55,8 @@ if (state == 4)
 if (state == 69)
 {
 	if (keyboard_check_pressed(ord("0"))) reset_debug_menu();
-	if (keyboard_check_pressed(ord("1"))) { reset_controls(); reset_debug_menu(); }
+	else if (keyboard_check_pressed(ord("1"))) { reset_controls(); reset_debug_menu(); }
+	else if (keyboard_check_pressed(ord("2"))) { room_goto(rmMovementTest); }
 }
 
 if (control_check_pressed(controls.quit))
