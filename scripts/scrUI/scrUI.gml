@@ -19,6 +19,7 @@ global.ui_currentLayerName = undefined;
 global.ui_objButton = oButton;
 global.ui_objLabel = oLabel;
 global.ui_objCheckbox = oCheckbox;
+global.ui_objImage = oImage;
 
 function create_button(_x, _y, _width, _height, _text, _onPress, _callAs = undefined, _layer = undefined, _normalColor = $FFE6E6E6, 
 	_hoverColor = $FF999999, _clickedColor = $FF676767, _alpha = 1, _scale = 1)
@@ -92,6 +93,24 @@ function create_checkbox(_x, _y, _text, _onToggle, _checked = true, _layer = und
 	with (chbx) {  event_user(0); } // Set width and height
 	
 	return chbx;
+}
+
+function create_image(_x, _y, _sprite, _frame = 0, _layer = undefined, _color = $FFFFFFFF, _alpha = 1, _scale = 1)
+{
+	if (_layer == undefined)
+	{
+		if (global.ui_currentLayerName == undefined) global.ui_currentLayerName = "UI";
+		if (layer_exists(global.ui_currentLayerName)) _layer = layer_get_id(global.ui_currentLayerName);
+		else _layer = layer_create(-100, global.ui_currentLayerName);
+	}
+	
+	var img = instance_create_layer(_x, _y, _layer, global.ui_objImage);
+	img.sprite = _sprite;
+	img.frame = _frame;
+	img.color = _color;
+	img.alpha = _alpha;
+	img.scale = _scale;
+	img.refresh_values();
 }
 
 function start_stack(name, x, y, padding = 5, dir = stackDir.vertical)
