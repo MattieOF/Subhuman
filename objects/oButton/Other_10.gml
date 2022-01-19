@@ -1,11 +1,5 @@
-/// @description Setup values
-
-drawX1 = 0;
-drawY1 = 0;
-drawX2 = 0;
-drawY2 = 0;
-textX = 0;
-textY = 0;
+/// @description Setup draw positions
+/// This should be called every time the button is repositioned
 
 var halfWidth = width / 2;
 var halfHeight = height / 2;
