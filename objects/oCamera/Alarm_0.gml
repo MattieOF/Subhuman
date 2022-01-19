@@ -1,2 +1,2 @@
-/// @description Center window after one frame
+/// @description Center window
 window_center();
