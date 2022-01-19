@@ -22,7 +22,7 @@ global.ui_objCheckbox = oCheckbox;
 global.ui_objImage = oImage;
 
 function create_button(_x, _y, _width, _height, _text, _onPress, _callAs = undefined, _layer = undefined, _normalColor = $FFE6E6E6, 
-	_hoverColor = $FF999999, _clickedColor = $FF676767, _alpha = 1, _scale = 1)
+	_hoverColor = $FF999999, _clickedColor = $FF676767, _halign = fa_center, _valign = fa_center, _alpha = 1, _scale = 1)
 {
 	if (_layer == undefined)
 	{
@@ -42,6 +42,9 @@ function create_button(_x, _y, _width, _height, _text, _onPress, _callAs = undef
 	btn.clickedColor = _clickedColor;
 	btn.alpha = _alpha;
 	btn.textScale = _scale;
+	btn.halign = _halign;
+	btn.valign = _valign;
+	with (btn) { event_user(0); }
 	
 	return btn;
 }
@@ -167,6 +170,8 @@ function add_to_stack(objId)
 			global.ui_currentY += (objId.height + global.ui_currentPadding);
 			break;
 	}
+	
+	with (objId) { event_user(0); }
 }
 
 function add_stack_spacing(spacing)
