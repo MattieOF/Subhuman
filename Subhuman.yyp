@@ -5,6 +5,7 @@
     {"id":{"name":"scrGameOptions","path":"scripts/scrGameOptions/scrGameOptions.yy",},"order":0,},
     {"id":{"name":"oMoveTestDiag","path":"objects/oMoveTestDiag/oMoveTestDiag.yy",},"order":3,},
     {"id":{"name":"oLabel","path":"objects/oLabel/oLabel.yy",},"order":3,},
+    {"id":{"name":"scrWeapons","path":"scripts/scrWeapons/scrWeapons.yy",},"order":12,},
     {"id":{"name":"scrJsonUtility","path":"scripts/scrJsonUtility/scrJsonUtility.yy",},"order":6,},
     {"id":{"name":"oSprite","path":"objects/oSprite/oSprite.yy",},"order":3,},
     {"id":{"name":"oFPS","path":"objects/oFPS/oFPS.yy",},"order":0,},
