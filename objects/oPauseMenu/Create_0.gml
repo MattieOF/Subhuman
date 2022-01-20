@@ -37,20 +37,14 @@ function on_menu()
 
 // Create pause menu
 // Draw in world means its drawn during the draw gui event, letting it use screen x/y
-start_stack("PauseMenu", 100, 100, 5, stackDir.vertical);
-var title = create_image(0, 0, sTitle);
-title.drawInWorld = false;
-add_to_stack(title);
+start_stack("PauseMenu", 100, 100, 5, stackDir.vertical, false);
+
+add_to_stack(create_image(0, 0, sTitle));
 add_stack_spacing(10);
-var lbl = create_label(0, 0, "Pause Menu",,,,,fa_left);
-lbl.drawInWorld = false;
-add_to_stack(lbl);
+add_to_stack(create_label(0, 0, "Pause Menu",,,,,fa_left));
 add_stack_spacing(100);
-var resume = create_button(0, 0, 150, 50, "Resume", on_resume,,,,,,fa_left);
-resume.drawInWorld = false;
-add_to_stack(resume);
-var menu = create_button(0, 0, 150, 50, "Quit", on_menu,,,,,,fa_left);
-menu.drawInWorld = false;
-add_to_stack(menu);
+add_to_stack(create_button(0, 0, 150, 50, "Resume", on_resume,,,,,,fa_left));
+add_to_stack(create_button(0, 0, 150, 50, "Quit", on_menu,,,,,,fa_left));
 end_stack();
+
 instance_deactivate_layer("PauseMenu");

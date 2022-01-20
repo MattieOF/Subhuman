@@ -15,6 +15,7 @@ global.ui_currentX = undefined;
 global.ui_currentY = undefined;
 global.ui_currentStackDir = undefined;
 global.ui_currentLayerName = undefined;
+global.ui_currentStackDIW = true;
 
 global.ui_objButton = oButton;
 global.ui_objLabel = oLabel;
@@ -118,7 +119,7 @@ function create_image(_x, _y, _sprite, _frame = 0, _layer = undefined, _color = 
 	return img;
 }
 
-function start_stack(name, x, y, padding = 5, dir = stackDir.vertical)
+function start_stack(name, x, y, padding = 5, dir = stackDir.vertical, drawInWorld = true)
 {
 	if (global.ui_currentLayout != undefined)
 	{
@@ -132,6 +133,7 @@ function start_stack(name, x, y, padding = 5, dir = stackDir.vertical)
 	global.ui_currentPadding = padding;
 	global.ui_currentX = x;
 	global.ui_currentY = y;
+	global.ui_currentStackDIW = drawInWorld;
 }
 
 function end_stack()
@@ -160,6 +162,7 @@ function add_to_stack(objId)
 	
 	objId.x = global.ui_currentX;
 	objId.y = global.ui_currentY;
+	if (variable_instance_exists(objId, "drawInWorld")) objId.drawInWorld = global.ui_currentStackDIW;
 	
 	switch(global.ui_currentStackDir)
 	{
