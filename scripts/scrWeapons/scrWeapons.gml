@@ -13,7 +13,7 @@ enum weaponType
 	melee
 }
 
-function LoadoutItem(_weapon)
+function LoadoutItem(_weapon) constructor
 {
 	weapon = _weapon;
 	if (variable_struct_exists(_weapon, "ammoClip"))
