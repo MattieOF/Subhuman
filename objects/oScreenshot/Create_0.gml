@@ -1,6 +1,6 @@
 /// @description Set up values
 
-destroy_if_instance_exists();
+if (instance_number(object_index) > 1) instance_destroy(id);
 
 // 0 - Don't display
 // 1 - Show text

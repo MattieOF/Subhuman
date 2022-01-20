@@ -1,2 +1,3 @@
 /// @description Destroy if instance exists
-destroy_if_instance_exists();
+
+if (instance_number(object_index) > 1) instance_destroy(id);
