@@ -57,4 +57,6 @@ y += vmove;
 // Shooting
 
 if (control_check_pressed(controls.attackPrimary))
-	show_debug_message("Shoot!");
+{
+	create_projectile(x, y, global.testProjectile, targetAngle);
+}

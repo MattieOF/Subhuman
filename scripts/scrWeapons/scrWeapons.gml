@@ -1,3 +1,8 @@
+global.projectileLayer = undefined;
+global.projectileObject = oProjectile;
+
+global.testProjectile = new Projectile(sTestProjectile, 10, 5);
+
 enum weaponType
 {
 	projectile,
@@ -62,4 +67,11 @@ function Projectile(_sprite, _damage, _speed) constructor
 	else sprite = _sprite;
 	damage = _damage;
 	projectileSpeed = _speed;
+}
+
+function create_projectile(_x, _y, _projectile, _dir)
+{
+	if (global.projectileLayer == undefined) global.projectileLayer = layer_create(-500, "Projectiles");
+	var proj = instance_create_layer(_x, _y, global.projectileLayer, global.projectileObject);
+	proj.init(_projectile, _dir, 1);
 }
