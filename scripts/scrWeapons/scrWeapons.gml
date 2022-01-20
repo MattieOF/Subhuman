@@ -25,8 +25,8 @@ function LoadoutItem(_weapon) constructor
 
 function WeaponSounds(_shoot = undefined, _reload = undefined) constructor
 {
-	shoot = _shoot;
-	reload = _reload;
+	soundShoot = _shoot;
+	soundReload = _reload;
 }
 
 function WeaponHitscan(_name, _sprite, _damage, _range, _rof, _clip, _reserve, _sounds) constructor
