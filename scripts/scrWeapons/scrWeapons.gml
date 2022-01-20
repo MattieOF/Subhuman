@@ -3,6 +3,9 @@ global.projectileObject = oProjectile;
 
 global.testProjectile = new Projectile(sTestProjectile, 10, 5);
 
+global.weaponFists = new WeaponMelee("Fists", sTestProjectile, 5, 3, 0.75, new WeaponSounds());
+global.weaponPistol = new WeaponHitscan("Pistol", sTestProjectile, 10, 100, 1, 5, 25, new WeaponSounds());
+
 enum weaponType
 {
 	projectile,
@@ -10,7 +13,17 @@ enum weaponType
 	melee
 }
 
-function WeaponSounds(_shoot, _reload) constructor
+function LoadoutItem(_weapon)
+{
+	weapon = _weapon;
+	if (variable_struct_exists(_weapon, "ammoClip"))
+	{
+		ammoClip = _weapon.ammoClip;
+		ammoReserve = _weapon.ammoReserve;
+	}
+}
+
+function WeaponSounds(_shoot = undefined, _reload = undefined) constructor
 {
 	shoot = _shoot;
 	reload = _reload;
