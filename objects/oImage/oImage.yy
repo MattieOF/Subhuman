@@ -33,8 +33,8 @@
   ],
   "overriddenProperties": [],
   "parent": {
-    "name": "UI",
-    "path": "folders/Objects/UI.yy",
+    "name": "Elements",
+    "path": "folders/Objects/UI/Elements.yy",
   },
   "resourceVersion": "1.0",
   "name": "oImage",
