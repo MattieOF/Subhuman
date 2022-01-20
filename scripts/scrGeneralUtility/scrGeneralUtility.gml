@@ -20,3 +20,13 @@ function approach_angle(value, target, amount, maximum = 360)
 	if (abs(diff) >= 350) return target;
 	return value + clamp(target - value, -amount, amount);
 }
+
+global.debrisLayer = undefined;
+global.debrisObject = oDebris;
+function create_debris(_x, _y, _sprite, _count, _lifetime, _speed)
+{
+	if (global.debrisLayer == undefined) global.debrisLayer = layer_create(-500, "Debris");
+	var debris = instance_create_layer(_x, _y, global.debrisLayer, global.debrisObject);
+	debris.init(_sprite, _count, _speed, _lifetime);
+	return debris;
+}

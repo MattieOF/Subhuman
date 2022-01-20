@@ -18,6 +18,10 @@ function init(_sprite, _count, _speed, _lifetime, _dirMin = 0, _dirMax = 359)
 {
 	objects = array_create(_count);
 	
+	sprite = _sprite;
+	
 	for (var i = 0; i < _count; i++)
 		objects[i] = new Particle(x, y, random_range(_dirMin, _dirMax), _speed);
+		
+	life = _lifetime * room_speed;
 }
