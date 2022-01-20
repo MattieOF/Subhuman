@@ -1,3 +1,3 @@
 /// @description Insert description here
-create_debris(x, y, sTestDebris, 5, 1, 2);
+if (projectile.debrisSprite != undefined) create_debris(x, y, projectile.debrisSprite, 5, 1, 2);
 instance_destroy(id);

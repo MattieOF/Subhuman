@@ -1,7 +1,7 @@
 global.projectileLayer = undefined;
 global.projectileObject = oProjectile;
 
-global.testProjectile = new Projectile(sTestProjectile, 10, 5);
+global.testProjectile = new Projectile(sTestProjectile, 10, 5, sTestDebris);
 
 global.weaponFists = new WeaponMelee("Fists", sTestProjectile, 5, 3, 0.75, new WeaponSounds());
 global.weaponPistol = new WeaponHitscan("Pistol", sTestProjectile, 10, 100, 1, 5, 25, new WeaponSounds());
@@ -74,12 +74,13 @@ function WeaponMelee(_name, _sprite, _damage, _range, _rof, _sounds) constructor
 	else sounds = _sounds;
 }
 
-function Projectile(_sprite, _damage, _speed) constructor
+function Projectile(_sprite, _damage, _speed, _debrisSprite = undefined) constructor
 {
 	if (!sprite_exists(_sprite)) log_format_string("In a projectile, provided sprite ({0}) doesn't exist.", _sprite);
 	else sprite = _sprite;
 	damage = _damage;
 	projectileSpeed = _speed;
+	debrisSprite = _debrisSprite;
 }
 
 function create_projectile(_x, _y, _projectile, _dir)
