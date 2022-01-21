@@ -59,5 +59,6 @@ y += vmove;
 shootCooldown--;
 if (control_check_pressed(controls.attackPrimary))
 {
-	create_projectile(x, y, global.testProjectile, targetAngle);
+	// create_projectile(x, y, global.testProjectile, targetAngle);
+	shoot();
 }

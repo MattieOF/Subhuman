@@ -5,6 +5,8 @@ global.testProjectile = new Projectile(sTestProjectile, 10, 5, sTestDebris);
 
 global.weaponFists = new WeaponMelee("Fists", sTestProjectile, 5, 3, 0.75, new WeaponSounds());
 global.weaponPistol = new WeaponHitscan("Pistol", sTestProjectile, 10, 100, 1, 5, 25, new WeaponSounds());
+global.weaponProjectileTest = new WeaponProjectile("Projectile Test", sTestProjectile, global.testProjectile,
+	0.25, 15, 60, new WeaponSounds());
 
 enum weaponType
 {

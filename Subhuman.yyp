@@ -19,6 +19,7 @@
     {"id":{"name":"oMoveTestManager","path":"objects/oMoveTestManager/oMoveTestManager.yy",},"order":0,},
     {"id":{"name":"oCheckbox","path":"objects/oCheckbox/oCheckbox.yy",},"order":1,},
     {"id":{"name":"sSolid","path":"sprites/sSolid/sSolid.yy",},"order":0,},
+    {"id":{"name":"oHUD","path":"objects/oHUD/oHUD.yy",},"order":4,},
     {"id":{"name":"oDebris","path":"objects/oDebris/oDebris.yy",},"order":2,},
     {"id":{"name":"scrAccessibilityOptions","path":"scripts/scrAccessibilityOptions/scrAccessibilityOptions.yy",},"order":3,},
     {"id":{"name":"sTestProjectile","path":"sprites/sTestProjectile/sTestProjectile.yy",},"order":1,},
