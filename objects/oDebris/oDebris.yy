@@ -26,8 +26,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Game",
-    "path": "folders/Objects/Game.yy",
+    "name": "Graphics",
+    "path": "folders/Objects/Game/Graphics.yy",
   },
   "resourceVersion": "1.0",
   "name": "oDebris",

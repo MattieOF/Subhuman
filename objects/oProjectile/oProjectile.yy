@@ -25,8 +25,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Game",
-    "path": "folders/Objects/Game.yy",
+    "name": "Weapon",
+    "path": "folders/Objects/Game/Player/Weapon.yy",
   },
   "resourceVersion": "1.0",
   "name": "oProjectile",
