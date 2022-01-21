@@ -6,16 +6,16 @@ loadout = {};
 selectedLoadoutItem = 0;
 shootCooldown = 0;
 
-loadout[$ 0] = new LoadoutItem(global.weaponFists);
-loadout[$ 1] = new LoadoutItem(global.weaponPistol);
-loadout[$ 2] = new LoadoutItem(global.weaponProjectileTest);
-update_loadout_size();
-
 function update_loadout_size()
 {
 	loadoutSize = 0;
 	while (loadout[$loadoutSize] != undefined) loadoutSize++;
 }
+
+loadout[$ 0] = new LoadoutItem(global.weaponFists);
+loadout[$ 1] = new LoadoutItem(global.weaponPistol);
+loadout[$ 2] = new LoadoutItem(global.weaponProjectileTest);
+update_loadout_size();
 
 function shoot()
 {
