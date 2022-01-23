@@ -63,7 +63,11 @@ function reload_pressed()
 
 function reload()
 {
+	var needed = loadout[$selectedLoadoutItem].weapon.ammoClip - loadout[$selectedLoadoutItem].ammoClip;
+	var toBeAdded = min(loadout[$selectedLoadoutItem].ammoReserve, needed);
 	
+	loadout[$selectedLoadoutItem].ammoClip += toBeAdded;
+	loadout[$selectedLoadoutItem].ammoReserve -= toBeAdded;
 }
 
 // Create hud
