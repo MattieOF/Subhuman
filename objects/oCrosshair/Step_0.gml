@@ -2,8 +2,8 @@
 
 if (player == undefined) return;
 
-x = mouse_x;
-y = mouse_y;
+x = device_mouse_x_to_gui(0);
+y = device_mouse_y_to_gui(0);
 
 // Check if we're over something that colours the crosshair
 if (place_meeting(x, y, oPlayer)) image_blend = c_green;
