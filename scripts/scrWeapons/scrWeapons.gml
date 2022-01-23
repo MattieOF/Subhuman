@@ -89,7 +89,7 @@ function Projectile(_sprite, _damage, _speed, _debrisSprite = undefined) constru
 
 function create_projectile(_x, _y, _projectile, _dir)
 {
-	if (global.projectileLayer == undefined) global.projectileLayer = layer_create(-500, "Projectiles");
+	if (global.projectileLayer == undefined || !layer_exists(global.projectileLayer)) global.projectileLayer = layer_create(-500, "Projectiles");
 	var proj = instance_create_layer(_x, _y, global.projectileLayer, global.projectileObject);
 	proj.init(_projectile, _dir, 1);
 }
