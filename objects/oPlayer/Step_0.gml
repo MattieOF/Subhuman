@@ -1,11 +1,6 @@
 /// @description Movement and shooting
 
-// Check input
-// var left = keyboard_check(vk_left) || keyboard_check(ord("A"));
-// var right = keyboard_check(vk_right) || keyboard_check(ord("D"));
-// var up = keyboard_check(vk_up) || keyboard_check(ord("W"));
-// var down = keyboard_check(vk_down) || keyboard_check(ord("S"));
-
+// Check inputs
 var left = control_check(controls.moveLeft);
 var right = control_check(controls.moveRight);
 var up = control_check(controls.moveUp);
@@ -19,7 +14,7 @@ playerSprite.y = y;
 var targetAngle = point_direction(x, y, mouse_x, mouse_y);
 playerSprite.image_angle = approach_angle(playerSprite.image_angle, targetAngle, 30);
 
-// Movement
+// Calculate movement
 var hmove = right - left;
 var vmove = down - up;
 
@@ -69,12 +64,7 @@ if (reloading && reloadTime <= 0)
 }
 
 if (control_check_pressed(controls.reload))
-{
 	reload_pressed();
-}
 
 if (control_check_pressed(controls.attackPrimary))
-{
-	// create_projectile(x, y, global.testProjectile, targetAngle);
 	shoot();
-}
