@@ -2,6 +2,7 @@
 if (!showFPS) return;
 draw_set_halign(fa_right);
 draw_set_valign(fa_top);
+draw_set_color(c_white);
 
 var fpsString = "FPS: " + string(fps);
 var fpsRealString = "Real FPS: " + string(fps_real);
