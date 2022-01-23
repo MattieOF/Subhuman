@@ -23,6 +23,7 @@ currentMainMenuFade = 0;
 69 = delete debug menu
 		0 = cancel
 		1 = reset controls
+		2 = goto movement test
 */
 state = 0;
 global.mainMenu = id;
