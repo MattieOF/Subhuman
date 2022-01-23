@@ -4,9 +4,9 @@ global.projectileObject = oProjectile;
 global.testProjectile = new Projectile(sTestProjectile, 10, 5, sTestDebris);
 
 global.weaponFists = new WeaponMelee("Fists", sTestProjectile, 5, 3, 0.75, new WeaponSounds());
-global.weaponPistol = new WeaponHitscan("Pistol", sTestProjectile, 10, 100, 1, 5, 25, new WeaponSounds());
+global.weaponPistol = new WeaponHitscan("Pistol", sTestProjectile, 10, 100, 1, 1, 5, 25, new WeaponSounds());
 global.weaponProjectileTest = new WeaponProjectile("Projectile Test", sTestProjectile, global.testProjectile,
-	0.25, 15, 60, new WeaponSounds());
+	0.25, 1, 15, 60, new WeaponSounds());
 
 enum weaponType
 {
@@ -31,7 +31,7 @@ function WeaponSounds(_shoot = undefined, _reload = undefined) constructor
 	soundReload = _reload;
 }
 
-function WeaponHitscan(_name, _sprite, _damage, _range, _rof, _clip, _reserve, _sounds) constructor
+function WeaponHitscan(_name, _sprite, _damage, _range, _rof, _reloadTime, _clip, _reserve, _sounds) constructor
 {
 	type = weaponType.hitscan;
 	name = _name;
@@ -40,6 +40,7 @@ function WeaponHitscan(_name, _sprite, _damage, _range, _rof, _clip, _reserve, _
 	damage = _damage;
 	range = _range;
 	rof = _rof;
+	reloadTime = _reloadTime;
 	ammoClip = _clip;
 	ammoReserve = _reserve;
 	if (!variable_struct_exists(_sounds, "reload")) 
@@ -47,7 +48,7 @@ function WeaponHitscan(_name, _sprite, _damage, _range, _rof, _clip, _reserve, _
 	else sounds = _sounds;
 }
 
-function WeaponProjectile(_name, _sprite, _projectile, _rof, _clip, _reserve, _sounds) constructor
+function WeaponProjectile(_name, _sprite, _projectile, _rof, _reloadTime, _clip, _reserve, _sounds) constructor
 {
 	type = weaponType.projectile;
 	name = _name;
@@ -55,6 +56,7 @@ function WeaponProjectile(_name, _sprite, _projectile, _rof, _clip, _reserve, _s
 	else sprite = _sprite;
 	projectile = _projectile;
 	rof = _rof;
+	reloadTime = _reloadTime;
 	ammoClip = _clip;
 	ammoReserve = _reserve;
 	if (!variable_struct_exists(_sounds, "reload")) 

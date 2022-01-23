@@ -11,7 +11,8 @@ enum controls
 	quit,
 	screenshot,
 	toggleDistort,
-	toggleFPS
+	toggleFPS,
+	reload
 }
 
 /// @description Enum representing the types of a control (key, mouse)
@@ -55,6 +56,7 @@ function control_defaults()
 	set_control(controls.toggleFPS,      new Control(controlType.key, vk_f1));
 	set_control(controls.toggleDistort,  new Control(controlType.key, vk_f2));
 	set_control(controls.screenshot,     new Control(controlType.key, vk_f5));
+	set_control(controls.reload,         new Control(controlType.key, ord("R")));
 }
 
 /// @description Save backup of controls file, reset controls to default, and save again.

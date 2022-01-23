@@ -6,6 +6,10 @@ loadout = {};
 selectedLoadoutItem = 0;
 shootCooldown = 0;
 
+// If reloadTime is 0 and reloading is true, reload ammo.
+reloading = false;
+reloadTime = 0;
+
 function update_loadout_size()
 {
 	loadoutSize = 0;
@@ -15,13 +19,19 @@ function update_loadout_size()
 loadout[$ 0] = new LoadoutItem(global.weaponFists);
 loadout[$ 1] = new LoadoutItem(global.weaponPistol);
 loadout[$ 2] = new LoadoutItem(global.weaponProjectileTest);
+selectedLoadoutItem = 2;
 update_loadout_size();
 
 function shoot()
 {
-	if (selectedLoadoutItem == -1) return;
-	if (shootCooldown > 0) return;
-		
+	// Return if we can't shoot right now
+	if (reloading) return; // Currently reloading
+	if (selectedLoadoutItem == -1) return; // No valid weapon selected
+	if (shootCooldown > 0) return; // On shoot cooldown
+	
+	// Get direction to fire weapon
+	var dir = point_direction(x, y, mouse_x, mouse_y); // Or we could use image_angle?
+	
 	switch (loadout[$selectedLoadoutItem].weapon.type)
 	{
 		case weaponType.melee:
@@ -31,9 +41,29 @@ function shoot()
 			show_debug_message("hitscan");
 			break;
 		case weaponType.projectile:
-			show_debug_message("projectile");
+			if (loadout[$selectedLoadoutItem].ammoClip <= 0) return;
+			create_projectile(x, y, loadout[$selectedLoadoutItem].weapon.projectile, dir);
+			shootCooldown = loadout[$selectedLoadoutItem].weapon.rof * room_speed;
+			loadout[$selectedLoadoutItem].ammoClip--;
 			break;
 	}
+}
+
+function reload_pressed()
+{
+	// Return if we can't reload
+	if (!variable_struct_exists(loadout[$selectedLoadoutItem], "ammoClip")) return; // Ammoless weapon
+	if (loadout[$selectedLoadoutItem].ammoClip == loadout[$selectedLoadoutItem].weapon.ammoClip) 
+		return;  // Clip is full
+	if (loadout[$selectedLoadoutItem].ammoReserve == 0) return; // Out of reserve ammo
+	
+	reloading = true;
+	reloadTime = loadout[$selectedLoadoutItem].weapon.reloadTime * room_speed;
+}
+
+function reload()
+{
+	
 }
 
 // Create hud

@@ -54,9 +54,25 @@ if (!place_free(x, y + vmove))
 x += hmove;
 y += vmove;
 
+// ---------
 // Shooting
+// ---------
 
+// Tick shooting variables
 shootCooldown--;
+reloadTime--;
+
+if (reloading && reloadTime <= 0)
+{
+	reload();
+	reloading = false;
+}
+
+if (control_check_pressed(controls.reload))
+{
+	reload_pressed();
+}
+
 if (control_check_pressed(controls.attackPrimary))
 {
 	// create_projectile(x, y, global.testProjectile, targetAngle);

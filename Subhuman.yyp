@@ -96,6 +96,7 @@
     {"folderPath":"folders/Objects/Game/Player.yy","order":6,"resourceVersion":"1.0","name":"Player","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Objects/Game/Graphics.yy","order":7,"resourceVersion":"1.0","name":"Graphics","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Objects/Game/Player/Weapon.yy","order":1,"resourceVersion":"1.0","name":"Weapon","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Objects/Game/Enemy.yy","order":8,"resourceVersion":"1.0","name":"Enemy","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [
     {"targets":-1,"resourceVersion":"1.3","name":"audiogroup_default","resourceType":"GMAudioGroup",},
