@@ -52,6 +52,7 @@ function shoot()
 function reload_pressed()
 {
 	// Return if we can't reload
+	if (reloading) return; // Already reloading
 	if (!variable_struct_exists(loadout[$selectedLoadoutItem], "ammoClip")) return; // Ammoless weapon
 	if (loadout[$selectedLoadoutItem].ammoClip == loadout[$selectedLoadoutItem].weapon.ammoClip) 
 		return;  // Clip is full
