@@ -30,6 +30,7 @@ canQuit = false;
 titleGraphic = sTitle;
 halfTitleGraphicWidth = sprite_get_width(titleGraphic) / 2;
 titleGraphicAlpha = 1;
+window_set_cursor(cr_default); // Ensure cursor is shown
 
 function start_game()
 {

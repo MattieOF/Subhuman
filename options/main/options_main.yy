@@ -8,7 +8,7 @@
   "option_steam_app_id": "0",
   "option_sci_usesci": false,
   "option_author": "Matt Ware",
-  "option_lastchanged": "12 January 2022 17:03:37",
+  "option_lastchanged": "23 January 2022 17:54:41",
   "option_spine_licence": false,
   "option_template_image": "${base_options_dir}/main/template_image.png",
   "option_template_icon": "${base_options_dir}/main/template_icon.png",

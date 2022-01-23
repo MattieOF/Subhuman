@@ -72,3 +72,5 @@ function reload()
 
 // Create hud
 instance_create_layer(0, 0, layer_create(-300, "HUD"), oHUD).init(id);
+instance_create_layer(0, 0, layer_create(-300, "Crosshair"), oCrosshair).init(id);
+window_set_cursor(cr_none);

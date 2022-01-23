@@ -6,5 +6,7 @@ surface_copy(global.pauseSurface, 0, 0, application_surface);
 deactivate_layers();
 // Activate pause menu layer
 instance_activate_layer("PauseMenu");
+// Show cursor
+window_set_cursor(cr_default);
 
 enabled = true;

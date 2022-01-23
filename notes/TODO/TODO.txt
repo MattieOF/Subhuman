@@ -1,7 +1,2 @@
 - scrGeneralUtilitys debris layer could be invalid after a room change. Fix this - perhaps a function that checks
 for its existence that should be called on room start - init_general_utility()?
-
-- Crosshair object
-	Always at mouse position
-	When not reloading, its a normal crosshair shape
-	If we are reloading, its a circular progress bar showing how far in the reload process we are
