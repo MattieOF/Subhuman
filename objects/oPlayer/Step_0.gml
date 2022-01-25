@@ -68,3 +68,8 @@ if (control_check_pressed(controls.reload))
 
 if (control_check_pressed(controls.attackPrimary))
 	shoot();
+	
+if (control_check_pressed(controls.weaponNext))
+	next_weapon();
+else if (control_check_pressed(controls.weaponPrevious))
+	previous_weapon();

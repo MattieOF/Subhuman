@@ -4,8 +4,12 @@ var selectedItem = player.loadout[$selectedItemIndex];
 draw_set_halign(fa_left);
 draw_set_valign(fa_top);
 draw_set_color(c_white);
-draw_text(10, 10, format_string("Selected index: {0}, name: {1}, loadout size: {2}, clip: {3}, reserve: {4}", selectedItemIndex, 
-	selectedItem.weapon.name, player.loadoutSize, selectedItem.ammoClip, selectedItem.ammoReserve));
+if (variable_struct_exists(selectedItem, "ammoClip"))
+	draw_text(10, 10, format_string("Selected index: {0}, name: {1}, loadout size: {2}, clip: {3}, reserve: {4}", selectedItemIndex, 
+		selectedItem.weapon.name, player.loadoutSize, selectedItem.ammoClip, selectedItem.ammoReserve));
+else
+	draw_text(10, 10, format_string("Selected index: {0}, name: {1}, loadout size: {2}", selectedItemIndex, 
+		selectedItem.weapon.name, player.loadoutSize));
 
 // Temp reload hud
 draw_set_valign(fa_bottom);

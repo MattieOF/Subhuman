@@ -71,6 +71,43 @@ function reload()
 	loadout[$selectedLoadoutItem].ammoReserve -= toBeAdded;
 }
 
+function next_weapon()
+{
+	if (loadoutSize == 0)
+	{
+		selectedLoadoutItem = -1;
+		return;
+	}
+	
+	selectedLoadoutItem++;
+	if (loadout[$selectedLoadoutItem] == undefined) selectedLoadoutItem = 0;
+	log_format_string("Next weapon. New index: {0}, new value: {1}", selectedLoadoutItem, loadout[$selectedLoadoutItem]);
+	
+	if (reloading)
+	{
+		reloading = false;
+		reloadTime = 0;
+	}
+}
+
+function previous_weapon()
+{
+	if (loadoutSize == 0)
+	{
+		selectedLoadoutItem = -1;
+		return;
+	}
+	
+	selectedLoadoutItem--;
+	if (loadout[$selectedLoadoutItem] == undefined) selectedLoadoutItem = loadoutSize - 1;
+	
+	if (reloading)
+	{
+		reloading = false;
+		reloadTime = 0;
+	}
+}
+
 // Create hud
 instance_create_layer(0, 0, layer_create(-300, "HUD"), oHUD).init(id);
 instance_create_layer(0, 0, layer_create(-300, "Crosshair"), oCrosshair).init(id);
