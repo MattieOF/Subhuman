@@ -30,3 +30,34 @@ function create_debris(_x, _y, _sprite, _count, _lifetime, _speed, _dirMin = 0, 
 	debris.init(_sprite, _count, _speed, _lifetime, _dirMin, _dirMax);
 	return debris;
 }
+
+global.tracersLayer = undefined;
+global.tracersObject = oTracer;
+function create_tracer(_x, _y, _endX, _endY, _time = 0.5, _col = c_white)
+{
+	if (global.tracersLayer == undefined || !layer_exists(global.tracersLayer)) global.tracersLayer = layer_create(-500, "Tracers");
+	var tracer = instance_create_layer(_x, _y, global.tracersLayer, global.tracersObject);
+	tracer.init(_x, _y, _endX, _endY, _col, _time);
+	return tracer;
+}
+
+function angle_reverse(_angle)
+{
+	return (_angle + 180) % 360;
+}
+
+function Point(_x, _y) constructor
+{
+	X = _x;
+	Y = _y;
+}
+
+function point_on_line(x1, y1, x2, y2, t)
+{
+	var dir = point_direction(x1, y1, x2, y2);
+	var dist = point_distance(x1, y1, x2, y2);
+	var outX = x1 + lengthdir_x(dist * t, dir);
+	var outY = y1 + lengthdir_y(dist * t, dir);
+	
+	return new Point(outX, outY);
+}

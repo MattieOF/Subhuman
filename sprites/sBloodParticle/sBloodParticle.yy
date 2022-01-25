@@ -8,14 +8,14 @@
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
   "bbox_left": 0,
-  "bbox_right": 1,
+  "bbox_right": 2,
   "bbox_top": 0,
-  "bbox_bottom": 1,
+  "bbox_bottom": 2,
   "HTile": false,
   "VTile": false,
   "For3D": false,
-  "width": 2,
-  "height": 2,
+  "width": 3,
+  "height": 3,
   "textureGroupId": {
     "name": "Default",
     "path": "texturegroups/Default",
@@ -24,12 +24,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"dd68b451-631d-4546-8635-a348d7bdb221","path":"sprites/sTestDebris/sTestDebris.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"dd68b451-631d-4546-8635-a348d7bdb221","path":"sprites/sTestDebris/sTestDebris.yy",},"LayerId":{"name":"bfb65835-e0a0-4383-8381-165bd3e130d9","path":"sprites/sTestDebris/sTestDebris.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sTestDebris","path":"sprites/sTestDebris/sTestDebris.yy",},"resourceVersion":"1.0","name":"dd68b451-631d-4546-8635-a348d7bdb221","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"3a55c6fd-2812-4b43-9645-172dce01b0da","path":"sprites/sBloodParticle/sBloodParticle.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"3a55c6fd-2812-4b43-9645-172dce01b0da","path":"sprites/sBloodParticle/sBloodParticle.yy",},"LayerId":{"name":"848de3d9-8c0d-4dec-ac6a-e3f2f14043ed","path":"sprites/sBloodParticle/sBloodParticle.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sBloodParticle","path":"sprites/sBloodParticle/sBloodParticle.yy",},"resourceVersion":"1.0","name":"3a55c6fd-2812-4b43-9645-172dce01b0da","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
-    "spriteId": {"name":"sTestDebris","path":"sprites/sTestDebris/sTestDebris.yy",},
+    "spriteId": {"name":"sBloodParticle","path":"sprites/sBloodParticle/sBloodParticle.yy",},
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 30.0,
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"f33bc1c2-b271-46da-b975-6ca2b8f1c9c5","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"dd68b451-631d-4546-8635-a348d7bdb221","path":"sprites/sTestDebris/sTestDebris.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"1d6fd1f5-053c-41f2-9f82-b5f07bb9cee0","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"3a55c6fd-2812-4b43-9645-172dce01b0da","path":"sprites/sBloodParticle/sBloodParticle.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
     ],
     "visibleRange": null,
@@ -58,14 +58,14 @@
     "yorigin": 0,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"sTestDebris","path":"sprites/sTestDebris/sTestDebris.yy",},
+    "parent": {"name":"sBloodParticle","path":"sprites/sBloodParticle/sBloodParticle.yy",},
     "resourceVersion": "1.3",
-    "name": "sTestDebris",
+    "name": "sBloodParticle",
     "tags": [],
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"bfb65835-e0a0-4383-8381-165bd3e130d9","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"848de3d9-8c0d-4dec-ac6a-e3f2f14043ed","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,
   "parent": {
@@ -73,7 +73,7 @@
     "path": "folders/Sprites/Game.yy",
   },
   "resourceVersion": "1.0",
-  "name": "sTestDebris",
+  "name": "sBloodParticle",
   "tags": [],
   "resourceType": "GMSprite",
 }

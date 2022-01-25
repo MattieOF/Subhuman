@@ -4,7 +4,7 @@ global.projectileObject = oProjectile;
 global.testProjectile = new Projectile(sTestProjectile, 10, 5, sTestDebris);
 
 global.weaponFists = new WeaponMelee("Fists", sTestProjectile, 5, 3, 0.75, new WeaponSounds());
-global.weaponPistol = new WeaponHitscan("Pistol", sTestProjectile, 10, 100, 1, 1, 5, 25, new WeaponSounds());
+global.weaponPistol = new WeaponHitscan("Pistol", sTestProjectile, 10, 2000, 0.05, 0.05, 500, 25, new WeaponSounds());
 global.weaponProjectileTest = new WeaponProjectile("Projectile Test", sTestProjectile, global.testProjectile,
 	0.25, 1, 15, 60, new WeaponSounds());
 
@@ -92,4 +92,27 @@ function create_projectile(_x, _y, _projectile, _dir)
 	if (global.projectileLayer == undefined || !layer_exists(global.projectileLayer)) global.projectileLayer = layer_create(-500, "Projectiles");
 	var proj = instance_create_layer(_x, _y, global.projectileLayer, global.projectileObject);
 	proj.init(_projectile, _dir, 1);
+}
+
+function cast_hitscan(_x, _y, _dir, _weapon, _wall = oSolid, _enemy = oEnemy, _tracer = true)
+{
+	info = raycast(_x, _y, _dir, _weapon.range, _wall);
+	var endX = info.X;
+	var endY = info.Y;
+	
+	enemyInfo = raycast(_x, _y, _dir, _weapon.range, _enemy);
+	var wallDist  = point_distance(_x, _y, info.X, info.Y);
+	var enemyDist = point_distance(_x, _y, enemyInfo.X, enemyInfo.Y);
+	if (enemyDist < wallDist)
+	{
+		// We hit an enemy before a wall
+		endX = enemyInfo.X;
+		endY = enemyInfo.Y;
+		instance_destroy(enemyInfo.obj);
+		create_debris(endX, endY, sBloodParticle, 8, 2, 0.4);
+	}
+	
+	delete info;
+	delete enemyInfo;
+	if (_tracer) create_tracer(_x, _y, endX, endY);
 }

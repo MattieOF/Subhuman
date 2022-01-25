@@ -38,7 +38,12 @@ function shoot()
 			show_debug_message("melee");
 			break;
 		case weaponType.hitscan:
-			show_debug_message("hitscan");
+			if (loadout[$selectedLoadoutItem].ammoClip <= 0) return;
+			
+			cast_hitscan(x + lengthdir_x(16, dir), y + lengthdir_y(16, dir), dir, loadout[$selectedLoadoutItem].weapon);
+			
+			shootCooldown = loadout[$selectedLoadoutItem].weapon.rof * room_speed;
+			loadout[$selectedLoadoutItem].ammoClip--;
 			break;
 		case weaponType.projectile:
 			if (loadout[$selectedLoadoutItem].ammoClip <= 0) return;
@@ -81,7 +86,7 @@ function next_weapon()
 	
 	selectedLoadoutItem++;
 	if (loadout[$selectedLoadoutItem] == undefined) selectedLoadoutItem = 0;
-	log_format_string("Next weapon. New index: {0}, new value: {1}", selectedLoadoutItem, loadout[$selectedLoadoutItem]);
+	
 	
 	if (reloading)
 	{
