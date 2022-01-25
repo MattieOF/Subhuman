@@ -12,14 +12,24 @@ enum controls
 	screenshot,
 	toggleDistort,
 	toggleFPS,
-	reload
+	reload,
+	weaponNext,
+	weaponPrevious
 }
 
 /// @description Enum representing the types of a control (key, mouse)
 enum controlType
 {
 	key,
-	mouse
+	mouse,
+	mousewheel
+}
+
+enum mouseWheelDir
+{
+	none,
+	up,
+	down
 }
 
 /// @description Create a control struct, with a control type and a control value
@@ -47,16 +57,18 @@ function control_defaults()
 	global.controls = {};
 
 	// Init default controls
-	set_control(controls.moveUp,         new Control(controlType.key, ord("W")));
-	set_control(controls.moveDown,       new Control(controlType.key, ord("S")));
-	set_control(controls.moveLeft,       new Control(controlType.key, ord("A")));
-	set_control(controls.moveRight,      new Control(controlType.key, ord("D")));
-	set_control(controls.attackPrimary,  new Control(controlType.mouse, mb_left));
-	set_control(controls.quit,           new Control(controlType.key, vk_escape));
-	set_control(controls.toggleFPS,      new Control(controlType.key, vk_f1));
-	set_control(controls.toggleDistort,  new Control(controlType.key, vk_f2));
-	set_control(controls.screenshot,     new Control(controlType.key, vk_f5));
-	set_control(controls.reload,         new Control(controlType.key, ord("R")));
+	set_control(controls.moveUp,          new Control(controlType.key,        ord("W")));
+	set_control(controls.moveDown,        new Control(controlType.key,        ord("S")));
+	set_control(controls.moveLeft,        new Control(controlType.key,        ord("A")));
+	set_control(controls.moveRight,       new Control(controlType.key,        ord("D")));
+	set_control(controls.attackPrimary,   new Control(controlType.mouse,      mb_left));
+	set_control(controls.quit,            new Control(controlType.key,        vk_escape));
+	set_control(controls.toggleFPS,       new Control(controlType.key,        vk_f1));
+	set_control(controls.toggleDistort,   new Control(controlType.key,        vk_f2));
+	set_control(controls.screenshot,      new Control(controlType.key,        vk_f5));
+	set_control(controls.reload,          new Control(controlType.key,        ord("R")));
+	set_control(controls.weaponNext,      new Control(controlType.mousewheel, mouseWheelDir.up));
+	set_control(controls.weaponPrevious,  new Control(controlType.mousewheel, mouseWheelDir.down));
 }
 
 /// @description Save backup of controls file, reset controls to default, and save again.
@@ -101,6 +113,18 @@ function control_check(controlId)
 			return keyboard_check(control.value);
 		case controlType.mouse:
 			return mouse_check_button(control.value);
+		case controlType.mousewheel:
+			switch (control.value)
+			{
+				case mouseWheelDir.up:
+					return mouse_wheel_up();
+				case mouseWheelDir.down:
+					return mouse_wheel_down();
+				case mouseWheelDir.none:
+					return !mouse_wheel_up() && !mouse_wheel_down();
+				default:
+					return false;
+			}
 		default:
 			return false;
 	}
@@ -120,6 +144,18 @@ function control_check_pressed(controlId)
 			return keyboard_check_pressed(control.value);
 		case controlType.mouse:
 			return mouse_check_button_pressed(control.value);
+		case controlType.mousewheel:
+			switch (control.value)
+			{
+				case mouseWheelDir.up:
+					return mouse_wheel_up();
+				case mouseWheelDir.down:
+					return mouse_wheel_down();
+				case mouseWheelDir.none:
+					return !mouse_wheel_up() && !mouse_wheel_down();
+				default:
+					return false;
+			}
 		default:
 			return false;
 	}
@@ -139,6 +175,18 @@ function control_check_released(controlId)
 			return keyboard_check_released(control.value);
 		case controlType.mouse:
 			return keyboard_check_released(control.value);
+		case controlType.mousewheel:
+			switch (control.value)
+			{
+				case mouseWheelDir.up:
+					return mouse_wheel_up();
+				case mouseWheelDir.down:
+					return mouse_wheel_down();
+				case mouseWheelDir.none:
+					return !mouse_wheel_up() && !mouse_wheel_down();
+				default:
+					return false;
+			}
 		default:
 			return false;
 	}
