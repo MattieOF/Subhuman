@@ -42,7 +42,7 @@ function shoot()
 			break;
 		case weaponType.projectile:
 			if (loadout[$selectedLoadoutItem].ammoClip <= 0) return;
-			create_projectile(x, y, loadout[$selectedLoadoutItem].weapon.projectile, dir);
+			create_projectile(x + lengthdir_x(16, dir), y + lengthdir_y(16, dir), loadout[$selectedLoadoutItem].weapon.projectile, dir);
 			shootCooldown = loadout[$selectedLoadoutItem].weapon.rof * room_speed;
 			loadout[$selectedLoadoutItem].ammoClip--;
 			break;
