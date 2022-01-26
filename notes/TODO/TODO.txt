@@ -1,2 +1,22 @@
 - scrGeneralUtilitys debris layer could be invalid after a room change. Fix this - perhaps a function that checks
 for its existence that should be called on room start - init_general_utility()?
+
+- More feedback for when you save your game
+- Enemy AI
+	- Pathfinding: https://www.youtube.com/watch?v=RmOqnp5d33Q
+	- Siphonorator
+	- Summoned enemies - Ticks (they just charge at you)
+- Item system
+- Inventory system - likely similar to the loadout system but with a limit to the items you can carry
+	- For simplicitys sake, each item will only take up one inventory slot
+	- Need a HUD for all this
+- Locked doors (or otherwise things that require an item or weapon to bypass).
+- Completed demo level
+- Win screen; summary of player score
+	- Perhaps a small new game+ thing
+- Art lol
+- Sound
+- Unlockables (notes, concept art, secret level - maybe you could visit the movement test lol)
+- Unlockables menu
+
+- Most importantly: remake the game in a decent engine
