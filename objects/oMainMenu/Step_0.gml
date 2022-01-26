@@ -15,7 +15,8 @@ if (global.debug)
 	}
 }
 
-// Fade out press enter
+// TODO: Convert this to a switch statement
+
 if (state == 1)
 {
 	if (pressEnterAlpha > 0) pressEnterAlpha -= pressEnterFadePerStep;
@@ -51,12 +52,20 @@ if (state == 4)
 	}
 }
 
+if (state == 5)
+	room_goto(rmGame);
+
 // Delete debug menu
 if (state == 69)
 {
 	if (keyboard_check_pressed(ord("0"))) reset_debug_menu();
 	else if (keyboard_check_pressed(ord("1"))) { reset_controls(); reset_debug_menu(); }
 	else if (keyboard_check_pressed(ord("2"))) { room_goto(rmMovementTest); }
+	else if (keyboard_check_pressed(ord("3"))) 
+	{ 
+		if (file_exists("savegame.json")) file_delete("savegame.json");
+		room_restart();
+	}
 }
 
 if (control_check_pressed(controls.quit))

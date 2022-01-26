@@ -26,11 +26,12 @@ switch (state) {
 	case 4:
 		break;
 	case 5:
-		room_goto(rmGame);
 		break;
 	case 6:
 		break;
 	case 7:
+		break;
+	case 8:
 		break;
 	case 69:
 		// Debug menu
@@ -38,6 +39,7 @@ switch (state) {
 		draw_text(room_width / 2, room_height / 2, "0 - Cancel");
 		draw_text(room_width / 2, (room_height / 2) + 22, "1 - Reset controls");
 		draw_text(room_width / 2, (room_height / 2) + 44, "2 - Go to movement test");
+		draw_text(room_width / 2, (room_height / 2) + 66, "3 - Delete save");
 		break;
     default:
 		show_debug_message("state switch broken!");

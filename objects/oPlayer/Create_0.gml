@@ -113,6 +113,12 @@ function previous_weapon()
 	}
 }
 
+function set_loadout(_loadout)
+{
+	loadout = _loadout;
+	update_loadout_size();
+}
+
 // Create hud
 instance_create_layer(0, 0, layer_create(-300, "HUD"), oHUD).init(id);
 instance_create_layer(0, 0, layer_create(-300, "Crosshair"), oCrosshair).init(id);

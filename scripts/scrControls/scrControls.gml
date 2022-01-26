@@ -14,7 +14,8 @@ enum controls
 	toggleFPS,
 	reload,
 	weaponNext,
-	weaponPrevious
+	weaponPrevious,
+	save
 }
 
 /// @description Enum representing the types of a control (key, mouse)
@@ -69,6 +70,7 @@ function control_defaults()
 	set_control(controls.reload,          new Control(controlType.key,        ord("R")));
 	set_control(controls.weaponNext,      new Control(controlType.mousewheel, mouseWheelDir.up));
 	set_control(controls.weaponPrevious,  new Control(controlType.mousewheel, mouseWheelDir.down));
+	set_control(controls.save,            new Control(controlType.key,        ord("E")));
 }
 
 /// @description Save backup of controls file, reset controls to default, and save again.

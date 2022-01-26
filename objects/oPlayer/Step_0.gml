@@ -73,3 +73,7 @@ if (control_check_pressed(controls.weaponNext))
 	next_weapon();
 else if (control_check_pressed(controls.weaponPrevious))
 	previous_weapon();
+
+var sl = instance_place(x, y, oSaveLocation);
+if (sl != noone) sl.inRange = true;
+else oSaveLocation.inRange = false;

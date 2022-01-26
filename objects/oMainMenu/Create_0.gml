@@ -19,11 +19,13 @@ currentMainMenuFade = 0;
 5 = go to rmgame
 6 = options
 7 = accessibility options
+8 = confirm new save
 
 69 = delete debug menu
 		0 = cancel
 		1 = reset controls
 		2 = goto movement test
+		3 = delete save
 */
 state = 0;
 global.mainMenu = id;
@@ -34,6 +36,35 @@ titleGraphicAlpha = 1;
 window_set_cursor(cr_default); // Ensure cursor is shown
 
 function start_game()
+{
+	if (!file_exists("savegame.json"))
+	{
+		global.mainMenu.state = 4;
+		set_layer_interactable("MainMenu", false);
+	} 
+	else
+	{
+		global.mainMenu.state = 8;
+		instance_deactivate_layer("MainMenu");
+		instance_activate_layer("NewSave");
+	}
+}
+
+function new_save()
+{
+	instance_deactivate_layer("NewSave");
+	if (file_exists("savegame.json")) file_delete("savegame.json");
+	global.mainMenu.state = 4;
+}
+
+function close_new_save()
+{
+	global.mainMenu.state = 3;
+	instance_deactivate_layer("NewSave");
+	instance_activate_layer("MainMenu");
+}
+
+function load_game()
 {
 	global.mainMenu.state = 4;
 	set_layer_interactable("MainMenu", false);
@@ -92,7 +123,8 @@ function set_debugmode(value)
 	global.debug = value;
 }
 
-start_stack("MainMenu", room_width / 2, room_height / 2);
+start_stack("MainMenu", room_width / 2, room_height / 2 - 50);
+if (save_exists()) add_to_stack(create_button(0, 0, 150, 50, "Continue", load_game, id));
 add_to_stack(create_button(0, 0, 150, 50, "New Game", start_game, id));
 add_to_stack(create_button(0, 0, 150, 50, "Options", open_options));
 add_to_stack(create_button(0, 0, 150, 50, "Extras", undefined));
@@ -120,3 +152,12 @@ global.ui_currentY = room_height - 60;
 add_to_stack(create_button(0, 0, 150, 50, "Back", close_accessibility_options));
 end_stack();
 instance_deactivate_layer("AccessibilityOptions");
+
+start_stack("NewSave", room_width / 2, 250);
+add_to_stack(create_label(0, 0, "New save?",,c_red));
+add_to_stack(create_label(0, 0, "This will delete your previous save and start over"));
+add_stack_spacing(50);
+add_to_stack(create_button(0, 0, 150, 50, "Yes", new_save));
+add_to_stack(create_button(0, 0, 150, 50, "No", close_new_save));
+end_stack();
+instance_deactivate_layer("NewSave");
