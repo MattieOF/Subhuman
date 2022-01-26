@@ -22,7 +22,7 @@ function save(filename = "savegame.json")
 	{
 	    var k = keys[i];
 	    var v = gameState.enemies[$ k];
-		if (v != undefined && v != 0)
+		if (v == 0 || v == pointer_null)
 		{
 			with (k)
 			{
@@ -71,7 +71,7 @@ function load(filename = "savegame.json")
 	{
 	    var k = keys[i];
 	    var v = gameState.enemies[$ k];
-		if (v == undefined || v == 0) // Enemy is dead
+		if (v == 0 || v == pointer_null) // Enemy is dead
 		{
 			instance_destroy(k);	
 		}
