@@ -22,7 +22,7 @@ function save(filename = "savegame.json")
 	{
 	    var k = keys[i];
 	    var v = gameState.enemies[$ k];
-		if (v != undefined || v != 0 || v != pointer_null)
+		if (v != undefined && v != 0 && v != pointer_null)
 		{
 			with (k)
 			{
