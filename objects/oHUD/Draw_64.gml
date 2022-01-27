@@ -14,11 +14,12 @@ else
 	draw_set_font(fntMain);
 	var reserveString = format_string("/{0}", player.loadout[$ player.selectedLoadoutItem].ammoReserve);
 	var size = string_width(reserveString);
+	if (player.loadout[$ player.selectedLoadoutItem].ammoReserve == 0) draw_set_color(c_red);
 	draw_text(global.displayWidth - 5, global.displayHeight - 5, reserveString);
 	draw_set_font(fntMainLarge);
 	if (player.loadout[$ player.selectedLoadoutItem].ammoClip <= 0) draw_set_color(c_red);
+	else draw_set_color(c_white);
 	draw_text(global.displayWidth - 10 - size, global.displayHeight + 5, player.loadout[$ player.selectedLoadoutItem].ammoClip);
-	
 }
 draw_set_font(fntMain);
 
