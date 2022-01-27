@@ -35,7 +35,8 @@ function shoot()
 	switch (loadout[$selectedLoadoutItem].weapon.type)
 	{
 		case weaponType.melee:
-			show_debug_message("melee");
+			cast_hitscan(x + lengthdir_x(16, dir), y + lengthdir_y(16, dir), dir, loadout[$selectedLoadoutItem].weapon,,,false);
+			shootCooldown = loadout[$selectedLoadoutItem].weapon.rof * room_speed;
 			break;
 		case weaponType.hitscan:
 			if (loadout[$selectedLoadoutItem].ammoClip <= 0) return;

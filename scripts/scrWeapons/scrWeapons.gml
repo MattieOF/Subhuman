@@ -1,9 +1,9 @@
 global.projectileLayer = undefined;
 global.projectileObject = oProjectile;
 
-global.testProjectile = new Projectile(sTestProjectile, 10, 5, sTestDebris);
+global.testProjectile = new Projectile(sTestProjectile, 25, 5, sTestDebris);
 
-global.weaponFists = new WeaponMelee("Fists", sTestProjectile, 5, 3, 0.75, new WeaponSounds());
+global.weaponFists = new WeaponMelee("Fists", sTestProjectile, 15, 20, 0.75, new WeaponSounds());
 global.weaponPistol = new WeaponHitscan("Pistol", sTestProjectile, 1000, 2000, 0.05, 0.05, 500, 25, new WeaponSounds());
 global.weaponProjectileTest = new WeaponProjectile("Projectile Test", sTestProjectile, global.testProjectile,
 	0.25, 1, 15, 60, new WeaponSounds());
@@ -108,8 +108,8 @@ function cast_hitscan(_x, _y, _dir, _weapon, _wall = oSolid, _enemy = oEnemy, _t
 		// We hit an enemy before a wall
 		endX = enemyInfo.X;
 		endY = enemyInfo.Y;
-		enemyInfo.obj.hurt(_weapon.damage);
-		create_debris(endX, endY, sBloodParticle, 8, 2, 0.4);
+		if (instance_exists(enemyInfo.obj)) // Occasionally, enemyInfo.obj is invalid and causes a crash.
+			enemyInfo.obj.hurt(_weapon.damage);
 	}
 	
 	delete info;

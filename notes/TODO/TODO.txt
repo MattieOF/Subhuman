@@ -1,7 +1,6 @@
 - scrGeneralUtilitys debris layer could be invalid after a room change. Fix this - perhaps a function that checks
 for its existence that should be called on room start - init_general_utility()?
 
-- Melee weapons
 - Enemy AI
 	- Pathfinding: https://www.youtube.com/watch?v=RmOqnp5d33Q
 	- Siphonorator
@@ -10,6 +9,7 @@ for its existence that should be called on room start - init_general_utility()?
 - Inventory system - likely similar to the loadout system but with a limit to the items you can carry
 	- For simplicitys sake, each item will only take up one inventory slot
 	- Need a HUD for all this
+- Breakables
 - Locked doors (or otherwise things that require an item or weapon to bypass).
 - Completed demo level
 - Win screen; summary of player score
