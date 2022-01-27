@@ -6,5 +6,6 @@ if (control_check_pressed(controls.quit))
 		case 0: event_user(0); break;
 		case 1: event_user(1); break;
 		case 2: close_load_checkpoint(); break;
+		case 3: close_exit(); break;
 	}
 }
