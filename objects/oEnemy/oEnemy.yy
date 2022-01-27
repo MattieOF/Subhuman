@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sSpecificColliderTest",
-    "path": "sprites/sSpecificColliderTest/sSpecificColliderTest.yy",
+    "name": "sEnemy",
+    "path": "sprites/sEnemy/sEnemy.yy",
   },
   "solid": false,
   "visible": true,
