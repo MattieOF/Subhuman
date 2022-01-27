@@ -1,8 +1,31 @@
 /// @description Draw HUD
+
+// Draw ammo
+draw_set_alpha(1);
+draw_set_halign(fa_right);
+draw_set_valign(fa_bottom);
+draw_set_font(fntMainLarge);
+draw_set_color(c_white);
+
+if (!variable_struct_exists(player.loadout[$ player.selectedLoadoutItem], "ammoClip"))
+	draw_text(global.displayWidth - 20, global.displayHeight - 5, "∞");
+else
+{
+	draw_set_font(fntMain);
+	var reserveString = format_string("/{0}", player.loadout[$ player.selectedLoadoutItem].ammoReserve);
+	var size = string_width(reserveString);
+	draw_text(global.displayWidth - 5, global.displayHeight - 5, reserveString);
+	draw_set_font(fntMainLarge);
+	if (player.loadout[$ player.selectedLoadoutItem].ammoClip <= 0) draw_set_color(c_red);
+	draw_text(global.displayWidth - 10 - size, global.displayHeight + 5, player.loadout[$ player.selectedLoadoutItem].ammoClip);
+	
+}
+draw_set_font(fntMain);
+
+// Draw loadout UI
 if (loadoutUiState == 0) return;
 var loadoutUiHeight = 100;
 var loadoutUiWidth = 150;
-
 var halfTotalWidth = (player.loadoutSize * loadoutUiWidth) / 2;
 var currentX = (global.displayWidth / 2) - halfTotalWidth;
 var startY = global.displayHeight;
@@ -29,4 +52,3 @@ for (var i = 0; i < player.loadoutSize; i++)
 	currentX += loadoutUiWidth;
 }
 draw_set_alpha(1);
-
