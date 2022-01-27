@@ -22,6 +22,7 @@
     {"id":{"name":"scrSave","path":"scripts/scrSave/scrSave.yy",},"order":15,},
     {"id":{"name":"sCrosshair","path":"sprites/sCrosshair/sCrosshair.yy",},"order":3,},
     {"id":{"name":"oMoveTestPlayerAltMovement","path":"objects/oMoveTestPlayerAltMovement/oMoveTestPlayerAltMovement.yy",},"order":4,},
+    {"id":{"name":"fntMain","path":"fonts/fntMain/fntMain.yy",},"order":0,},
     {"id":{"name":"oMoveTestWall","path":"objects/oMoveTestWall/oMoveTestWall.yy",},"order":1,},
     {"id":{"name":"oMoveTestManager","path":"objects/oMoveTestManager/oMoveTestManager.yy",},"order":5,},
     {"id":{"name":"raycast","path":"scripts/raycast/raycast.yy",},"order":0,},

@@ -3,7 +3,8 @@ function setup_game()
 	read_options_to_globals();
 	global.pauseSurface = -1;
 	global.initialised = true;
-	
+	draw_set_font(fntMain);
+
 	var pCount = parameter_count();
 	if (pCount > 0)
 	{

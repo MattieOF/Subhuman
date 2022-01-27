@@ -88,12 +88,13 @@ function next_weapon()
 	selectedLoadoutItem++;
 	if (loadout[$selectedLoadoutItem] == undefined) selectedLoadoutItem = 0;
 	
-	
 	if (reloading)
 	{
 		reloading = false;
 		reloadTime = 0;
 	}
+	
+	oHUD.open_loadout_ui();
 }
 
 function previous_weapon()
@@ -112,6 +113,8 @@ function previous_weapon()
 		reloading = false;
 		reloadTime = 0;
 	}
+	
+	oHUD.open_loadout_ui();
 }
 
 function set_loadout(_loadout)
