@@ -5,4 +5,4 @@ instance_deactivate_layer("PauseMenu");
 // Hide cursor
 window_set_cursor(cr_none);
 
-enabled = false;
+state = 0;

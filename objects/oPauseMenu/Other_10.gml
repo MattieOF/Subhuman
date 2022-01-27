@@ -9,4 +9,4 @@ instance_activate_layer("PauseMenu");
 // Show cursor
 window_set_cursor(cr_default);
 
-enabled = true;
+state = 1;
