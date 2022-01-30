@@ -9,6 +9,10 @@ state = 0;
 bgTint = make_color_rgb(100, 100, 100);
 global.inv = id;
 
+normalColor = $1a1a1a;
+hoveredColor = $3b3b3b;
+selectedColor = $707070;
+
 function init(_player)
 {
 	player = _player;
@@ -25,8 +29,8 @@ function open_inventory(_selectionObj = undefined)
 	if (surface_exists(global.pauseSurface)) return;
 	
 	event_user(0);
-	show_debug_message("Set state 1");
 	state = 1;
+	selectedItem = -1;
 	if (_selectionObj != undefined)
 	{
 		selectionObj = _selectionObj;
