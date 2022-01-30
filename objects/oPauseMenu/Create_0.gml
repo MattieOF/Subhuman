@@ -12,28 +12,6 @@ state = 0;
 pauseMenuCol = make_color_rgb(100, 100, 100);
 global.pauseMenu = id;
 
-function deactivate_layers()
-{
-	var a = layer_get_all();
-	for (var i = 0; i < array_length(a); i++;)
-	{
-		var name = layer_get_name(a[i]);
-		if (name == "Instances" || name == "Background") continue;
-		instance_deactivate_layer(a[i]);
-	}
-}
-
-function activate_layers()
-{
-	var a = layer_get_all();
-	for (var i = 0; i < array_length(a); i++;)
-	{
-		var name = layer_get_name(a[i]);
-		if (name == "PauseMenu" || name == "LoadCheckpoint" || name == "Exit") continue;
-		instance_activate_layer(a[i]);
-	}
-}
-
 function on_resume()
 {
 	with(global.pauseMenu) event_user(1);

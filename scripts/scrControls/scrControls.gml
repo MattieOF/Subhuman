@@ -15,7 +15,8 @@ enum controls
 	reload,
 	weaponNext,
 	weaponPrevious,
-	save
+	save,
+	openInventory
 }
 
 /// @description Enum representing the types of a control (key, mouse)
@@ -71,6 +72,7 @@ function control_defaults()
 	set_control(controls.weaponNext,      new Control(controlType.mousewheel, mouseWheelDir.up));
 	set_control(controls.weaponPrevious,  new Control(controlType.mousewheel, mouseWheelDir.down));
 	set_control(controls.save,            new Control(controlType.key,        ord("E")));
+	set_control(controls.openInventory,   new Control(controlType.key,        vk_tab));
 }
 
 /// @description Save backup of controls file, reset controls to default, and save again.

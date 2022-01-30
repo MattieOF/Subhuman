@@ -22,6 +22,48 @@ loadout[$ 2] = new LoadoutItem(global.weaponProjectileTest);
 selectedLoadoutItem = 2;
 update_loadout_size();
 
+// Initialise inventory
+inventorySlots = 10;
+inventory = array_create(inventorySlots, undefined);
+
+function inventory_full()
+{
+	for (var i = 0; i < inventorySlots; i++)
+		if (inventory[i] == undefined) return false;
+	return true;
+}
+
+function inventory_add(item)
+{
+	if (inventory_full()) return false;
+	
+	for (var i = 0; i < inventorySlots; i++)
+	{
+		if (inventory[i] == undefined) 
+			inventory[i] = item;
+	}
+	return true;
+}
+
+function inventory_remove_index(index)
+{
+	if (index < 0 || index >= inventorySlots) return;
+	inventory[index] = undefined;
+}
+
+function inventory_remove_item(item)
+{
+	for (var i = 0; i < inventorySlots; i++)
+	{
+		if (inventory[i] == item) 
+		{
+			inventory[i] = undefined;
+			return true;
+		}
+	}
+	return false;
+}
+
 function shoot()
 {
 	// Return if we can't shoot right now
@@ -126,4 +168,5 @@ function set_loadout(_loadout)
 // Create hud
 instance_create_layer(0, 0, layer_create(-300, "HUD"), oHUD).init(id);
 instance_create_layer(0, 0, layer_create(-300, "Crosshair"), oCrosshair).init(id);
+instance_create_layer(0, 0, layer_create(-300, "Instances"), oInventoryUI).init(id);
 window_set_cursor(cr_none);

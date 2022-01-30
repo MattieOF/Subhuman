@@ -52,6 +52,7 @@
     {"id":{"name":"oCrosshair","path":"objects/oCrosshair/oCrosshair.yy",},"order":2,},
     {"id":{"name":"sTestPlayer","path":"sprites/sTestPlayer/sTestPlayer.yy",},"order":0,},
     {"id":{"name":"sPlayer","path":"sprites/sPlayer/sPlayer.yy",},"order":4,},
+    {"id":{"name":"oInventoryUI","path":"objects/oInventoryUI/oInventoryUI.yy",},"order":5,},
     {"id":{"name":"oSaveLocation","path":"objects/oSaveLocation/oSaveLocation.yy",},"order":10,},
     {"id":{"name":"rmMovementTest","path":"rooms/rmMovementTest/rmMovementTest.yy",},"order":1,},
     {"id":{"name":"oTracer","path":"objects/oTracer/oTracer.yy",},"order":3,},

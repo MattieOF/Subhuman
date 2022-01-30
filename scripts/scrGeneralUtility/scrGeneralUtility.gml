@@ -61,3 +61,26 @@ function point_on_line(x1, y1, x2, y2, t)
 	
 	return new Point(outX, outY);
 }
+
+function deactivate_game_layers()
+{
+	var a = layer_get_all();
+	for (var i = 0; i < array_length(a); i++;)
+	{
+		var name = layer_get_name(a[i]);
+		if (name == "Instances" || name == "Background") continue;
+		instance_deactivate_layer(a[i]);
+	}
+}
+
+function activate_game_layers()
+{
+	var a = layer_get_all();
+	for (var i = 0; i < array_length(a); i++;)
+	{
+		var name = layer_get_name(a[i]);
+		if (name == "PauseMenu" || name == "LoadCheckpoint" || name == "Exit" || name == "SelectionUI")
+			continue;
+		instance_activate_layer(a[i]);
+	}
+}
