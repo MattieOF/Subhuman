@@ -11,7 +11,9 @@ global.inv = id;
 
 normalColor = $1a1a1a;
 hoveredColor = $3b3b3b;
-selectedColor = $707070;
+selectedColor = $616161;
+textNormal = c_white;
+textEmpty = c_dkgray;
 
 function init(_player)
 {

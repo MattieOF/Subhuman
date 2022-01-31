@@ -19,7 +19,14 @@ function on_resume()
 
 function on_menu()
 {
+	with (global.pauseMenu) event_user(1);
 	room_goto(rmMainMenu);
+}
+
+function on_load_checkpoint()
+{
+	with (global.pauseMenu) event_user(1);
+	room_restart();
 }
 
 function open_load_checkpoint()
@@ -69,7 +76,7 @@ add_stack_spacing(10);
 add_to_stack(create_label(0, 0, "Load Checkpoint?",,c_red,,,fa_left));
 add_to_stack(create_label(0, 0, "All progress since the last checkpoint will be lost",,,,,fa_left));
 add_stack_spacing(100);
-add_to_stack(create_button(0, 0, 200, 40, "Yes", room_restart,,,,,,fa_left));
+add_to_stack(create_button(0, 0, 200, 40, "Yes", on_load_checkpoint,,,,,,fa_left));
 add_to_stack(create_button(0, 0, 200, 40, "No", close_load_checkpoint,,,,,,fa_left));
 end_stack();
 instance_deactivate_layer("LoadCheckpoint");

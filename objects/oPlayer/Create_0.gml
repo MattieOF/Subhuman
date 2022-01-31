@@ -24,12 +24,12 @@ update_loadout_size();
 
 // Initialise inventory
 inventorySlots = 10;
-inventory = array_create(inventorySlots, undefined);
+inventory = array_create(inventorySlots, pointer_null);
 
 function inventory_full()
 {
 	for (var i = 0; i < inventorySlots; i++)
-		if (inventory[i] == undefined) return false;
+		if (inventory[i] == pointer_null) return false;
 	return true;
 }
 
@@ -39,16 +39,19 @@ function inventory_add(item)
 	
 	for (var i = 0; i < inventorySlots; i++)
 	{
-		if (inventory[i] == undefined) 
+		if (inventory[i] == pointer_null) 
+		{
 			inventory[i] = item;
+			return true;
+		}
 	}
-	return true;
+	return false;
 }
 
 function inventory_remove_index(index)
 {
 	if (index < 0 || index >= inventorySlots) return;
-	inventory[index] = undefined;
+	inventory[index] = pointer_null;
 }
 
 function inventory_remove_item(item)
@@ -57,7 +60,7 @@ function inventory_remove_item(item)
 	{
 		if (inventory[i] == item) 
 		{
-			inventory[i] = undefined;
+			inventory[i] = pointer_null;
 			return true;
 		}
 	}
@@ -170,3 +173,5 @@ instance_create_layer(0, 0, layer_create(-300, "HUD"), oHUD).init(id);
 instance_create_layer(0, 0, layer_create(-300, "Crosshair"), oCrosshair).init(id);
 instance_create_layer(0, 0, layer_create(-300, "Instances"), oInventoryUI).init(id);
 window_set_cursor(cr_none);
+
+inventory_add(global.item_test);

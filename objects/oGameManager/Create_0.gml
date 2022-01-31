@@ -36,6 +36,7 @@ function save(filename = "savegame.json")
 		}
 	}
 	gameState.playerLoadout = oPlayer.loadout;
+	gameState.playerInv = oPlayer.inventory;
 	gameState.playerSelectedLoadoutItem = oPlayer.selectedLoadoutItem;
 	
 	if (file_exists(filename)) file_delete(filename);
@@ -64,6 +65,7 @@ function load(filename = "savegame.json")
 	// Setup player loadout
 	oPlayer.set_loadout(gameState.playerLoadout);
 	oPlayer.selectedLoadoutItem = gameState.playerSelectedLoadoutItem;
+	oPlayer.inventory = gameState.playerInv;
 	
 	// Loop through loaded enemies, set their position and health
 	var keys = variable_struct_get_names(gameState.enemies);
