@@ -26,6 +26,12 @@ function use_selected()
 	
 }
 
+function drop(_index)
+{
+	instance_create_layer(player.x, player.y, "Level", oItem).init(player.inventory[_index]);
+	player.inventory_remove_index(_index);
+}
+
 function open_inventory(_selectionObj = undefined)
 {
 	// Don't open if something else is already using the pause surface.

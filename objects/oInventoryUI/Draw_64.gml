@@ -41,7 +41,7 @@ for (var i = 0; i < rows; i++)
 				if (mouse_check_button(mb_left) && selectionObj != undefined)
 					selectedItem = itemIndex;
 				else if (mouse_check_button(mb_right))
-					player.inventory_remove_index(itemIndex);
+					drop(itemIndex);
 			}
 		}
 		else draw_set_color(normalColor);

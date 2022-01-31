@@ -74,6 +74,14 @@ if (control_check_pressed(controls.weaponNext))
 else if (control_check_pressed(controls.weaponPrevious))
 	previous_weapon();
 
+// Annoying range checks for objects with ranges, as there's no collision end event
 var sl = instance_place(x, y, oSaveLocation);
 if (sl != noone) sl.inRange = true;
 else oSaveLocation.inRange = false;
+
+if (instance_exists(oItem))
+{
+	var dItem = instance_place(x, y, oItem);
+	if (dItem != noone) dItem.inRange = true;
+	else oItem.inRange = false;
+}
