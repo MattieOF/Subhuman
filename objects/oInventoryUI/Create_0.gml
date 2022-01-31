@@ -23,7 +23,10 @@ function init(_player)
 
 function use_selected()
 {
-	
+	if (selectionObj == undefined) return;
+	if (selectedItem == -1 || selectedItem == undefined) return;
+	selectionObj.check_item_used(player.inventory[selectedItem]);
+	close_inventory();
 }
 
 function drop(_index)

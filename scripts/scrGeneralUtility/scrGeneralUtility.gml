@@ -84,3 +84,10 @@ function activate_game_layers()
 		instance_activate_layer(a[i]);
 	}
 }
+
+function play_sound_if_exists(_sound, _priority = 0, _loops = false)
+{
+	if (_sound == undefined || _sound == noone || _sound == pointer_null)
+		return;
+	audio_play_sound(_sound, _priority, _loops);
+}

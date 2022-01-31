@@ -85,3 +85,10 @@ if (instance_exists(oItem))
 	if (dItem != noone) dItem.inRange = true;
 	else oItem.inRange = false;
 }
+
+if (instance_exists(oUsable))
+{
+	var usable = instance_place(x, y, oUsable);
+	if (usable != noone) usable.inRange = true;
+	else oUsable.inRange = false;
+}

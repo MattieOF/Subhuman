@@ -175,3 +175,6 @@ instance_create_layer(0, 0, layer_create(-300, "Instances"), oInventoryUI).init(
 window_set_cursor(cr_none);
 
 inventory_add(global.item_test);
+inventory_add(global.item_test);
+inventory_add(global.item_test);
+inventory_add(global.item_test);

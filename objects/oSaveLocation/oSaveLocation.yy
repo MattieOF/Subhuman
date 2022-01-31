@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sSaveLocationTrigger",
-    "path": "sprites/sSaveLocationTrigger/sSaveLocationTrigger.yy",
+    "name": "sTrigger",
+    "path": "sprites/sTrigger/sTrigger.yy",
   },
   "solid": false,
   "visible": true,
