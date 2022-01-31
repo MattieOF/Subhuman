@@ -57,6 +57,7 @@
     {"id":{"name":"sPlayer","path":"sprites/sPlayer/sPlayer.yy",},"order":4,},
     {"id":{"name":"oInventoryUI","path":"objects/oInventoryUI/oInventoryUI.yy",},"order":5,},
     {"id":{"name":"oSaveLocation","path":"objects/oSaveLocation/oSaveLocation.yy",},"order":10,},
+    {"id":{"name":"oDoor","path":"objects/oDoor/oDoor.yy",},"order":13,},
     {"id":{"name":"rmMovementTest","path":"rooms/rmMovementTest/rmMovementTest.yy",},"order":1,},
     {"id":{"name":"oTracer","path":"objects/oTracer/oTracer.yy",},"order":3,},
     {"id":{"name":"scrStringUtility","path":"scripts/scrStringUtility/scrStringUtility.yy",},"order":4,},

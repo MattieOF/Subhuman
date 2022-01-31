@@ -40,6 +40,10 @@
             {"propertyId":{"name":"requiresItem","path":"objects/oUsable/oUsable.yy",},"objectId":{"name":"oUsable","path":"objects/oUsable/oUsable.yy",},"value":"True","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
             {"propertyId":{"name":"item","path":"objects/oUsable/oUsable.yy",},"objectId":{"name":"oUsable","path":"objects/oUsable/oUsable.yy",},"value":"global.item_test","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
           ],"isDnd":false,"objectId":{"name":"oUsable","path":"objects/oUsable/oUsable.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":608.0,"y":864.0,"resourceVersion":"1.0","name":"inst_3CC5C72","tags":[],"resourceType":"GMRInstance",},
+        {"properties":[
+            {"propertyId":{"name":"requiresItem","path":"objects/oUsable/oUsable.yy",},"objectId":{"name":"oUsable","path":"objects/oUsable/oUsable.yy",},"value":"True","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+            {"propertyId":{"name":"item","path":"objects/oUsable/oUsable.yy",},"objectId":{"name":"oUsable","path":"objects/oUsable/oUsable.yy",},"value":"global.item_test","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+          ],"isDnd":false,"objectId":{"name":"oDoor","path":"objects/oDoor/oDoor.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":384.0,"y":736.0,"resourceVersion":"1.0","name":"inst_23C8422A","tags":[],"resourceType":"GMRInstance",},
       ],"visible":true,"depth":-100,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":32,"gridY":32,"layers":[],"hierarchyFrozen":false,"resourceVersion":"1.0","name":"Level","tags":[],"resourceType":"GMRInstanceLayer",},
     {"instances":[
         {"properties":[],"isDnd":false,"objectId":{"name":"oGameManager","path":"objects/oGameManager/oGameManager.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":0.0,"y":0.0,"resourceVersion":"1.0","name":"inst_65E2EAF9","tags":[],"resourceType":"GMRInstance",},
@@ -92,6 +96,7 @@
     {"name":"inst_206CCEB6","path":"rooms/rmGame/rmGame.yy",},
     {"name":"inst_75A3D3C1","path":"rooms/rmGame/rmGame.yy",},
     {"name":"inst_3CC5C72","path":"rooms/rmGame/rmGame.yy",},
+    {"name":"inst_23C8422A","path":"rooms/rmGame/rmGame.yy",},
   ],
   "inheritCreationOrder": false,
   "sequenceId": null,
