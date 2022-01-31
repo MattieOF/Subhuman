@@ -2,6 +2,7 @@
 
 inRange = false;
 interactable = true;
+used = false;
 
 function check_item_used(_item)
 {
@@ -16,5 +17,6 @@ function check_item_used(_item)
 
 function item_used()
 {
+	used = true;
 	instance_destroy(id);
 }

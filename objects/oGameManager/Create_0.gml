@@ -51,6 +51,13 @@ function save(filename = "savegame.json")
 		array_push(oGameManager.gameState.droppedItems, itemObject);
 	}
 	
+	// Save usables
+	gameState.usables = {};
+	with (oUsable)
+	{
+		oGameManager.gameState.usables[$ id] = used;
+	}
+	
 	if (file_exists(filename)) file_delete(filename);
 	
 	var file = file_text_open_write(filename);
@@ -84,6 +91,14 @@ function load(filename = "savegame.json")
 	{
 		var current = gameState.droppedItems[i];
 		instance_create_layer(current.X, current.Y, "Level", oItem).init(current.itemInfo);
+	}
+	
+	// Load usables
+	with (oUsable)
+	{
+		var val = oGameManager.gameState.usables[$ id];
+		if (val == undefined) instance_destroy();
+		else if (val == true) item_used();
 	}
 	
 	// Loop through loaded enemies, set their position and health

@@ -32,8 +32,8 @@
   ],
   "overriddenProperties": [],
   "parent": {
-    "name": "Game",
-    "path": "folders/Objects/Game.yy",
+    "name": "LevelElements",
+    "path": "folders/Objects/Game/LevelElements.yy",
   },
   "resourceVersion": "1.0",
   "name": "oSaveLocation",
