@@ -6,10 +6,11 @@ function check_item_used(_item)
 {
 	if (_item == item)
 	{
-		item_used();
 		play_sound_if_exists(successSound);
+		item_used();
 	}
-	play_sound_if_exists(failSound);
+	else
+		play_sound_if_exists(failSound);
 }
 
 function item_used()

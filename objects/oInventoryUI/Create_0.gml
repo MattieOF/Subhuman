@@ -23,10 +23,13 @@ function init(_player)
 
 function use_selected()
 {
-	if (selectionObj == undefined) return;
-	if (selectedItem == -1 || selectedItem == undefined) return;
-	selectionObj.check_item_used(player.inventory[selectedItem]);
-	close_inventory();
+	with (global.inv)
+	{
+		if (selectionObj == undefined) return;
+		if (selectedItem == -1 || selectedItem == undefined) return;
+		close_inventory();
+		selectionObj.check_item_used(player.inventory[selectedItem]);
+	}
 }
 
 function drop(_index)
@@ -43,6 +46,7 @@ function open_inventory(_selectionObj = undefined)
 	event_user(0);
 	state = 1;
 	selectedItem = -1;
+	selectionObj = undefined;
 	if (_selectionObj != undefined)
 	{
 		selectionObj = _selectionObj;
@@ -56,7 +60,6 @@ function close_inventory()
 	with (global.inv)
 	{
 		event_user(1);
-		selectionObj = undefined;
 		state = 0;
 	}
 }
