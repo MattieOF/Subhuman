@@ -38,6 +38,18 @@ function save(filename = "savegame.json")
 	gameState.playerLoadout = oPlayer.loadout;
 	gameState.playerInv = oPlayer.inventory;
 	gameState.playerSelectedLoadoutItem = oPlayer.selectedLoadoutItem;
+	gameState.droppedItems = array_create(0);
+	
+	with (oItem)
+	{
+		itemObject = 
+		{
+			itemInfo : item,
+			X : x,
+			Y : y
+		}
+		array_push(oGameManager.gameState.droppedItems, itemObject);
+	}
 	
 	if (file_exists(filename)) file_delete(filename);
 	
@@ -66,6 +78,13 @@ function load(filename = "savegame.json")
 	oPlayer.set_loadout(gameState.playerLoadout);
 	oPlayer.selectedLoadoutItem = gameState.playerSelectedLoadoutItem;
 	oPlayer.inventory = gameState.playerInv;
+	
+	// Reload dropped items
+	for (var i = 0; i < array_length(gameState.droppedItems); i++)
+	{
+		var current = gameState.droppedItems[i];
+		instance_create_layer(current.X, current.Y, "Level", oItem).init(current.itemInfo);
+	}
 	
 	// Loop through loaded enemies, set their position and health
 	var keys = variable_struct_get_names(gameState.enemies);
