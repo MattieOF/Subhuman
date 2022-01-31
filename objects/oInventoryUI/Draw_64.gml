@@ -10,8 +10,8 @@ draw_set_font(fntMainLarge);
 draw_text(100, 50, "Inventory");
 draw_set_font(fntMain);
 draw_set_color(c_ltgray);
-if (selectionObj == undefined) var tipString = "Right click an item to drop it";
-else var tipString = "Left click an item to select it, right click an item to drop it";
+if (selectionObj == undefined) var tipString = "Right click an item to drop it, tab to close";
+else var tipString = "Left click an item to select it, right click an item to drop it, tab to close";
 draw_text(102, 105, tipString);
 
 var mouseX = device_mouse_x_to_gui(0), mouseY = device_mouse_y_to_gui(0);
