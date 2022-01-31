@@ -14,6 +14,7 @@ if (selectionObj == undefined) var tipString = "Right click an item to drop it";
 else var tipString = "Left click an item to select it, right click an item to drop it";
 draw_text(102, 105, tipString);
 
+var mouseX = device_mouse_x_to_gui(0), mouseY = device_mouse_y_to_gui(0);
 var itemWidth = 200;
 var itemHeight = 150;
 var itemIndex = 0;
@@ -30,7 +31,7 @@ for (var i = 0; i < rows; i++)
 		draw_rectangle(currentX, currentY, currentX + itemWidth, currentY + itemHeight, true);
 		
 		if (selectedItem == itemIndex) draw_set_color(selectedColor);
-		else if (point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), currentX, currentY, currentX + itemWidth, currentY + itemHeight)) 
+		else if (point_in_rectangle(mouseX, mouseY, currentX, currentY, currentX + itemWidth, currentY + itemHeight)) 
 		{
 			draw_set_color(hoveredColor);
 			hoveredIndex = itemIndex;
@@ -70,8 +71,29 @@ for (var i = 0; i < rows; i++)
 	currentY += itemHeight;
 }
 
-if (hoveredIndex != -1)
+if (hoveredIndex != -1 && player.inventory[hoveredIndex] != pointer_null)
 {
 	// Draw tooltip
+	var border = 15;
+	var name = player.inventory[hoveredIndex].name;
+	var desc = player.inventory[hoveredIndex].desc;
+	draw_set_font(fntMainLarge);
+	var titleWidth = string_width(name);
+	var titleHeight = string_height(name);
+	draw_set_font(fntMain);
+	var descWidth = string_width(desc);
+	var descHeight = string_height(desc);
+	var width = max(titleWidth, descWidth) + (border * 2);
+	var height = titleHeight + descHeight + (border * 3);
 	
+	draw_set_color(c_black);
+	draw_set_alpha(1);
+	draw_rectangle(mouseX + 10, mouseY + 10, mouseX + 10 + width, mouseY + 10 + height, false);
+	
+	draw_set_color(c_white);
+	draw_set_halign(fa_left);
+	draw_set_valign(fa_top);
+	draw_text(mouseX + 10 + border, mouseY + 10 + (border * 2) + titleHeight, desc); // Draw desc first to skip a draw_set_font
+	draw_set_font(fntMainLarge);
+	draw_text(mouseX + 10 + border, mouseY + 10 + border, name);
 }
