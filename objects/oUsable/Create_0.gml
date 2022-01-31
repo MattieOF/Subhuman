@@ -5,7 +5,7 @@ interactable = true;
 
 function check_item_used(_item)
 {
-	if (_item == item)
+	if (items_equal(_item, item))
 	{
 		play_sound_if_exists(successSound);
 		item_used();
