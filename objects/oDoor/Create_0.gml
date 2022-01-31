@@ -12,4 +12,5 @@ function item_used()
 {
 	show_debug_message("override!");
 	sprite.sprite_index = sEnemy;
+	interactable = false;
 }

@@ -1,4 +1,5 @@
 /// @description Draw 
+if (!interactable) return;
 if (inRange)
 {
 	draw_set_valign(fa_center);

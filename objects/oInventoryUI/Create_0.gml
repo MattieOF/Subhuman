@@ -29,6 +29,7 @@ function use_selected()
 		if (selectedItem == -1 || selectedItem == undefined) return;
 		close_inventory();
 		selectionObj.check_item_used(player.inventory[selectedItem]);
+		if (consume) player.inventory_remove_index(selectedItem);
 	}
 }
 
@@ -38,7 +39,7 @@ function drop(_index)
 	player.inventory_remove_index(_index);
 }
 
-function open_inventory(_selectionObj = undefined)
+function open_inventory(_selectionObj = undefined, _consume = false)
 {
 	// Don't open if something else is already using the pause surface.
 	if (surface_exists(global.pauseSurface)) return;
@@ -47,9 +48,11 @@ function open_inventory(_selectionObj = undefined)
 	state = 1;
 	selectedItem = -1;
 	selectionObj = undefined;
+	consume = false;
 	if (_selectionObj != undefined)
 	{
 		selectionObj = _selectionObj;
+		consume = _consume;
 		state = 2;
 		instance_activate_layer("SelectionUI");
 	}

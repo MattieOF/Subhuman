@@ -1,6 +1,7 @@
 /// @description Define base functions
 
 inRange = false;
+interactable = true;
 
 function check_item_used(_item)
 {
