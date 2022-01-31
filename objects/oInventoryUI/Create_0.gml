@@ -8,6 +8,7 @@
 state = 0;
 bgTint = make_color_rgb(100, 100, 100);
 global.inv = id;
+selectionObj = undefined;
 
 normalColor = $1a1a1a;
 hoveredColor = $3b3b3b;
