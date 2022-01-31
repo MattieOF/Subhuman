@@ -31,7 +31,7 @@ for (var i = 0; i < rows; i++)
 		draw_rectangle(currentX, currentY, currentX + itemWidth, currentY + itemHeight, true);
 		
 		if (selectedItem == itemIndex) draw_set_color(selectedColor);
-		else if (point_in_rectangle(mouseX, mouseY, currentX, currentY, currentX + itemWidth, currentY + itemHeight)) 
+		else if (point_in_rectangle(mouseX, mouseY, currentX + 1, currentY + 1, currentX + itemWidth, currentY + itemHeight)) 
 		{
 			draw_set_color(hoveredColor);
 			hoveredIndex = itemIndex;
