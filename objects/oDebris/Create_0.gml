@@ -1,11 +1,12 @@
 /// @description Function defs
 
-function Particle(_x, _y, _dir, _speed) constructor
+function Particle(_x, _y, _dir, _speed, _subimg) constructor
 {
 	X = _x;
 	Y = _y;
 	dir = _dir;
 	spd = _speed;
+	subimg = _subimg;
 	
 	function update()
 	{
