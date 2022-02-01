@@ -25,6 +25,7 @@
     {"id":{"name":"sDoor","path":"sprites/sDoor/sDoor.yy",},"order":0,},
     {"id":{"name":"scrSave","path":"scripts/scrSave/scrSave.yy",},"order":15,},
     {"id":{"name":"sCrosshair","path":"sprites/sCrosshair/sCrosshair.yy",},"order":3,},
+    {"id":{"name":"oSolidSprite","path":"objects/oSolidSprite/oSolidSprite.yy",},"order":4,},
     {"id":{"name":"oMoveTestPlayerAltMovement","path":"objects/oMoveTestPlayerAltMovement/oMoveTestPlayerAltMovement.yy",},"order":4,},
     {"id":{"name":"fntMain","path":"fonts/fntMain/fntMain.yy",},"order":0,},
     {"id":{"name":"oMoveTestWall","path":"objects/oMoveTestWall/oMoveTestWall.yy",},"order":1,},
@@ -81,6 +82,7 @@
   ],
   "isDnDProject": false,
   "isEcma": false,
+  "tutorialPath": "",
   "configs": {
     "name": "Default",
     "children": [],
@@ -130,7 +132,7 @@
   ],
   "IncludedFiles": [],
   "MetaData": {
-    "IDEVersion": "2022.1.0.609",
+    "IDEVersion": "2.3.7.606",
   },
   "resourceVersion": "1.4",
   "name": "Subhuman",

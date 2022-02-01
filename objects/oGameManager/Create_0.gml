@@ -55,7 +55,11 @@ function save(filename = "savegame.json")
 	gameState.usables = {};
 	with (oUsable)
 	{
-		oGameManager.gameState.usables[$ id] = used;
+		oGameManager.gameState.usables[$ id] = {
+			needsItem : requiresItem,
+			interactable : interactable,
+			open : open
+		};
 	}
 	
 	if (file_exists(filename)) file_delete(filename);
@@ -98,7 +102,12 @@ function load(filename = "savegame.json")
 	{
 		var val = oGameManager.gameState.usables[$ id];
 		if (val == undefined) instance_destroy();
-		else if (val == true) item_used();
+		else 
+		{
+			requiresItem = val.needsItem;
+			interactable = val.interactable;
+			if (val.open) item_used();
+		}
 	}
 	
 	// Loop through loaded enemies, set their position and health
