@@ -62,6 +62,13 @@ function save(filename = "savegame.json")
 		};
 	}
 	
+	// Save breakables
+	gameState.breakables = {};
+	with (oBreakable)
+	{
+		oGameManager.gameState.breakables[$ id] = true;
+	}
+	
 	if (file_exists(filename)) file_delete(filename);
 	
 	var file = file_text_open_write(filename);
@@ -109,6 +116,10 @@ function load(filename = "savegame.json")
 			if (val.open) item_used();
 		}
 	}
+	
+	// Load breakables
+	with (oBreakable)
+		if (oGameManager.gameState.breakables[$ id] != true) instance_destroy(id); 
 	
 	// Loop through loaded enemies, set their position and health
 	var keys = variable_struct_get_names(gameState.enemies);
