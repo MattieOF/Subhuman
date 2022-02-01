@@ -42,13 +42,16 @@ function save(filename = "savegame.json")
 	
 	with (oItem)
 	{
-		itemObject = 
+		if (pickupable)
 		{
-			itemInfo : item,
-			X : x,
-			Y : y
+			itemObject = 
+			{
+				itemInfo : item,
+				X : x,
+				Y : y
+			}
+			array_push(oGameManager.gameState.droppedItems, itemObject);
 		}
-		array_push(oGameManager.gameState.droppedItems, itemObject);
 	}
 	
 	// Save usables
