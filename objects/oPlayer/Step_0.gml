@@ -92,3 +92,10 @@ if (instance_exists(oUsable))
 	if (usable != noone) usable.inRange = true;
 	else oUsable.inRange = false;
 }
+
+if (currentOverhealTickTime > 0) currentOverhealTickTime--;
+if (currentOverhealTickTime <= 0 && health > 100)
+{
+	health--;
+	currentOverhealTickTime = overhealTickTime;
+}

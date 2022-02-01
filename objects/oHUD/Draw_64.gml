@@ -2,10 +2,13 @@
 
 // Draw ammo
 draw_set_alpha(1);
-draw_set_halign(fa_right);
+draw_set_halign(fa_left);
 draw_set_valign(fa_bottom);
 draw_set_font(fntMainLarge);
 draw_set_color(c_white);
+
+draw_text(5, global.displayHeight - 5, string(player.playerHealth));
+draw_set_halign(fa_right);
 
 if (!variable_struct_exists(player.loadout[$ player.selectedLoadoutItem], "ammoClip"))
 	draw_text(global.displayWidth - 20, global.displayHeight - 5, "∞");

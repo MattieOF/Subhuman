@@ -91,3 +91,36 @@ function play_sound_if_exists(_sound, _priority = 0, _loops = false)
 		return;
 	audio_play_sound(_sound, _priority, _loops);
 }
+
+function color_lerp(a, b, amount)
+{
+	var _ar = color_get_red(a);
+	var _ag = color_get_green(a);
+	var _ab = color_get_blue(a);
+	
+	var _br = color_get_red(b);
+	var _bg = color_get_green(b);
+	var _bb = color_get_blue(b);
+	
+	return make_color_rgb(lerp(_ar, _br, amount), lerp(_ag, _bg, amount), lerp(_ab, _bb, amount));
+}
+
+function color_lerp_rgb(ar, ag, ab, br, bg, bb, amount)
+{
+	return make_color_rgb(lerp(ar, br, amount), lerp(ag, bg, amount), lerp(ab, bb, amount));
+}
+
+function color_invert(colour)
+{
+	var _r = color_get_red(colour);
+	var _g = color_get_green(colour);
+	var _b = color_get_blue(colour);
+	
+	return make_color_rgb(255 - _r, 255 - _g, 255 - _b);
+}
+
+function color_invert_rgb(r, g, b)
+{
+	return make_color_rgb(255 - r, 255 - g, 255 - b);
+}
+

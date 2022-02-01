@@ -2,9 +2,12 @@
 playerSprite = instance_create_layer(x, y, layer, oSprite);
 playerSprite.sprite_index = sPlayer;
 
+playerHealth = 100;
 loadout = {};
 selectedLoadoutItem = 0;
 shootCooldown = 0;
+overhealTickTime = 0.5 * room_speed;
+currentOverhealTickTime = 0;
 
 // If reloadTime is 0 and reloading is true, reload ammo.
 reloading = false;
@@ -166,6 +169,25 @@ function set_loadout(_loadout)
 {
 	loadout = _loadout;
 	update_loadout_size();
+}
+
+function heal(_health)
+{
+	playerHealth += _health;
+}
+
+function hurt(_dmg)
+{
+	playerHealth -= _dmg;
+	if (playerHealth <= 0) die();
+}
+
+function die()
+{
+	// Play die sound
+	global.gameOverSurface = surface_create(surface_get_width(application_surface), surface_get_height(application_surface));
+	surface_copy(global.gameOverSurface, 0, 0, application_surface);
+	room_goto(rmGameOver);
 }
 
 // Create hud
