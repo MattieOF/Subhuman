@@ -17,3 +17,8 @@ function die()
 	oGameManager.gameState.playerScore += value;
 	oGameManager.gameState.enemies[$ id] = undefined;
 }
+
+function hit(_dmg = undefined)
+{
+	hurt(_dmg);
+}

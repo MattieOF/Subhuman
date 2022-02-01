@@ -21,6 +21,7 @@
     {"id":{"name":"sEnemy","path":"sprites/sEnemy/sEnemy.yy",},"order":5,},
     {"id":{"name":"oHittable","path":"objects/oHittable/oHittable.yy",},"order":16,},
     {"id":{"name":"sSpecificColliderTest","path":"sprites/sSpecificColliderTest/sSpecificColliderTest.yy",},"order":3,},
+    {"id":{"name":"oBarrel","path":"objects/oBarrel/oBarrel.yy",},"order":17,},
     {"id":{"name":"scrControls","path":"scripts/scrControls/scrControls.yy",},"order":5,},
     {"id":{"name":"oBreakable","path":"objects/oBreakable/oBreakable.yy",},"order":15,},
     {"id":{"name":"oItem","path":"objects/oItem/oItem.yy",},"order":1,},

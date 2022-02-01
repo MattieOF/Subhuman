@@ -94,7 +94,7 @@ function create_projectile(_x, _y, _projectile, _dir)
 	proj.init(_projectile, _dir, 1);
 }
 
-function cast_hitscan(_x, _y, _dir, _weapon, _wall = oSolid, _enemy = oEnemy, _tracer = true)
+function cast_hitscan(_x, _y, _dir, _weapon, _wall = oSolid, _enemy = oHittable, _tracer = true)
 {
 	info = raycast(_x, _y, _dir, _weapon.range, _wall);
 	var endX = info.X;
@@ -109,7 +109,7 @@ function cast_hitscan(_x, _y, _dir, _weapon, _wall = oSolid, _enemy = oEnemy, _t
 		endX = enemyInfo.X;
 		endY = enemyInfo.Y;
 		if (instance_exists(enemyInfo.obj)) // Occasionally, enemyInfo.obj is invalid and causes a crash.
-			enemyInfo.obj.hurt(_weapon.damage);
+			enemyInfo.obj.hit(_weapon.damage);
 	}
 	
 	delete info;
