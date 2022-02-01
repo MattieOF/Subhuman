@@ -22,7 +22,7 @@ function init(_sprite, _count, _speed, _lifetime, _dirMin = 0, _dirMax = 359)
 	sprite = _sprite;
 	
 	for (var i = 0; i < _count; i++)
-		objects[i] = new Particle(x, y, random_range(_dirMin, _dirMax), _speed);
+		objects[i] = new Particle(x, y, random_range(_dirMin, _dirMax), _speed, random_range(0, sprite_get_number(_sprite) - 1));
 		
 	lifetime = _lifetime * room_speed;
 	life = _lifetime * room_speed;
