@@ -94,25 +94,35 @@ function create_projectile(_x, _y, _projectile, _dir)
 	proj.init(_projectile, _dir, 1);
 }
 
-function cast_hitscan(_x, _y, _dir, _weapon, _wall = oSolid, _enemy = oHittable, _tracer = true)
+function cast_hitscan(_x, _y, _dir, _weapon, _wall = oWall, _enemy = oHittable, _enemySolid = oHittableSolid, _tracer = true)
 {
-	info = raycast(_x, _y, _dir, _weapon.range, _wall);
+	var info = raycast(_x, _y, _dir, _weapon.range, _wall);
 	var endX = info.X;
 	var endY = info.Y;
 	
-	enemyInfo = raycast(_x, _y, _dir, _weapon.range, _enemy);
+	var enemyInfo = raycast(_x, _y, _dir, _weapon.range, _enemy);
+	var solidEnemyInfo = raycast(_x, _y, _dir, _weapon.range, _enemySolid);
 	var wallDist  = point_distance(_x, _y, info.X, info.Y);
 	var enemyDist = point_distance(_x, _y, enemyInfo.X, enemyInfo.Y);
-	if (enemyDist < wallDist)
+	var solidEnemyDist = point_distance(_x, _y, solidEnemyInfo.X, solidEnemyInfo.Y);
+	var closest = min(wallDist, enemyDist, solidEnemyDist);
+	
+	if (closest == enemyDist || closest == solidEnemyDist)
 	{
 		// We hit an enemy before a wall
-		endX = enemyInfo.X;
-		endY = enemyInfo.Y;
-		if (instance_exists(enemyInfo.obj)) // Occasionally, enemyInfo.obj is invalid and causes a crash.
-			enemyInfo.obj.hit(_weapon.damage);
+		var _enemyInfo = (closest == enemyDist ? enemyInfo : solidEnemyInfo);
+		
+		if (instance_exists(_enemyInfo.obj)) // Occasionally, enemyInfo.obj is invalid and causes a crash.
+		{
+			_enemyInfo.obj.hit(_weapon.damage);
+		}
+		
+		endX = _enemyInfo.X;
+		endY = _enemyInfo.Y;
 	}
 	
 	delete info;
 	delete enemyInfo;
+	delete solidEnemyInfo;
 	if (_tracer) create_tracer(_x, _y, endX, endY);
 }
