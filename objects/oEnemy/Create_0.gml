@@ -1,4 +1,4 @@
-/// @description Function defs
+/// @description Setup enemy
 
 // Add to manager
 oGameManager.gameState.enemies[$ id] = new EnemyInfo(x, y, enemyHealth);
@@ -13,8 +13,12 @@ playerInView = false;
 // Start sight check alarm
 alarm[0] = sightCheckTimer * room_speed;
 
+// --------------------
+// Function definitions
+// --------------------
 function hurt(_dmg)
 {
+	if (_dmg == undefined) return;
 	create_debris(x, y, sBloodParticle, 8, 2, 0.4);
 	enemyHealth -= _dmg;
 	if (enemyHealth <= 0)
