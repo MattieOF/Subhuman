@@ -8,8 +8,8 @@
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "oHittable",
-    "path": "objects/oHittable/oHittable.yy",
+    "name": "oHittableSolid",
+    "path": "objects/oHittableSolid/oHittableSolid.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,
