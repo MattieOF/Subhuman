@@ -34,8 +34,8 @@
   ],
   "overriddenProperties": [],
   "parent": {
-    "name": "LevelElements",
-    "path": "folders/Objects/Game/LevelElements.yy",
+    "name": "Base",
+    "path": "folders/Objects/Game/LevelElements/Base.yy",
   },
   "resourceVersion": "1.0",
   "name": "oUsable",

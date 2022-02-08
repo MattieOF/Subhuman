@@ -24,8 +24,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Game",
-    "path": "folders/Objects/Game.yy",
+    "name": "Base",
+    "path": "folders/Objects/Game/LevelElements/Base.yy",
   },
   "resourceVersion": "1.0",
   "name": "oSolid",
