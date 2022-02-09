@@ -15,14 +15,14 @@ function Particle(_x, _y, _dir, _speed, _subimg) constructor
 	}
 }
 
-function init(_sprite, _count, _speed, _lifetime, _dirMin = 0, _dirMax = 359)
+function init(_sprite, _count, _speed, _lifetime, _dirMin = 0, _dirMax = 359, _speedRange = 0)
 {
 	objects = array_create(_count);
 	
 	sprite = _sprite;
 	
 	for (var i = 0; i < _count; i++)
-		objects[i] = new Particle(x, y, random_range(_dirMin, _dirMax), _speed, random_range(0, sprite_get_number(_sprite) - 1));
+		objects[i] = new Particle(x, y, random_range(_dirMin, _dirMax), _speed + random_range(-_speedRange, _speedRange), random_range(0, sprite_get_number(_sprite) - 1));
 		
 	lifetime = _lifetime * room_speed;
 	life = _lifetime * room_speed;

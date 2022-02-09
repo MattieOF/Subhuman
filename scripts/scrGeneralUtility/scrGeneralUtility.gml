@@ -23,11 +23,11 @@ function approach_angle(value, target, amount, maximum = 360)
 
 global.debrisLayer = undefined;
 global.debrisObject = oDebris;
-function create_debris(_x, _y, _sprite, _count, _lifetime, _speed, _dirMin = 0, _dirMax = 359)
+function create_debris(_x, _y, _sprite, _count, _lifetime, _speed, _dirMin = 0, _dirMax = 359, speedRange = 0)
 {
 	if (global.debrisLayer == undefined || !layer_exists(global.debrisLayer)) global.debrisLayer = layer_create(-500, "Debris");
 	var debris = instance_create_layer(_x, _y, global.debrisLayer, global.debrisObject);
-	debris.init(_sprite, _count, _speed, _lifetime, _dirMin, _dirMax);
+	debris.init(_sprite, _count, _speed, _lifetime, _dirMin, _dirMax, speedRange);
 	return debris;
 }
 
@@ -124,3 +124,8 @@ function color_invert_rgb(r, g, b)
 	return make_color_rgb(255 - r, 255 - g, 255 - b);
 }
 
+function goo_ball_explode()
+{
+	create_debris(x, y, sGooBallDebris, 20, 1.5, 0.4,,, 0.1);
+	instance_destroy(id);
+}
