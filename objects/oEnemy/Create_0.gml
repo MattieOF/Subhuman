@@ -13,7 +13,7 @@ playerLastY = pointer_null;
 playerInView = false;
 
 // Start sight check alarm
-alarm[0] = sightCheckTimer * room_speed;
+alarm[0] = 1;
 
 // --------------------
 // Function definitions

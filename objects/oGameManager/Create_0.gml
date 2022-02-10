@@ -73,7 +73,7 @@ function save(filename = "savegame.json")
 	}
 	
 	// Save ticks
-	gameState.ticks = array_create();
+	gameState.ticks = array_create(0);
 	with (oTick)
 	{
 		var tick = {
