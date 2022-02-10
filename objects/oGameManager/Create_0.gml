@@ -72,6 +72,19 @@ function save(filename = "savegame.json")
 		oGameManager.gameState.breakables[$ id] = true;
 	}
 	
+	// Save ticks
+	gameState.ticks = array_create();
+	with (oTick)
+	{
+		var tick = {
+			X : x,
+			Y : y,
+			pX : playerLastX,
+			pY : playerLastY
+		};
+		array_push(oGameManager.gameState.ticks, tick);
+	}
+	
 	if (file_exists(filename)) file_delete(filename);
 	
 	var file = file_text_open_write(filename);
@@ -123,6 +136,15 @@ function load(filename = "savegame.json")
 	// Load breakables
 	with (oBreakable)
 		if (oGameManager.gameState.breakables[$ id] != true) instance_destroy(id); 
+		
+	// Load ticks
+	for (var i = 0; i < array_length(gameState.ticks); i++)
+	{
+		var current = gameState.ticks[i];
+		var tick = instance_create_layer(current.X, current.Y, "Level", oTick);
+		tick.playerLastX = current.pX;
+		tick.playerLastY = current.pY;
+	}
 	
 	// Loop through loaded enemies, set their position and health
 	var keys = variable_struct_get_names(gameState.enemies);

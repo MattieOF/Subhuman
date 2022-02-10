@@ -129,3 +129,31 @@ function goo_ball_explode()
 	create_debris(x, y, sGooBallDebris, 20, 1.5, 0.4,,, 0.1);
 	instance_destroy(id);
 }
+
+function random_point_in_rect(x1, y1, x2, y2)
+{
+	var _x = random_range(x1, x2);
+	var _y = random_range(y1, y2);
+	
+	return 
+	{
+		X : _x,
+		Y : _y
+	};
+}
+
+function random_free_point_in_rect(x1, y1, x2, y2, obj = undefined, tries = 100)
+{
+	do
+	{
+		var _x = random_range(x1, x2);
+		var _y = random_range(y1, y2);
+		tries--;
+	} until ((obj != undefined ? !place_meeting(_x, _y, obj) : !place_free(_x, _y)) && tries > 0);
+	
+	return 
+	{
+		X : _x,
+		Y : _y
+	};
+}
