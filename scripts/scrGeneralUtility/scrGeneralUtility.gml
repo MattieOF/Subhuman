@@ -149,7 +149,7 @@ function random_free_point_in_rect(x1, y1, x2, y2, obj = undefined, tries = 100)
 		var _x = random_range(x1, x2);
 		var _y = random_range(y1, y2);
 		tries--;
-	} until ((obj != undefined ? !place_meeting(_x, _y, obj) : !place_free(_x, _y)) && tries > 0);
+	} until ((obj != undefined ? !place_meeting(_x, _y, obj) : place_free(_x, _y)) || tries <= 0);
 	
 	return 
 	{

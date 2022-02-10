@@ -53,7 +53,7 @@ function start_game()
 function new_save()
 {
 	instance_deactivate_layer("NewSave");
-	if (file_exists("savegame.json")) file_delete("savegame.json");
+	delete_save();
 	global.mainMenu.state = 4;
 }
 
