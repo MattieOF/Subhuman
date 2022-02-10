@@ -1,7 +1,5 @@
-- Enemy AI
-	- Pathfinding: https://www.youtube.com/watch?v=RmOqnp5d33Q
-	- Siphonorator
-	- Summoned enemies - Ticks (they just charge at you)
+- Blood effect when almost dead
+- Gun pickup
 - Completed demo level
 - Win screen; summary of player score
 	- Perhaps a small new game+ thing
