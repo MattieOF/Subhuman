@@ -37,5 +37,7 @@ function summon_tick()
 
 function melee()
 {
-	
+	moveSpeed = 4;
+	cast_hitscan(x, y, point_direction(x, y, oPlayer.x, oPlayer.y), global.weaponSiphonoratorMelee,,oPlayer,,false);
+	attackCooldown = attackCooldownTime / 2;
 }

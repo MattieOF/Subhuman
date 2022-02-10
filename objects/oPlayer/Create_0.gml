@@ -190,6 +190,11 @@ function die()
 	room_goto(rmGameOver);
 }
 
+function hit(_dmg = undefined)
+{
+	hurt(_dmg);
+}
+
 // Create hud
 instance_create_layer(0, 0, layer_create(-300, "HUD"), oHUD).init(id);
 instance_create_layer(0, 0, layer_create(-300, "Crosshair"), oCrosshair).init(id);
