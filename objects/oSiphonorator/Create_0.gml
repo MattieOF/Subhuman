@@ -31,7 +31,8 @@ function summon_tick()
 	var _x = lengthdir_x(length, direction);
 	var _y = lengthdir_y(length, direction);
 	
-	instance_create_layer(x + _x, y + _y, layer, oTickSpawn);
+	var pos = random_free_point_in_rect(x - 120, y - 120, x + 120, y + 120, oWall);
+	instance_create_layer(pos.X, pos.Y, layer, oTickSpawn);
 	attackCooldown = attackCooldownTime;
 }
 
