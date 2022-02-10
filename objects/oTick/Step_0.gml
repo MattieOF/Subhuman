@@ -1,6 +1,13 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+if (latched)
+{
+	x = oPlayer.x + lengthdir_x(playerOffsetLength, playerOffset);
+	y = oPlayer.y + lengthdir_y(playerOffsetLength, playerOffset);
+	return;
+}
+
 if (playerInView)
 	mp_potential_step_object(oPlayer.x, oPlayer.y, moveSpeed, oWall);
 else if (playerLastX != pointer_null) // If one has a value, we can assume both do

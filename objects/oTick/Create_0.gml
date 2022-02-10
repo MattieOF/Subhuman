@@ -11,6 +11,7 @@ playerLastX = pointer_null;
 playerLastY = pointer_null;
 playerInView = false;
 timeSinceLastSawPlayer = 0;
+latched = false;
 
 // Start sight check alarm
 alarm[0] = sightCheckTimer * room_speed;
