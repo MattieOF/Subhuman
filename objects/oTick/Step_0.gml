@@ -10,4 +10,5 @@ image_angle = direction;
 if (moveSpeed > 0) moveSpeed -= 0.5;
 
 if (!playerInView) timeSinceLastSawPlayer++;
-if (timeSinceLastSawPlayer > 20 * room_speed) retreat();
+else timeSinceLastSawPlayer = 0;
+if (timeSinceLastSawPlayer > 15 * room_speed) retreat();

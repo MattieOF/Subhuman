@@ -1,5 +1,8 @@
 {
-  "spriteId": null,
+  "spriteId": {
+    "name": "sTickSpawn",
+    "path": "sprites/sTickSpawn/sTickSpawn.yy",
+  },
   "solid": false,
   "visible": true,
   "spriteMaskId": null,
@@ -18,18 +21,16 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":0,"eventType":2,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":7,"eventType":7,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Graphics",
-    "path": "folders/Objects/Game/Graphics.yy",
+    "name": "Enemy",
+    "path": "folders/Objects/Game/Enemy.yy",
   },
   "resourceVersion": "1.0",
-  "name": "oAnimation",
+  "name": "oTickSpawn",
   "tags": [],
   "resourceType": "GMObject",
 }

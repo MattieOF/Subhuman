@@ -41,7 +41,8 @@ function hit(_dmg = undefined)
 
 function retreat()
 {
-	// Do a little animation and get destroyed
+	instance_create_layer(x, y, layer, oAnimation).sprite_index = sTickRetreat;
+	instance_destroy(id);
 }
 
 maxMoveSpeed = 10;

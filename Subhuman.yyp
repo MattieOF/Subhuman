@@ -37,6 +37,7 @@
     {"id":{"name":"oMoveTestWall","path":"objects/oMoveTestWall/oMoveTestWall.yy",},"order":1,},
     {"id":{"name":"oMoveTestManager","path":"objects/oMoveTestManager/oMoveTestManager.yy",},"order":5,},
     {"id":{"name":"sTickRetreat","path":"sprites/sTickRetreat/sTickRetreat.yy",},"order":0,},
+    {"id":{"name":"oTickSpawn","path":"objects/oTickSpawn/oTickSpawn.yy",},"order":4,},
     {"id":{"name":"raycast","path":"scripts/raycast/raycast.yy",},"order":0,},
     {"id":{"name":"oCheckbox","path":"objects/oCheckbox/oCheckbox.yy",},"order":1,},
     {"id":{"name":"sSolid","path":"sprites/sSolid/sSolid.yy",},"order":0,},
@@ -143,8 +144,8 @@
     {"folderPath":"folders/Sprites/Game/Door.yy","order":6,"resourceVersion":"1.0","name":"Door","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Objects/Game/LevelElements.yy","order":14,"resourceVersion":"1.0","name":"LevelElements","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Objects/Game/LevelElements/Base.yy","order":4,"resourceVersion":"1.0","name":"Base","tags":[],"resourceType":"GMFolder",},
-    {"folderPath":"folders/Sprites/Game/GooBall.yy","order":9,"resourceVersion":"1.0","name":"GooBall","tags":[],"resourceType":"GMFolder",},
-    {"folderPath":"folders/Sprites/Game/Enemy.yy","order":10,"resourceVersion":"1.0","name":"Enemy","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Sprites/Game/GooBall.yy","order":7,"resourceVersion":"1.0","name":"GooBall","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Sprites/Game/Enemy.yy","order":8,"resourceVersion":"1.0","name":"Enemy","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Sprites/Game/Enemy/Tick.yy","order":1,"resourceVersion":"1.0","name":"Tick","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [

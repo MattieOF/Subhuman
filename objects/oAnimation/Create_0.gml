@@ -1,3 +1,3 @@
 /// @description Init vars
-lastFrameTime = 0;
+lastFrameTime = 1;
 done = false;
