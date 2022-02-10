@@ -57,6 +57,11 @@ function close_exit()
 	global.pauseMenu.state = 1;
 }
 
+function set_fullscreen(value)
+{
+	window_set_fullscreen(value);
+}
+
 // Create pause menu
 // Draw in world means its drawn during the draw gui event, letting it use screen x/y
 start_stack("PauseMenu", 100, 100, 5, stackDir.vertical, false);
@@ -67,6 +72,10 @@ add_stack_spacing(100);
 add_to_stack(create_button(0, 0, 200, 40, "Resume", on_resume,,,,,,fa_left));
 add_to_stack(create_button(0, 0, 200, 40, "Load Checkpoint", open_load_checkpoint,,,,,,fa_left));
 add_to_stack(create_button(0, 0, 200, 40, "Quit", open_exit,,,,,,fa_left));
+add_stack_spacing(220);
+add_to_stack(create_label(0, 0, "Video Settings",,,,,fa_left));
+global.ui_currentX += 65;
+add_to_stack(create_checkbox(0, 0, "Fullscreen", set_fullscreen, window_get_fullscreen()));
 end_stack();
 instance_deactivate_layer("PauseMenu");
 

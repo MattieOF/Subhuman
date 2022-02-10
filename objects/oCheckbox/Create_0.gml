@@ -29,3 +29,5 @@ onToggle = undefined; // Should be a function with 1 bool parameter
 width = 0;
 height = 0;
 checkboxColor = normalCheckboxColor;
+halign = fa_center;
+valign = fa_center;
