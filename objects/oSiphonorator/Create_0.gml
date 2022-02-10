@@ -27,10 +27,6 @@ function throw_goo_ball()
 
 function summon_tick()
 {
-	var length = ((sprite_get_width(sprite_index) * image_xscale) / 2) + 10;
-	var _x = lengthdir_x(length, direction);
-	var _y = lengthdir_y(length, direction);
-	
 	var pos = random_free_point_in_rect(x - 120, y - 120, x + 120, y + 120, oWall);
 	instance_create_layer(pos.X, pos.Y, layer, oTickSpawn);
 	attackCooldown = attackCooldownTime;
