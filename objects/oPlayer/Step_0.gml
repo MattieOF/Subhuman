@@ -94,8 +94,8 @@ if (instance_exists(oUsable))
 }
 
 if (currentOverhealTickTime > 0) currentOverhealTickTime--;
-if (currentOverhealTickTime <= 0 && health > 100)
+if (currentOverhealTickTime <= 0 && playerHealth > 100)
 {
-	health--;
+	playerHealth--;
 	currentOverhealTickTime = overhealTickTime;
 }

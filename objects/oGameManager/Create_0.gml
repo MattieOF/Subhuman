@@ -37,6 +37,7 @@ function save(filename = "savegame.json")
 	}
 	gameState.playerLoadout = oPlayer.loadout;
 	gameState.playerInv = oPlayer.inventory;
+	gameState.playerHealth = oPlayer.playerHealth;
 	gameState.playerSelectedLoadoutItem = oPlayer.selectedLoadoutItem;
 	gameState.droppedItems = array_create(0);
 	
@@ -107,6 +108,9 @@ function load(filename = "savegame.json")
 	// Set player position to current save locs location
 	oPlayer.x = saveLocations[$ gameState.currentSaveLoc].x;
 	oPlayer.y = saveLocations[$ gameState.currentSaveLoc].y;
+	
+	// Set player health
+	oPlayer.playerHealth = max(gameState.playerHealth, 1);
 	
 	// Setup player loadout
 	oPlayer.set_loadout(gameState.playerLoadout);
