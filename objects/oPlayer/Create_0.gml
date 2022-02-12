@@ -2,6 +2,9 @@
 playerSprite = instance_create_layer(x, y, layer, oSprite);
 playerSprite.sprite_index = sPlayer;
 
+// Get layer ids
+hurtEffectLayer = layer_get_id("HurtEffect");
+
 playerHealth = 100;
 loadout = {};
 selectedLoadoutItem = 0;
@@ -176,8 +179,27 @@ function heal(_health)
 	playerHealth += _health;
 }
 
+function set_hurt_effect(value)
+{
+	var effect = layer_get_fx(hurtEffectLayer);
+	if (effect != -1)
+		fx_set_parameter(effect, "g_Radius", value);
+}
+
+function tick_hurt_effect()
+{
+	var effect = layer_get_fx(hurtEffectLayer);
+	if (effect != -1)
+	{
+		var val = fx_get_parameter(effect, "g_Radius");
+		if (val > 0)
+			fx_set_parameter(effect, "g_Radius", max(val - 0.15, 0));
+	}
+}
+
 function hurt(_dmg)
 {
+	set_hurt_effect(2.5);
 	playerHealth -= _dmg;
 	if (playerHealth <= 0) die();
 }

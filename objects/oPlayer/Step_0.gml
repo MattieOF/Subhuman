@@ -10,6 +10,9 @@ var down = control_check(controls.moveDown);
 playerSprite.x = x;
 playerSprite.y = y;
 
+// Update hurt effect
+tick_hurt_effect();
+
 // Look in direction of mouse
 var targetAngle = point_direction(x, y, mouse_x, mouse_y);
 playerSprite.image_angle = approach_angle(playerSprite.image_angle, targetAngle, 30);
