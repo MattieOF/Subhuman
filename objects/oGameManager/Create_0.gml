@@ -82,6 +82,11 @@ function save(filename = "savegame.json")
 		oGameManager.gameState.breakables[$ id] = true;
 	}
 	
+	// Save blockages
+	gameState.blockages = {};
+	with (oBlockage)
+		oGameManager.gameState.blockages[$ id] = open;
+	
 	// Save ticks
 	gameState.ticks = array_create(0);
 	with (oTick)
@@ -163,6 +168,10 @@ function load(filename = "savegame.json")
 	// Load breakables
 	with (oBreakable)
 		if (oGameManager.gameState.breakables[$ id] != true) instance_destroy(id); 
+		
+	// Load blockages
+	with (oBlockage)
+		if (oGameManager.gameState.blockages[$ id]) open_blockage(true);
 		
 	// Load ticks
 	for (var i = 0; i < array_length(gameState.ticks); i++)
