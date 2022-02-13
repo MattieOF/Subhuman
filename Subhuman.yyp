@@ -88,6 +88,7 @@
     {"id":{"name":"sPlayerCollision","path":"sprites/sPlayerCollision/sPlayerCollision.yy",},"order":5,},
     {"id":{"name":"oTick","path":"objects/oTick/oTick.yy",},"order":3,},
     {"id":{"name":"oSiphonorator","path":"objects/oSiphonorator/oSiphonorator.yy",},"order":1,},
+    {"id":{"name":"sTickLatched","path":"sprites/sTickLatched/sTickLatched.yy",},"order":3,},
     {"id":{"name":"oSolid","path":"objects/oSolid/oSolid.yy",},"order":4,},
     {"id":{"name":"oProjectile","path":"objects/oProjectile/oProjectile.yy",},"order":0,},
     {"id":{"name":"sTickSpawn","path":"sprites/sTickSpawn/sTickSpawn.yy",},"order":2,},
