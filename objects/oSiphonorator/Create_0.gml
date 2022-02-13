@@ -42,6 +42,13 @@ function compute_path()
 {
 	if (path != undefined) path_delete(path);
 	path = path_add();
+	
+	if (!playerInView && playerLastX == pointer_null)
+	{
+		playerLastX = x;
+		playerLastY = y;
+	}
+	
 	mp_potential_path_object(path, playerInView ? oPlayer.x : playerLastX, playerInView ? oPlayer.y : playerLastY, moveSpeed, 4, oSolid);
 	path_start(path, moveSpeed, path_action_stop, true);
 }

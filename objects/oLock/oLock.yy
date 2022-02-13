@@ -1,15 +1,15 @@
 {
   "spriteId": {
-    "name": "sBlockageCorrodible",
-    "path": "sprites/sBlockageCorrodible/sBlockageCorrodible.yy",
+    "name": "sLock",
+    "path": "sprites/sLock/sLock.yy",
   },
-  "solid": true,
+  "solid": false,
   "visible": true,
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "oSolid",
-    "path": "objects/oSolid/oSolid.yy",
+    "name": "oHittable",
+    "path": "objects/oHittable/oHittable.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,
@@ -35,7 +35,7 @@
     "path": "folders/Objects/Game/LevelElements.yy",
   },
   "resourceVersion": "1.0",
-  "name": "oBlockageCorrodible",
+  "name": "oLock",
   "tags": [],
   "resourceType": "GMObject",
 }

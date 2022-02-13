@@ -98,7 +98,12 @@ function save(filename = "savegame.json")
 	// Save spawn triggers
 	gameState.spawnTriggers = {};
 	with (oSpawnTrigger)
-		oGameManager.gameState.spawnTriggers[$ id] = true;
+		oGameManager.gameState.spawnTriggers[$ id] = true
+		
+	// Save locks
+	gameState.locks = {};
+	with (oLock)
+		oGameManager.gameState.locks[$ id] = true;
 	
 	// Save corrodible blockages
 	gameState.corrodibleBlockages = {};
@@ -203,6 +208,10 @@ function load(filename = "savegame.json")
 	// Load spawn triggers
 	with (oSpawnTrigger)
 		if (oGameManager.gameState.spawnTriggers[$ id] != true) instance_destroy(id); 
+	
+	// Load locks
+	with (oLock)
+		if (oGameManager.gameState.locks[$ id] != true) unlock(); 
 	
 	// Load blockages
 	with (oBlockage)

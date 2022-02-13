@@ -24,5 +24,6 @@ function done()
 {
 	var nearestDoor = instance_nearest(x, y, oDoor);
 	nearestDoor.interactable = true;
+	if (destroyNearestTrigger) instance_destroy(instance_nearest(x, y, oSpawnTrigger));
 	instance_destroy(id);
 }
