@@ -1,5 +1,4 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// @description Initialise vars and functions
 
 // Add to manager
 oGameManager.gameState.enemies[$ id] = new EnemyInfo(x, y, enemyHealth);

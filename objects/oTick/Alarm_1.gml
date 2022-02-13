@@ -1,4 +1,3 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// @description Start dash
 moveSpeed = maxMoveSpeed;
 alarm[1] = moveDelay * room_speed;
