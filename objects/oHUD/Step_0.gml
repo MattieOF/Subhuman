@@ -18,3 +18,12 @@ switch (loadoutUiState)
 		if (loadoutUiAlpha <= 0) loadoutUiState = 0;
 		break;
 }
+
+if (areaAlpha > 0) areaAlpha = max(areaAlpha - 0.02, 0);
+
+previousArea = area;
+with (oPlayer)
+	oHUD.area = instance_place(x, y, oArea);
+
+if (area != previousArea && area != noone)
+	areaAlpha = 3;

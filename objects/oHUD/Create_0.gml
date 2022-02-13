@@ -12,6 +12,10 @@ loadoutUiAlpha = 0;
 loadoutUiTime = 3 * room_speed;
 currentLoadoutUiTime = 0;
 
+areaAlpha = 0;
+area = noone;
+previousArea = noone;
+
 function init(_playerId)
 {
 	player = _playerId;

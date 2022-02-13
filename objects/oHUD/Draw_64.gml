@@ -26,6 +26,16 @@ else
 }
 draw_set_font(fntMain);
 
+if (areaAlpha > 0 && instance_exists(area))
+{
+	draw_set_alpha(areaAlpha);
+	draw_set_color(c_white);
+	draw_set_font(fntMain);
+	draw_set_valign(fa_center);
+	draw_set_halign(fa_center);
+	draw_text(global.displayWidth / 2, 50, area.name);
+}
+
 // Draw loadout UI
 if (loadoutUiState == 0) return;
 var loadoutUiHeight = 100;

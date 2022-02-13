@@ -66,6 +66,7 @@
     {"id":{"name":"scrSaveLocation","path":"scripts/scrSaveLocation/scrSaveLocation.yy",},"order":16,},
     {"id":{"name":"oGameOver","path":"objects/oGameOver/oGameOver.yy",},"order":6,},
     {"id":{"name":"oWall","path":"objects/oWall/oWall.yy",},"order":5,},
+    {"id":{"name":"oArea","path":"objects/oArea/oArea.yy",},"order":7,},
     {"id":{"name":"scrSetupGame","path":"scripts/scrSetupGame/scrSetupGame.yy",},"order":1,},
     {"id":{"name":"oCrosshair","path":"objects/oCrosshair/oCrosshair.yy",},"order":2,},
     {"id":{"name":"sTestPlayer","path":"sprites/sTestPlayer/sTestPlayer.yy",},"order":0,},
