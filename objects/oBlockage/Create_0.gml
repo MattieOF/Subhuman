@@ -5,6 +5,7 @@
 event_inherited();
 
 open = false;
+opening = false;
 
 function hit(_dmg = undefined)
 {
@@ -14,6 +15,22 @@ function hit(_dmg = undefined)
 		return;
 	}
 	
-	// Switch to sprite of it opening
-	open = true;
+	open_blockage(false);
+}
+
+function open_blockage(_instant = false)
+{
+	if (_instant)
+	{
+		open = true;
+		opening = false;
+		sprite_index = sBlockageOpen;
+	} 
+	else
+	{
+		open = true;
+		opening = true;
+		sprite_index = sBlockageOpening;
+		image_index = 0;
+	}
 }
