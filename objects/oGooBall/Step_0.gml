@@ -8,4 +8,4 @@ if (instance_exists(oPlayer))
 }
 
 image_angle = direction;
-turnSpeed += 0.02;
+turnSpeed += 0.008;

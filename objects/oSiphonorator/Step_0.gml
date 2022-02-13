@@ -1,15 +1,13 @@
 /// @description AI
 
-// Inherit the parent event
 // This will pathfind to the player
-event_inherited();
+image_angle = direction;
 
 // return if player doesn't exist for some reason
 if (!instance_exists(oPlayer)) return;
 
 // For this enemy, we want it to look at where the player is, over which way it is facing
 if (playerInView) image_angle = point_direction(x, y, oPlayer.x, oPlayer.y);
-
 attackCooldown--;
 
 if (moveSpeed > 1.2) moveSpeed -= 0.1;

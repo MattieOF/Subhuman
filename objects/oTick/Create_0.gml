@@ -1,8 +1,5 @@
 /// @description Initialise vars and functions
 
-// Add to manager
-oGameManager.gameState.enemies[$ id] = new EnemyInfo(x, y, enemyHealth);
-
 // -------------
 // AI state vars
 // -------------
@@ -31,7 +28,6 @@ function die()
 {
 	instance_destroy(id);
 	oGameManager.gameState.playerScore += value;
-	oGameManager.gameState.enemies[$ id] = undefined;
 }
 
 function hit(_dmg = undefined)

@@ -94,6 +94,29 @@ function save(filename = "savegame.json")
 	gameState.vents = {};
 	with (oVentCover)
 		oGameManager.gameState.vents[$ id] = true;
+		
+	// Save spawn triggers
+	gameState.spawnTriggers = {};
+	with (oSpawnTrigger)
+		oGameManager.gameState.spawnTriggers[$ id] = true;
+	
+	// Save corrodible blockages
+	gameState.corrodibleBlockages = {};
+	with (oBlockageCorrodible)
+		oGameManager.gameState.corrodibleBlockages[$ id] = image_index;
+		
+	gameState.siphonorator = undefined;
+	with (oSiphonorator)
+	{
+		var siphonorator = {
+			X : x,
+			Y : y,
+			pX : playerLastX,
+			pY : playerLastY,
+			hp : enemyHealth
+		};
+		oGameManager.gameState.siphonorator = siphonorator;
+	}
 	
 	// Save ticks
 	gameState.ticks = array_create(0);
@@ -176,6 +199,10 @@ function load(filename = "savegame.json")
 	// Load breakables
 	with (oBreakable)
 		if (oGameManager.gameState.breakables[$ id] != true) instance_destroy(id); 
+		
+	// Load spawn triggers
+	with (oSpawnTrigger)
+		if (oGameManager.gameState.spawnTriggers[$ id] != true) instance_destroy(id); 
 	
 	// Load blockages
 	with (oBlockage)
@@ -184,6 +211,25 @@ function load(filename = "savegame.json")
 	// Load vents
 	with (oVentCover)
 		if (oGameManager.gameState.vents[$ id] == undefined) break_vent();
+	
+	// Load corrodible blockages
+	with (oBlockageCorrodible)
+	{
+		if (oGameManager.gameState.corrodibleBlockages[$ id] == undefined)
+			done();
+		else
+			set_stage(oGameManager.gameState.corrodibleBlockages[$ id]);
+	}
+	
+	// Load siphonorator
+	if (gameState.siphonorator != pointer_null && gameState.siphonorator != undefined)
+	{
+		var siphonorator = gameState.siphonorator;
+		var inst = instance_create_layer(siphonorator.X, siphonorator.Y, "Level", oSiphonorator);
+		inst.playerLastX = siphonorator.pX;
+		inst.playerLastY = siphonorator.pY;
+		inst.enemyHealth = siphonorator.hp;
+	}
 	
 	// Load ticks
 	for (var i = 0; i < array_length(gameState.ticks); i++)

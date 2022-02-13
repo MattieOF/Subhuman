@@ -9,7 +9,7 @@ global.weaponPistol = new WeaponHitscan("Pistol", sTestProjectile, 20, 1000, 0.5
 global.weaponDebug = new WeaponHitscan("Debug Weapon", sTestProjectile, 1000, 2000, 0.05, 0.05, 500, 25, new WeaponSounds());
 global.weaponProjectileTest = new WeaponProjectile("Projectile Test", sTestProjectile, global.testProjectile,
 	0.25, 1, 15, 60, new WeaponSounds());
-global.weaponSiphonoratorMelee = new WeaponMelee("Siphonorator Melee", sTestProjectile, 25, 60, 0.75, new WeaponSounds());
+global.weaponSiphonoratorMelee = new WeaponMelee("Siphonorator Melee", sTestProjectile, 25, 45, 0.75, new WeaponSounds());
 
 enum weaponType
 {

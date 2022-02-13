@@ -5,6 +5,7 @@ event_inherited();
 
 // Create a sprite object, and switch to a trigger sprite
 sprite = instance_create_layer(x, y, layer, oSolidSprite);
+doorSprite = sprite_index;
 sprite.image_speed = 0;
 sprite.sprite_index = sprite_index;
 sprite.image_xscale = image_xscale;

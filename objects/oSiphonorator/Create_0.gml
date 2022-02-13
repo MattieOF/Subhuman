@@ -1,8 +1,50 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-// Inherit the parent event
-event_inherited();
+mp_potential_settings(270, 60, 15, true);
+
+// -------------
+// AI state vars
+// -------------
+playerLastX = pointer_null;
+playerLastY = pointer_null;
+playerInView = false;
+path = undefined;
+
+// Start sight check alarm
+alarm[0] = 1;
+
+// --------------------
+// Function definitions
+// --------------------
+function hurt(_dmg)
+{
+	if (_dmg == undefined) return;
+	create_debris(x, y, sBloodParticle, 8, 2, 0.4);
+	enemyHealth -= _dmg;
+	if (enemyHealth <= 0)
+		die();
+}
+
+function die()
+{
+	instance_destroy(id);
+	oGameManager.gameState.playerScore += value;
+	oGameManager.gameState.enemies[$ id] = undefined;
+}
+
+function hit(_dmg = undefined)
+{
+	hurt(_dmg);
+}
+
+function compute_path()
+{
+	if (path != undefined) path_delete(path);
+	path = path_add();
+	mp_potential_path_object(path, playerInView ? oPlayer.x : playerLastX, playerInView ? oPlayer.y : playerLastY, moveSpeed, 4, oSolid);
+	path_start(path, moveSpeed, path_action_stop, true);
+}
 
 moveSpeed = 1.2;
 
