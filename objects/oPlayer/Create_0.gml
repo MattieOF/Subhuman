@@ -85,7 +85,7 @@ function shoot()
 	switch (loadout[$selectedLoadoutItem].weapon.type)
 	{
 		case weaponType.melee:
-			cast_hitscan(x + lengthdir_x(16, dir), y + lengthdir_y(16, dir), dir, loadout[$selectedLoadoutItem].weapon,,,false);
+			cast_hitscan(x + lengthdir_x(16, dir), y + lengthdir_y(16, dir), dir, loadout[$selectedLoadoutItem].weapon,oWall,oHittable,oHittableSolid,true);
 			shootCooldown = loadout[$selectedLoadoutItem].weapon.rof * room_speed;
 			break;
 		case weaponType.hitscan:

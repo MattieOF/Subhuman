@@ -157,3 +157,10 @@ function random_free_point_in_rect(x1, y1, x2, y2, obj = undefined, tries = 100)
 		Y : _y
 	};
 }
+
+function show_ui_message(_text, _textTime = 1, _bgTime = 0.25)
+{
+	var inst = instance_create_layer(0, 0, layer, oMessage);
+	inst.init(_text, _bgTime, _textTime);
+	return inst;
+}
