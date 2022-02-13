@@ -4,6 +4,7 @@ function setup_game()
 	global.pauseSurface = -1;
 	global.gameOverSurface = -1;
 	global.positions = {};
+	global.doors = {};
 	global.initialised = true;
 	draw_set_font(fntMain);
 

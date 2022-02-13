@@ -28,8 +28,8 @@ function use_selected()
 		if (selectionObj == undefined) return;
 		if (selectedItem == -1 || selectedItem == undefined) return;
 		close_inventory();
-		selectionObj.check_item_used(player.inventory[selectedItem]);
-		if (consume) player.inventory_remove_index(selectedItem);
+		var success = selectionObj.check_item_used(player.inventory[selectedItem]);
+		if (success && consume) player.inventory_remove_index(selectedItem);
 	}
 }
 

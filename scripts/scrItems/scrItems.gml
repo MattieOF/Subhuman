@@ -27,3 +27,7 @@ function items_equal(a, b)
 }
 
 global.itemSandwich = new HealingItem("Sandwich", sTestItem, "Cheese and mushy peas.\nHeals 25 HP.", 25);
+global.itemKeycardLvl1 = new Item("Level 1 Keycard", sTestItem, "Obtained from a dead guy");
+global.itemKeycardLvl2 = new Item("Level 2 Keycard", sTestItem, "Obtained from another dead guy");
+global.itemKeycardLvl5 = new Item("Level 5 Keycard", sTestItem, "Obtained from a dead monster");
+global.itemFuse = new Item("Fuse", sTestItem, "Can be used to activate key card readers");

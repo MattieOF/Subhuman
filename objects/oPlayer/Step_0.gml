@@ -103,6 +103,20 @@ if (instance_exists(oUsable))
 	else oUsable.inRange = false;
 }
 
+if (instance_exists(oFusebox))
+{
+	var fusebox = instance_place(x, y, oFusebox);
+	if (fusebox != noone) fusebox.inRange = true;
+	else oFusebox.inRange = false;
+}
+
+if (instance_exists(oKeycardSlot))
+{
+	var keycardSlot = instance_place(x, y, oKeycardSlot);
+	if (keycardSlot != noone) keycardSlot.inRange = true;
+	else oKeycardSlot.inRange = false;
+}
+
 if (instance_exists(oSpawnTrigger))
 {
 	var trigger = instance_place(x, y, oSpawnTrigger);

@@ -10,9 +10,13 @@ function check_item_used(_item)
 	{
 		play_sound_if_exists(successSound);
 		item_used();
+		return true;
 	}
 	else
+	{
 		play_sound_if_exists(failSound);
+		return false;
+	}
 }
 
 function item_used()

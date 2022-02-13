@@ -1,6 +1,14 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+if (needsFuse)
+	interactable = hasFuse;
+if (needsKeycard)
+	interactable = hasKeycard;
+	
+if (open && ((needsFuse && !hasFuse) || (needsKeycard && !hasKeycard)))
+	alarm[0] = 1;
+
 if (interactable && inRange && control_check_pressed(controls.save))
 {
 	if (open)

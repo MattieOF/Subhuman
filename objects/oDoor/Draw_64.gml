@@ -1,4 +1,4 @@
-/// @description Draw 
+// @description Draw 
 if (!interactable) return;
 if (inRange)
 {

@@ -14,6 +14,8 @@ sprite.image_angle = image_angle;
 lastFrame = sprite_get_number(sprite.sprite_index) - 1;
 sprite_index = sTrigger;
 
+global.doors[$ (doorId == "" ? id : doorId)] = id;
+
 function item_used()
 {
 	open = true;
