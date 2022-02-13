@@ -26,7 +26,7 @@
   "eventList": [],
   "properties": [],
   "overriddenProperties": [
-    {"propertyId":{"name":"itemDrop","path":"objects/oBreakable/oBreakable.yy",},"objectId":{"name":"oBreakable","path":"objects/oBreakable/oBreakable.yy",},"value":"global.item_test","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+    {"propertyId":{"name":"itemDrop","path":"objects/oBreakable/oBreakable.yy",},"objectId":{"name":"oBreakable","path":"objects/oBreakable/oBreakable.yy",},"value":"global.itemSandwich","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
     {"propertyId":{"name":"debrisSprite","path":"objects/oBreakable/oBreakable.yy",},"objectId":{"name":"oBreakable","path":"objects/oBreakable/oBreakable.yy",},"value":"sBarrelDebris","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
   ],
   "parent": {

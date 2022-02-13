@@ -23,9 +23,7 @@ function update_loadout_size()
 }
 
 loadout[$ 0] = new LoadoutItem(global.weaponFists);
-loadout[$ 1] = new LoadoutItem(global.weaponPistol);
-loadout[$ 2] = new LoadoutItem(global.weaponProjectileTest);
-selectedLoadoutItem = 2;
+selectedLoadoutItem = 0;
 update_loadout_size();
 
 // Initialise inventory
@@ -233,7 +231,7 @@ function add_weapon(_weapon, _equip = true)
 			reloading = false;
 			reloadTime = 0;
 		}
-	
+		
 		oHUD.open_loadout_ui();
 	}
 }
@@ -243,8 +241,3 @@ instance_create_layer(0, 0, layer_create(-300, "HUD"), oHUD).init(id);
 instance_create_layer(0, 0, layer_create(-300, "Crosshair"), oCrosshair).init(id);
 instance_create_layer(0, 0, layer_create(-300, "Instances"), oInventoryUI).init(id);
 window_set_cursor(cr_none);
-
-inventory_add(global.item_test);
-inventory_add(global.item_test);
-inventory_add(global.item_test);
-inventory_add(global.item_test);

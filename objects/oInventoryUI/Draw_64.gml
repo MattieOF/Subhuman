@@ -18,7 +18,7 @@ var mouseX = device_mouse_x_to_gui(0), mouseY = device_mouse_y_to_gui(0);
 var itemWidth = 200;
 var itemHeight = 150;
 var itemIndex = 0;
-var rows = 2, columns = 5;
+var rows = player.inventorySlots / 5, columns = 5;
 var startX = 100;
 var currentX = startX, currentY = 200;
 var hoveredIndex = -1;
