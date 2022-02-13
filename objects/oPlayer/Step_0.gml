@@ -103,6 +103,12 @@ if (instance_exists(oUsable))
 	else oUsable.inRange = false;
 }
 
+if (instance_exists(oSpawnTrigger))
+{
+	var trigger = instance_place(x, y, oSpawnTrigger);
+	if (trigger != noone) trigger.on_trigger();
+}
+
 if (currentOverhealTickTime > 0) currentOverhealTickTime--;
 if (currentOverhealTickTime <= 0 && playerHealth > 100)
 {

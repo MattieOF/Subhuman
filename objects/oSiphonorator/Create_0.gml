@@ -4,8 +4,10 @@
 // Inherit the parent event
 event_inherited();
 
-image_xscale = 2;
-image_yscale = 2;
+moveSpeed = 1.2;
+
+image_xscale = 1.5;
+image_yscale = 1.5;
 
 // AI state vars
 attackCooldownTime = 2.5 * room_speed;

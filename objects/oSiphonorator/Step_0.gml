@@ -12,8 +12,8 @@ if (playerInView) image_angle = point_direction(x, y, oPlayer.x, oPlayer.y);
 
 attackCooldown--;
 
-if (moveSpeed > 1.5) moveSpeed -= 0.1;
-if (moveSpeed < 1.5) moveSpeed = 1.5;
+if (moveSpeed > 1.2) moveSpeed -= 0.1;
+if (moveSpeed < 1.2) moveSpeed = 1.2;
 
 if (playerInView && attackCooldown <= 0)
 {

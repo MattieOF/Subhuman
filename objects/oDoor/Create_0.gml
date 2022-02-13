@@ -9,6 +9,7 @@ sprite.image_speed = 0;
 sprite.sprite_index = sprite_index;
 sprite.image_xscale = image_xscale;
 sprite.image_yscale = image_yscale;
+sprite.image_angle = image_angle;
 lastFrame = sprite_get_number(sprite.sprite_index) - 1;
 sprite_index = sTrigger;
 

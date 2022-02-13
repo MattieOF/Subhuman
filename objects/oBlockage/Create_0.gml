@@ -9,6 +9,8 @@ opening = false;
 
 function hit(_dmg = undefined)
 {
+	if (open) return;
+	
 	if (_dmg == undefined || _dmg < requiredDmg)
 	{
 		show_ui_message("I'm going to need something more powerful", 2.5);
