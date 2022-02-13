@@ -40,12 +40,14 @@ function save(filename = "savegame.json")
 	gameState.playerHealth = oPlayer.playerHealth;
 	gameState.playerSelectedLoadoutItem = oPlayer.selectedLoadoutItem;
 	gameState.droppedItems = array_create(0);
+	gameState.weaponPickups = {};
 	
+	// Save items
 	with (oItem)
 	{
 		if (pickupable)
 		{
-			itemObject = 
+			var itemObject = 
 			{
 				itemInfo : item,
 				X : x,
@@ -53,6 +55,13 @@ function save(filename = "savegame.json")
 			}
 			array_push(oGameManager.gameState.droppedItems, itemObject);
 		}
+	}
+	
+	// Save weapon pickups
+	with (oWeaponPickup)
+	{
+		if (pickupable)
+			oGameManager.gameState.weaponPickups[$ id] = true;
 	}
 	
 	// Save usables
@@ -122,6 +131,20 @@ function load(filename = "savegame.json")
 	{
 		var current = gameState.droppedItems[i];
 		instance_create_layer(current.X, current.Y, "Level", oItem).init(current.itemInfo);
+	}
+	
+	// Reload weapon pickups
+	// If dynamic weapon pickups are needed, do something similar to how we save items
+	// Have a boolean in the pickup called "dynamic" that we can set to true if it was
+	// dropped at runtime and is not part of the level. If it's true, execute the code
+	// similar to how we save items, otherwise use this method.
+	with (oWeaponPickup) 
+	{
+		if (oGameManager.gameState.weaponPickups[$ id] == undefined)
+		{
+			instance_destroy(sprite);
+			instance_destroy(id);
+		}
 	}
 	
 	// Load usables
