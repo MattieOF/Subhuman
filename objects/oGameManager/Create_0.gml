@@ -17,6 +17,15 @@ alarm[0] = 1;
 
 function save(filename = "savegame.json")
 {
+	// Save player, initialise state struct
+	gameState.playerLoadout = oPlayer.loadout;
+	gameState.playerInv = oPlayer.inventory;
+	gameState.playerHealth = oPlayer.playerHealth;
+	gameState.playerSelectedLoadoutItem = oPlayer.selectedLoadoutItem;
+	gameState.droppedItems = array_create(0);
+	gameState.weaponPickups = {};
+	
+	// Save enemies
 	var keys = variable_struct_get_names(gameState.enemies);
 	for (var i = array_length(keys) - 1; i >= 0; --i) 
 	{
@@ -35,12 +44,6 @@ function save(filename = "savegame.json")
 			gameState.enemies[$ k].Y = global.tempY;
 		}
 	}
-	gameState.playerLoadout = oPlayer.loadout;
-	gameState.playerInv = oPlayer.inventory;
-	gameState.playerHealth = oPlayer.playerHealth;
-	gameState.playerSelectedLoadoutItem = oPlayer.selectedLoadoutItem;
-	gameState.droppedItems = array_create(0);
-	gameState.weaponPickups = {};
 	
 	// Save items
 	with (oItem)
@@ -168,11 +171,11 @@ function load(filename = "savegame.json")
 	// Load breakables
 	with (oBreakable)
 		if (oGameManager.gameState.breakables[$ id] != true) instance_destroy(id); 
-		
+	
 	// Load blockages
 	with (oBlockage)
 		if (oGameManager.gameState.blockages[$ id]) open_blockage(true);
-		
+	
 	// Load ticks
 	for (var i = 0; i < array_length(gameState.ticks); i++)
 	{

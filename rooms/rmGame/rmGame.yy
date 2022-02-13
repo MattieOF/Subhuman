@@ -94,6 +94,7 @@
             {"propertyId":{"name":"timeOpen","path":"objects/oDoor/oDoor.yy",},"objectId":{"name":"oDoor","path":"objects/oDoor/oDoor.yy",},"value":"10","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
           ],"isDnd":false,"objectId":{"name":"oDoor","path":"objects/oDoor/oDoor.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.5,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":1488.0,"y":624.0,"resourceVersion":"1.0","name":"inst_EFC645A","tags":[],"resourceType":"GMRInstance",},
         {"properties":[],"isDnd":false,"objectId":{"name":"oBlockage","path":"objects/oBlockage/oBlockage.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":2336.0,"y":576.0,"resourceVersion":"1.0","name":"inst_33D15797","tags":[],"resourceType":"GMRInstance",},
+        {"properties":[],"isDnd":false,"objectId":{"name":"oBarrel","path":"objects/oBarrel/oBarrel.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":2208.0,"y":896.0,"resourceVersion":"1.0","name":"inst_6B598E8D","tags":[],"resourceType":"GMRInstance",},
       ],"visible":true,"depth":-100,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":32,"gridY":32,"layers":[],"hierarchyFrozen":false,"effectEnabled":true,"effectType":null,"properties":[],"resourceVersion":"1.0","name":"Level","tags":[],"resourceType":"GMRInstanceLayer",},
     {"instances":[],"visible":true,"depth":0,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":32,"gridY":32,"layers":[],"hierarchyFrozen":false,"effectEnabled":true,"effectType":null,"properties":[],"resourceVersion":"1.0","name":"Breakables","tags":[],"resourceType":"GMRInstanceLayer",},
     {"visible":true,"depth":100,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":32,"gridY":32,"layers":[],"hierarchyFrozen":false,"effectEnabled":true,"effectType":"_filter_underwater","properties":[
@@ -161,6 +162,7 @@
     {"name":"door_hallwayRight","path":"rooms/rmGame/rmGame.yy",},
     {"name":"inst_EFC645A","path":"rooms/rmGame/rmGame.yy",},
     {"name":"inst_33D15797","path":"rooms/rmGame/rmGame.yy",},
+    {"name":"inst_6B598E8D","path":"rooms/rmGame/rmGame.yy",},
   ],
   "inheritCreationOrder": false,
   "sequenceId": null,

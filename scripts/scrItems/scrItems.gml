@@ -26,4 +26,4 @@ function items_equal(a, b)
 	return a.name == b.name && a.sprite == b.sprite && a.desc == b.desc;
 }
 
-global.itemSandwich = new HealingItem("Sandwich", sTestItem, "Cheese and mushy peas.", 25);
+global.itemSandwich = new HealingItem("Sandwich", sTestItem, "Cheese and mushy peas.\nHeals 25 HP.", 25);
