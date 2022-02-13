@@ -16,6 +16,8 @@ areaAlpha = 0;
 area = noone;
 previousArea = noone;
 
+ventEffectLayer = layer_get_id("VentDarken");
+
 function init(_playerId)
 {
 	player = _playerId;

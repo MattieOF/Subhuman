@@ -27,3 +27,11 @@ with (oPlayer)
 
 if (area != previousArea && area != noone)
 	areaAlpha = 3;
+	
+with (oPlayer)
+{
+	if (place_meeting(x, y, oVent))
+		layer_set_visible(oHUD.ventEffectLayer, true);
+	else
+		layer_set_visible(oHUD.ventEffectLayer, false);
+}
