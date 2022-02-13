@@ -1,9 +1,10 @@
-- Gun pickup
 - Completed demo level
 - Win screen; summary of player score
 	- Perhaps a small new game+ thing
 - Art lol
 - Sound
+
+THESE WILL NOT HAPPEN BEFORE THE DEADLINE
 - Unlockables (notes, concept art, secret level - maybe you could visit the movement test lol)
 - Unlockables menu
 
