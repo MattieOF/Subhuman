@@ -89,6 +89,11 @@ function save(filename = "savegame.json")
 	gameState.blockages = {};
 	with (oBlockage)
 		oGameManager.gameState.blockages[$ id] = open;
+		
+	// Save vent covers
+	gameState.vents = {};
+	with (oVentCover)
+		oGameManager.gameState.vents[$ id] = true;
 	
 	// Save ticks
 	gameState.ticks = array_create(0);
@@ -175,6 +180,10 @@ function load(filename = "savegame.json")
 	// Load blockages
 	with (oBlockage)
 		if (oGameManager.gameState.blockages[$ id]) open_blockage(true);
+		
+	// Load vents
+	with (oVentCover)
+		if (oGameManager.gameState.vents[$ id] == undefined) break_vent();
 	
 	// Load ticks
 	for (var i = 0; i < array_length(gameState.ticks); i++)
