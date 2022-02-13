@@ -24,6 +24,7 @@ function update_loadout_size()
 
 loadout[$ 0] = new LoadoutItem(global.weaponFists);
 if (global.debug) loadout[$ 1] = new LoadoutItem(global.weaponDebug);
+if (global.debug) loadout[$ 2] = new LoadoutItem(global.weaponCrowbar);
 selectedLoadoutItem = 0;
 update_loadout_size();
 

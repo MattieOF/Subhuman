@@ -16,6 +16,6 @@ sprite_index = sTrigger;
 function item_used()
 {
 	open = true;
-	sprite.image_speed = 1;
 	interactable = false;
+	sprite.image_speed = 1;
 }

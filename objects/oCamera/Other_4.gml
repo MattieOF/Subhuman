@@ -17,6 +17,8 @@ cameraWidth = 683;
 cameraHeight = 384;
 zoom = 1; // Factor of viewport size
 
+if (room == rmGame) zoom = 1.25;
+
 // Setup camera in room
 view_enabled = true;
 view_visible[0] = true;

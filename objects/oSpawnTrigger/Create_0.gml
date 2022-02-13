@@ -1,7 +1,10 @@
 /// @description Insert description here
 
+triggerable = true;
+
 function on_trigger()
 {
+	if (!triggerable) return;
 	if (global.positions[$ positionId] == undefined) return;
 	if (!object_exists(objectToSpawn)) return;
 	if (layerToSpawnOn == undefined) layerToSpawnOn = layer;
