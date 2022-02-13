@@ -1,6 +1,7 @@
 {
   "resources": [
     {"id":{"name":"scrGeneralUtility","path":"scripts/scrGeneralUtility/scrGeneralUtility.yy",},"order":7,},
+    {"id":{"name":"sVentCover","path":"sprites/sVentCover/sVentCover.yy",},"order":0,},
     {"id":{"name":"sBloodParticle","path":"sprites/sBloodParticle/sBloodParticle.yy",},"order":3,},
     {"id":{"name":"sBlockageOpen","path":"sprites/sBlockageOpen/sBlockageOpen.yy",},"order":2,},
     {"id":{"name":"sTestDebris","path":"sprites/sTestDebris/sTestDebris.yy",},"order":2,},
@@ -60,6 +61,7 @@
     {"id":{"name":"sPressEnter","path":"sprites/sPressEnter/sPressEnter.yy",},"order":0,},
     {"id":{"name":"oPlayer","path":"objects/oPlayer/oPlayer.yy",},"order":0,},
     {"id":{"name":"scrIniExtensions","path":"scripts/scrIniExtensions/scrIniExtensions.yy",},"order":2,},
+    {"id":{"name":"oVentCover","path":"objects/oVentCover/oVentCover.yy",},"order":10,},
     {"id":{"name":"oMoveTestPlayer","path":"objects/oMoveTestPlayer/oMoveTestPlayer.yy",},"order":0,},
     {"id":{"name":"scrItems","path":"scripts/scrItems/scrItems.yy",},"order":17,},
     {"id":{"name":"oPauseMenu","path":"objects/oPauseMenu/oPauseMenu.yy",},"order":2,},
@@ -67,6 +69,7 @@
     {"id":{"name":"scrDrawUtils","path":"scripts/scrDrawUtils/scrDrawUtils.yy",},"order":9,},
     {"id":{"name":"oCamera","path":"objects/oCamera/oCamera.yy",},"order":1,},
     {"id":{"name":"scrSaveLocation","path":"scripts/scrSaveLocation/scrSaveLocation.yy",},"order":16,},
+    {"id":{"name":"sEmpty","path":"sprites/sEmpty/sEmpty.yy",},"order":15,},
     {"id":{"name":"oGameOver","path":"objects/oGameOver/oGameOver.yy",},"order":6,},
     {"id":{"name":"oWall","path":"objects/oWall/oWall.yy",},"order":5,},
     {"id":{"name":"oArea","path":"objects/oArea/oArea.yy",},"order":7,},
@@ -96,6 +99,7 @@
     {"id":{"name":"oSiphonorator","path":"objects/oSiphonorator/oSiphonorator.yy",},"order":1,},
     {"id":{"name":"oVent","path":"objects/oVent/oVent.yy",},"order":9,},
     {"id":{"name":"sTickLatched","path":"sprites/sTickLatched/sTickLatched.yy",},"order":3,},
+    {"id":{"name":"sVentCoverBroken","path":"sprites/sVentCoverBroken/sVentCoverBroken.yy",},"order":1,},
     {"id":{"name":"oSolid","path":"objects/oSolid/oSolid.yy",},"order":4,},
     {"id":{"name":"oProjectile","path":"objects/oProjectile/oProjectile.yy",},"order":0,},
     {"id":{"name":"sTickSpawn","path":"sprites/sTickSpawn/sTickSpawn.yy",},"order":2,},
@@ -156,6 +160,7 @@
     {"folderPath":"folders/Sprites/Game/Enemy.yy","order":8,"resourceVersion":"1.0","name":"Enemy","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Sprites/Game/Enemy/Tick.yy","order":1,"resourceVersion":"1.0","name":"Tick","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Sprites/Game/Blockage.yy","order":12,"resourceVersion":"1.0","name":"Blockage","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Sprites/Game/Vent.yy","order":14,"resourceVersion":"1.0","name":"Vent","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [
     {"targets":-1,"resourceVersion":"1.3","name":"audiogroup_default","resourceType":"GMAudioGroup",},
