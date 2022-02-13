@@ -1,4 +1,3 @@
-- Blood effect when almost dead
 - Gun pickup
 - Completed demo level
 - Win screen; summary of player score

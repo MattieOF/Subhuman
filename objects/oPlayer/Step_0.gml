@@ -89,6 +89,13 @@ if (instance_exists(oItem))
 	else oItem.inRange = false;
 }
 
+if (instance_exists(oWeaponPickup))
+{
+	var weaponPickup = instance_place(x, y, oWeaponPickup);
+	if (weaponPickup != noone) weaponPickup.inRange = true;
+	else oWeaponPickup.inRange = false;
+}
+
 if (instance_exists(oUsable))
 {
 	var usable = instance_place(x, y, oUsable);

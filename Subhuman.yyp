@@ -81,6 +81,7 @@
     {"id":{"name":"oMoveTestSpecificCollision","path":"objects/oMoveTestSpecificCollision/oMoveTestSpecificCollision.yy",},"order":3,},
     {"id":{"name":"oGameManager","path":"objects/oGameManager/oGameManager.yy",},"order":9,},
     {"id":{"name":"sTestWall","path":"sprites/sTestWall/sTestWall.yy",},"order":1,},
+    {"id":{"name":"oWeaponPickup","path":"objects/oWeaponPickup/oWeaponPickup.yy",},"order":6,},
     {"id":{"name":"oMainMenu","path":"objects/oMainMenu/oMainMenu.yy",},"order":1,},
     {"id":{"name":"oScreenshot","path":"objects/oScreenshot/oScreenshot.yy",},"order":3,},
     {"id":{"name":"sBarrel","path":"sprites/sBarrel/sBarrel.yy",},"order":8,},

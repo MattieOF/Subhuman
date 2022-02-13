@@ -217,6 +217,27 @@ function hit(_dmg = undefined)
 	hurt(_dmg);
 }
 
+function add_weapon(_weapon, _equip = true)
+{
+	var index = 0;
+	while (loadout[$ index] != undefined) index++;
+	loadout[$ index] = new LoadoutItem(_weapon);
+	update_loadout_size();
+	
+	if (_equip) 
+	{
+		selectedLoadoutItem = index;
+		
+		if (reloading)
+		{
+			reloading = false;
+			reloadTime = 0;
+		}
+	
+		oHUD.open_loadout_ui();
+	}
+}
+
 // Create hud
 instance_create_layer(0, 0, layer_create(-300, "HUD"), oHUD).init(id);
 instance_create_layer(0, 0, layer_create(-300, "Crosshair"), oCrosshair).init(id);
