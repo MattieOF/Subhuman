@@ -30,20 +30,27 @@ for (var i = 0; i < rows; i++)
 		draw_set_color(c_black);
 		draw_rectangle(currentX, currentY, currentX + itemWidth, currentY + itemHeight, true);
 		
-		if (selectedItem == itemIndex) draw_set_color(selectedColor);
-		else if (point_in_rectangle(mouseX, mouseY, currentX + 1, currentY + 1, currentX + itemWidth, currentY + itemHeight)) 
+		if (point_in_rectangle(mouseX, mouseY, currentX + 1, currentY + 1, currentX + itemWidth, currentY + itemHeight)) 
 		{
 			draw_set_color(hoveredColor);
+			if (selectedItem == itemIndex) draw_set_color(selectedColor);
 			hoveredIndex = itemIndex;
 			
 			if (player.inventory[itemIndex] != pointer_null)
 			{
-				if (mouse_check_button(mb_left) && selectionObj != undefined)
+				if (mouse_check_button(mb_left))
+				{
 					selectedItem = itemIndex;
+					if (selectionObj == undefined && player.inventory[selectedItem].use != itemUse.none)
+						instance_activate_layer("UseUI");
+					else
+						instance_deactivate_layer("UseUI");
+				}
 				else if (mouse_check_button(mb_right))
 					drop(itemIndex);
 			}
 		}
+		else if (selectedItem == itemIndex) draw_set_color(selectedColor);
 		else draw_set_color(normalColor);
 		
 		draw_rectangle(currentX, currentY, currentX + itemWidth, currentY + itemHeight, false);

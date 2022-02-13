@@ -33,10 +33,30 @@ function use_selected()
 	}
 }
 
+function use_in_inv()
+{
+	with (global.inv)
+	{
+		if (selectedItem == -1 || selectedItem == undefined) return;
+		
+		switch (player.inventory[selectedItem].use)
+		{
+			case itemUse.none: return;
+			case itemUse.healing:
+				close_inventory();
+				oPlayer.heal(player.inventory[selectedItem].healAmount);
+				player.inventory_remove_index(selectedItem);
+				break;
+		}
+	}
+}
+
 function drop(_index)
 {
 	instance_create_layer(player.x, player.y, "Level", oItem).init(player.inventory[_index]);
 	player.inventory_remove_index(_index);
+	if (selectedItem == _index) selectedItem = -1;
+	instance_deactivate_layer("UseUI");
 }
 
 function open_inventory(_selectionObj = undefined, _consume = false)
@@ -73,3 +93,8 @@ add_to_stack(create_button(0, 0, 150, 40, "Select", use_selected,,,,,,fa_left));
 add_to_stack(create_button(0, 0, 150, 40, "Cancel", close_inventory,,,,,,fa_left));
 end_stack();
 instance_deactivate_layer("SelectionUI");
+
+start_stack("UseUI", 100, global.displayHeight - 100, 10, stackDir.horizontal, false);
+add_to_stack(create_button(0, 0, 150, 40, "Use", use_in_inv,,,,,,fa_left));
+end_stack();
+instance_deactivate_layer("UseUI");
