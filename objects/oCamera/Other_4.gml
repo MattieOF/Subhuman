@@ -15,7 +15,7 @@ target = oPlayer;
 // Viewport properties
 cameraWidth = 683;
 cameraHeight = 384;
-zoom = 2; // Factor of viewport size
+zoom = 1; // Factor of viewport size
 
 // Setup camera in room
 view_enabled = true;
@@ -34,7 +34,7 @@ window_set_size(global.displayWidth, global.displayHeight);
 
 // Set render surface to the size of the window, not the size of the camera
 surface_resize(application_surface, global.displayWidth, global.displayHeight);
-display_set_gui_size(cameraWidth * zoom, cameraHeight * zoom); // Same for GUI
+display_set_gui_size(global.displayWidth, global.displayHeight); // Same for GUI
 
 // Center window after one frame
 alarm[0] = 1;

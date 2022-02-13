@@ -123,7 +123,7 @@ function set_debugmode(value)
 	global.debug = value;
 }
 
-start_stack("MainMenu", room_width / 2, room_height / 2 - 50);
+start_stack("MainMenu", room_width / 2, room_height / 2 - 50,,,false);
 if (save_exists()) add_to_stack(create_button(0, 0, 150, 50, "Continue", load_game, id));
 add_to_stack(create_button(0, 0, 150, 50, "New Game", start_game, id));
 add_to_stack(create_button(0, 0, 150, 50, "Options", open_options));
@@ -132,7 +132,7 @@ add_to_stack(create_button(0, 0, 150, 50, "Quit Game", quit_game,,,,c_red,make_c
 end_stack();
 instance_deactivate_layer("MainMenu");
 
-start_stack("Options", room_width / 2, 250);
+start_stack("Options", room_width / 2, 250,,,false);
 add_to_stack(create_label(0, 0, "Options"));
 add_stack_spacing(50);
 add_to_stack(create_checkbox(0, 0, "Fullscreen", set_fullscreen, window_get_fullscreen()));
@@ -144,7 +144,7 @@ add_to_stack(create_button(0, 0, 150, 50, "Back", close_options));
 end_stack();
 instance_deactivate_layer("Options");
 
-start_stack("AccessibilityOptions", room_width / 2, 250);
+start_stack("AccessibilityOptions", room_width / 2, 250,,,false);
 add_to_stack(create_label(0, 0, "Accessibility Options"));
 add_stack_spacing(50);
 add_to_stack(create_checkbox(0, 0, "Menu Distortion Effect", set_menu_effect_enabled, global.distortEnabled));
@@ -153,7 +153,7 @@ add_to_stack(create_button(0, 0, 150, 50, "Back", close_accessibility_options));
 end_stack();
 instance_deactivate_layer("AccessibilityOptions");
 
-start_stack("NewSave", room_width / 2, 250);
+start_stack("NewSave", room_width / 2, 250,,,false);
 add_to_stack(create_label(0, 0, "New save?",,c_red));
 add_to_stack(create_label(0, 0, "This will delete your previous save and start over"));
 add_stack_spacing(50);
