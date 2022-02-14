@@ -1,4 +1,3 @@
-- Assault rifle as alternative to shotgun
 - Sound
 - Art lol
 

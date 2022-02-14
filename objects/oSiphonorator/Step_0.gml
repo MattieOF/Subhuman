@@ -21,12 +21,13 @@ if (playerInView && attackCooldown <= 0)
 		var attack = choose(throw_goo_ball, summon_tick);
 		
 	var playerDist = point_distance(x, y, oPlayer.x, oPlayer.y);
-	if (playerDist < 120) attack = melee;
+	if (playerDist < 120 && vulnerable) melee();
+	else if (playerDist < 120) attack = melee;
 	attack();
 	attackCooldown = attackCooldownTime;
 }
 
-if (vulnerable && place_meeting(x, y, oVentSiphonorator))
+if (place_meeting(x, y, oVentSiphonorator))
 {
 	image_xscale = approach(image_xscale, 0.8, 0.05);
 	image_yscale = approach(image_yscale, 0.8, 0.05);
