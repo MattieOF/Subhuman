@@ -17,7 +17,11 @@ switch (state)
 		break;
 	case 3:
 		if (scoreAlpha < 1) scoreAlpha += 0.02;
-		else state = 4;
+		else 
+		{
+			state = 4;
+			audio_play_sound(sndClick, 0, true);
+		}
 		break;
 	case 4:
 		if (currentEnemyValue < data.enemyValue) 
@@ -32,7 +36,11 @@ switch (state)
 	case 6:
 		if (currentTimeScoreValue < timeScore) 
 			currentTimeScoreValue = min(timeScore, currentTimeScoreValue + 40);
-		else state = 7;
+		else 
+		{
+			audio_stop_sound(sndClick);
+			state = 7;
+		}
 		break;
 	case 7:
 		if (pressEnterAlpha < 1) pressEnterAlpha += 0.02;

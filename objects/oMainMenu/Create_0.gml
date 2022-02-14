@@ -1,6 +1,7 @@
 /// @description Init game, declare vars
 if (!variable_global_exists("initialised")) setup_game();
 refresh_menu_effect();
+audio_stop_all();
 
 pressEnterFrame = 0;
 pressEnterAlpha = 1;

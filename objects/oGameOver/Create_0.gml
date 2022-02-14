@@ -2,6 +2,7 @@
 // You can write your code in this editor
 
 tint = 0;
+audio_play_sound(sndGameOver, 0, false);
 
 function load_checkpoint()
 {

@@ -2,6 +2,8 @@
 
 randomise();
 
+audio_stop_all();
+
 // Initialise game state struct
 gameState = 
 {
