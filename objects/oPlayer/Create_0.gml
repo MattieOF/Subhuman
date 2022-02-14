@@ -224,11 +224,15 @@ function hit(_dmg = undefined)
 	hurt(_dmg);
 }
 
-function add_weapon(_weapon, _equip = true)
+function add_weapon(_weapon, _equip = true, _clip = undefined, _reserve = undefined)
 {
 	var index = 0;
 	while (loadout[$ index] != undefined) index++;
 	loadout[$ index] = new LoadoutItem(_weapon);
+	if (_clip != undefined)
+		loadout[$ index].ammoClip = _clip;
+	if (_reserve != undefined)
+		loadout[$ index].ammoReserve = _reserve;
 	update_loadout_size();
 	
 	if (_equip) 

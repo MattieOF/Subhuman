@@ -26,7 +26,7 @@ function init(_weapon)
 
 function pickup()
 {
-	oPlayer.add_weapon(weapon);
+	oPlayer.add_weapon(weapon, true, clipOverride, reserveOverride);
 	instance_destroy(sprite);
 	pickupable = false;
 	uiState = 1;

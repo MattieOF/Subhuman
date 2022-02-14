@@ -1,0 +1,1 @@
+init(global.itemKeycardLvl1);
