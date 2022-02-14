@@ -288,7 +288,7 @@
         {"properties":[
             {"propertyId":{"name":"clipOverride","path":"objects/oWeaponPickup/oWeaponPickup.yy",},"objectId":{"name":"oWeaponPickup","path":"objects/oWeaponPickup/oWeaponPickup.yy",},"value":"0","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
             {"propertyId":{"name":"reserveOverride","path":"objects/oWeaponPickup/oWeaponPickup.yy",},"objectId":{"name":"oWeaponPickup","path":"objects/oWeaponPickup/oWeaponPickup.yy",},"value":"0","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
-          ],"isDnd":false,"objectId":{"name":"oWeaponPickup","path":"objects/oWeaponPickup/oWeaponPickup.yy",},"inheritCode":false,"hasCreationCode":true,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":3991.0,"y":746.0,"resourceVersion":"1.0","name":"weaponPickup_shotgun","tags":[],"resourceType":"GMRInstance",},
+          ],"isDnd":false,"objectId":{"name":"oWeaponPickup","path":"objects/oWeaponPickup/oWeaponPickup.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":3991.0,"y":746.0,"resourceVersion":"1.0","name":"weaponPickup_final","tags":[],"resourceType":"GMRInstance",},
         {"properties":[],"isDnd":false,"objectId":{"name":"oSpawnTrigger","path":"objects/oSpawnTrigger/oSpawnTrigger.yy",},"inheritCode":false,"hasCreationCode":true,"colour":4294967295,"rotation":0.0,"scaleX":0.453125,"scaleY":0.7499647,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":3747.0,"y":784.007,"resourceVersion":"1.0","name":"spawnTrigger_level1Keycardmsg","tags":[],"resourceType":"GMRInstance",},
         {"properties":[
             {"propertyId":{"name":"baked","path":"objects/oItem/oItem.yy",},"objectId":{"name":"oItem","path":"objects/oItem/oItem.yy",},"value":"True","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
@@ -345,6 +345,7 @@
   "creationCodeFile": "",
   "inheritCode": false,
   "instanceCreationOrder": [
+    {"name":"inst_38533EE6","path":"rooms/rmGame/rmGame.yy",},
     {"name":"inst_65E2EAF9","path":"rooms/rmGame/rmGame.yy",},
     {"name":"inst_71F194CD","path":"rooms/rmGame/rmGame.yy",},
     {"name":"inst_5051A619","path":"rooms/rmGame/rmGame.yy",},
@@ -467,7 +468,7 @@
     {"name":"keycardSlot_right","path":"rooms/rmGame/rmGame.yy",},
     {"name":"fuseBox_right","path":"rooms/rmGame/rmGame.yy",},
     {"name":"inst_1C4191A2","path":"rooms/rmGame/rmGame.yy",},
-    {"name":"weaponPickup_shotgun","path":"rooms/rmGame/rmGame.yy",},
+    {"name":"weaponPickup_final","path":"rooms/rmGame/rmGame.yy",},
     {"name":"inst_106444A3","path":"rooms/rmGame/rmGame.yy",},
     {"name":"inst_2BF57CDD","path":"rooms/rmGame/rmGame.yy",},
     {"name":"inst_3D0B70FA","path":"rooms/rmGame/rmGame.yy",},
@@ -485,7 +486,6 @@
     {"name":"inst_3D5CE514","path":"rooms/rmGame/rmGame.yy",},
     {"name":"inst_660F69","path":"rooms/rmGame/rmGame.yy",},
     {"name":"spawnTrigger_level1Keycardmsg","path":"rooms/rmGame/rmGame.yy",},
-    {"name":"inst_38533EE6","path":"rooms/rmGame/rmGame.yy",},
     {"name":"pickup_lvl2keycard","path":"rooms/rmGame/rmGame.yy",},
     {"name":"area_lab","path":"rooms/rmGame/rmGame.yy",},
     {"name":"area_thegoal","path":"rooms/rmGame/rmGame.yy",},

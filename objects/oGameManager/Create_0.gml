@@ -1,5 +1,7 @@
 /// @description Function defs
 
+randomise();
+
 // Initialise game state struct
 gameState = 
 {
@@ -15,6 +17,22 @@ saveLocations =
 
 alarm[0] = 1;
 
+// 0 = shotgun
+// 1 = assault rifle
+finalWeapon = choose(0, 1);
+alarm[1] = 1;
+
+function init_final_weapon()
+{
+	if (instance_exists(oFissuratorBullets))
+	{
+		with (oFissuratorBullets)
+			sprite.image_index = oGameManager.finalWeapon;
+	}
+	if (instance_exists(weaponPickup_final))
+		weaponPickup_final.init(finalWeapon == 0 ? global.weaponShotgun : global.weaponAssaultRifle);
+}
+
 function save(filename = "savegame.json")
 {
 	// Save player, initialise state struct
@@ -25,6 +43,7 @@ function save(filename = "savegame.json")
 	gameState.droppedItems = array_create(0);
 	gameState.weaponPickups = {};
 	gameState.ticksPlayed = oTimer.ticks;
+	gameState.finalWeapon = finalWeapon;
 	
 	// Save enemies
 	var keys = variable_struct_get_names(gameState.enemies);
@@ -184,6 +203,15 @@ function load(filename = "savegame.json")
 	oPlayer.inventory = gameState.playerInv;
 	
 	oTimer.ticks = gameState.ticksPlayed;
+	
+	finalWeapon = gameState.finalWeapon;
+	if (instance_exists(oFissuratorBullets))
+	{
+		with (oFissuratorBullets)
+			sprite.image_index = oGameManager.finalWeapon;
+	}
+	if (instance_exists(weaponPickup_final))
+		weaponPickup_final.init(finalWeapon == 0 ? global.weaponShotgun : global.weaponAssaultRifle);
 	
 	// Reload baked dropped items
 	with (oItem)

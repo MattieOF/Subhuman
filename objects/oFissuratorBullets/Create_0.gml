@@ -29,13 +29,15 @@ function pickup()
 	if (!instance_exists(oSiphonorator)) return;
 	oSiphonorator.vulnerable = true;
 	
+	var name = oGameManager.finalWeapon == 0 ? global.weaponShotgun.name : global.weaponAssaultRifle.name;
 	var index = 0;
 	while (index < oPlayer.loadoutSize)
 	{
-		if (oPlayer.loadout[$ index].weapon.name == "Shotgun")
+		if (oPlayer.loadout[$ index].weapon.name == name)
 		{
-			oPlayer.loadout[$ index].ammoClip = global.weaponShotgun.ammoClip;
-			oPlayer.loadout[$ index].ammoReserve = global.weaponShotgun.ammoReserve;
+			var wpn = oGameManager.finalWeapon == 0 ? global.weaponShotgun : global.weaponAssaultRifle;
+			oPlayer.loadout[$ index].ammoClip = wpn.ammoClip;
+			oPlayer.loadout[$ index].ammoReserve = wpn.ammoReserve;
 			break;
 		}
 		index++;

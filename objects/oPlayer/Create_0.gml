@@ -25,9 +25,9 @@ function update_loadout_size()
 loadout[$ 0] = new LoadoutItem(global.weaponFists);
 if (global.debug) loadout[$ 1] = new LoadoutItem(global.weaponDebug);
 if (global.debug) loadout[$ 2] = new LoadoutItem(global.weaponCrowbar);
-if (global.debug) loadout[$ 3] = new LoadoutItem(global.weaponShotgun);
-if (global.debug) loadout[$ 4] = new LoadoutItem(global.weaponProjectileTest);
-if (global.debug) loadout[$ 5] = new LoadoutItem(global.weaponAssaultRifle);
+// if (global.debug) loadout[$ 3] = new LoadoutItem(global.weaponShotgun);
+if (global.debug) loadout[$ 3] = new LoadoutItem(global.weaponProjectileTest);
+// if (global.debug) loadout[$ 5] = new LoadoutItem(global.weaponAssaultRifle);
 selectedLoadoutItem = 0;
 update_loadout_size();
 
