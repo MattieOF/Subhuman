@@ -40,6 +40,7 @@ switch (state) {
 		draw_text(global.displayWidth / 4, (global.displayHeight / 4) + 22, "1 - Reset controls");
 		draw_text(global.displayWidth / 4, (global.displayHeight / 4) + 44, "2 - Go to movement test");
 		draw_text(global.displayWidth / 4, (global.displayHeight / 4) + 66, "3 - Delete save");
+		draw_text(global.displayWidth / 4, (global.displayHeight / 4) + 88, "4 - Test end game");
 		break;
     default:
 		show_debug_message("state switch broken!");

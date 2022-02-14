@@ -24,6 +24,7 @@ function save(filename = "savegame.json")
 	gameState.playerSelectedLoadoutItem = oPlayer.selectedLoadoutItem;
 	gameState.droppedItems = array_create(0);
 	gameState.weaponPickups = {};
+	gameState.ticksPlayed = oTimer.ticks;
 	
 	// Save enemies
 	var keys = variable_struct_get_names(gameState.enemies);
@@ -181,6 +182,8 @@ function load(filename = "savegame.json")
 	oPlayer.set_loadout(gameState.playerLoadout);
 	oPlayer.selectedLoadoutItem = gameState.playerSelectedLoadoutItem;
 	oPlayer.inventory = gameState.playerInv;
+	
+	oTimer.ticks = gameState.ticksPlayed;
 	
 	// Reload baked dropped items
 	with (oItem)

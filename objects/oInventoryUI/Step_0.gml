@@ -4,7 +4,7 @@ if (control_check_pressed(controls.openInventory) || control_check_pressed(contr
 {
 	switch (state)
 	{
-		case 0: open_inventory(); break;
+		case 0: if (control_check_pressed(controls.openInventory)) open_inventory(); break;
 		case 1:
 		case 2: close_inventory(); break;
 		case 3: close_note(); break;

@@ -66,6 +66,16 @@ if (state == 69)
 		if (file_exists("savegame.json")) file_delete("savegame.json");
 		room_restart();
 	}
+	else if (keyboard_check_pressed(ord("4"))) 
+	{
+		randomise();
+		global.completionData =
+		{
+			enemyValue : random_range(1000, 4000),
+			ticksPlayed : random_range(120 * room_speed, 700 * room_speed)
+		};
+		room_goto(rmGameComplete); 
+	}
 }
 
 if (control_check_pressed(controls.quit))
