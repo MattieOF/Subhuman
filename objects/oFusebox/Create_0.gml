@@ -28,15 +28,19 @@ function check_item_used(_item)
 	}
 }
 
+function set_has_fuse(_val)
+{
+	hasFuse = _val;
+	image_index = _val ? 1 : 0;
+	requiresItem = !_val;
+	global.doors[$ doorId].hasFuse = _val;
+}
+set_has_fuse(hasFuseOnStart);
+
 function item_used()
 {
 	if (hasFuse && oPlayer.inventory_full()) return;
-	
-	hasFuse = !hasFuse;
-	image_index = image_index == 1 ? 0 : 1;
-	requiresItem = !requiresItem;
-	if (!hasFuse)
+	if (hasFuse)
 		oPlayer.inventory_add(global.itemFuse);
-	
-	global.doors[$ doorId].hasFuse = hasFuse;
+	set_has_fuse(!hasFuse);
 }

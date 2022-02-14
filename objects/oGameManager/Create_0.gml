@@ -257,7 +257,7 @@ function load(filename = "savegame.json")
 	
 	// Load fuseboxes
 	with (oFusebox)
-		if (oGameManager.gameState.fuseboxes[$ id]) item_used();
+		set_has_fuse(oGameManager.gameState.fuseboxes[$ id]);
 		
 	// Load keycard slots
 	with (oKeycardSlot)
