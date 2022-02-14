@@ -15,7 +15,11 @@ if (moveSpeed < 1.2) moveSpeed = 1.2;
 
 if (playerInView && attackCooldown <= 0)
 {
-	var attack = choose(throw_goo_ball, summon_tick);
+	if (vulnerable)
+		var attack = choose(throw_goo_ball, summon_tick, throw_goo_ball, summon_tick, goo_pools);
+	else
+		var attack = choose(throw_goo_ball, summon_tick);
+		
 	var playerDist = point_distance(x, y, oPlayer.x, oPlayer.y);
 	if (playerDist < 120) attack = melee;
 	attack();

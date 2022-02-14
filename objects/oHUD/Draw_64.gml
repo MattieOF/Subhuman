@@ -36,6 +36,26 @@ if (areaAlpha > 0 && instance_exists(area))
 	draw_text(global.displayWidth / 2, 50, area.name);
 }
 
+if (instance_exists(oSiphonorator) && oSiphonorator.vulnerable)
+{
+	draw_set_alpha(1);
+	draw_set_valign(fa_center);
+	draw_set_halign(fa_left);
+	draw_set_color(c_white);
+	draw_set_font(fntMainBold);
+	
+	var c1 = make_color_rgb(127 + (90 * sin(current_time / 1000)), 0, 0);
+	var c2 = make_color_rgb(127 + (90 * (sin(current_time / 500 + 100))), 0, 0);
+	var c3 = make_color_rgb(127 + (90 * (sin(current_time / 500 + 200))), 0, 0);
+	var c4 = make_color_rgb(127 + (90 * (sin(current_time / 500 + 300))), 0, 0);
+	
+	draw_text_color(20, 45, "SIPHONORATOR", c1, c2, c3, c4, 1);
+	var healthPercent = oSiphonorator.enemyHealth / 2000;
+	var width = string_width("SIPHONORATOR");
+	draw_sprite_part(sHealthBar, 0, 0, 0, healthPercent * 300, 50, 40 + width, 20);
+	draw_sprite(sHealthBarBG, 0, 40 + width, 20);
+}
+
 // Draw loadout UI
 if (loadoutUiState == 0) return;
 var loadoutUiHeight = 100;
@@ -66,9 +86,3 @@ for (var i = 0; i < player.loadoutSize; i++)
 	currentX += loadoutUiWidth;
 }
 draw_set_alpha(1);
-
-if (instance_exists(oSiphonorator) && oSiphonorator.vulnerable)
-{
-	// Draw health bar
-	
-}

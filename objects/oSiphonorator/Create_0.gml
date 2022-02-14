@@ -29,6 +29,7 @@ function hurt(_dmg)
 
 function die()
 {
+	instance_create_layer(x, y, layer, oItem).init(global.itemKeycardLvl5);
 	instance_destroy(id);
 	oGameManager.gameState.playerScore += value;
 	oGameManager.gameState.enemies[$ id] = undefined;
@@ -89,4 +90,14 @@ function melee()
 	moveSpeed = 4;
 	cast_hitscan(x, y, point_direction(x, y, oPlayer.x, oPlayer.y), global.weaponSiphonoratorMelee,,oPlayer,,false);
 	attackCooldown = attackCooldownTime / 2;
+}
+
+function goo_pools()
+{
+	repeat (5)
+	{
+		var pos = random_free_point_in_rect(x - 50, y - 50, x + 50, y + 50, oWall);
+		instance_create_layer(pos.X, pos.Y, layer, oGooPool);
+		attackCooldown = attackCooldownTime;
+	}
 }
