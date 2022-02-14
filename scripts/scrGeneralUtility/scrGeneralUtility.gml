@@ -127,6 +127,7 @@ function color_invert_rgb(r, g, b)
 function goo_ball_explode()
 {
 	create_debris(x, y, sGooBallDebris, 20, 1.5, 0.4,,, 0.1);
+	audio_play_sound(sndGooBallExplode, 0, false);
 	instance_destroy(id);
 }
 

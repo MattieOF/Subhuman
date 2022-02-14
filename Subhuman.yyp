@@ -46,6 +46,7 @@
     {"id":{"name":"fntMainBold","path":"fonts/fntMainBold/fntMainBold.yy",},"order":2,},
     {"id":{"name":"oKeycardSlot","path":"objects/oKeycardSlot/oKeycardSlot.yy",},"order":16,},
     {"id":{"name":"oSpawnTrigger","path":"objects/oSpawnTrigger/oSpawnTrigger.yy",},"order":11,},
+    {"id":{"name":"sndGooBallExplode","path":"sounds/sndGooBallExplode/sndGooBallExplode.yy",},"order":2,},
     {"id":{"name":"sCrosshair","path":"sprites/sCrosshair/sCrosshair.yy",},"order":3,},
     {"id":{"name":"oSolidSprite","path":"objects/oSolidSprite/oSolidSprite.yy",},"order":4,},
     {"id":{"name":"oMoveTestPlayerAltMovement","path":"objects/oMoveTestPlayerAltMovement/oMoveTestPlayerAltMovement.yy",},"order":4,},
