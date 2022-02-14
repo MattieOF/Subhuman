@@ -9,7 +9,7 @@ if (showUI && inRange)
 	draw_text(global.displayWidth / 2, (global.displayHeight / 2) + 200, "Press E to save");
 }
 
-var center = 200;
+var center = global.displayHeight - 300;
 var extent = (currentBGAnim / bgAnimTime) * fullExtent;
 switch (uiState)
 {

@@ -54,6 +54,7 @@ if (instance_exists(oSiphonorator) && oSiphonorator.vulnerable)
 	var width = string_width("SIPHONORATOR");
 	draw_sprite_part(sHealthBar, 0, 0, 0, healthPercent * 300, 50, 40 + width, 20);
 	draw_sprite(sHealthBarBG, 0, 40 + width, 20);
+	draw_set_font(fntMain);
 }
 
 // Draw loadout UI

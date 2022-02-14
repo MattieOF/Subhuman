@@ -11,7 +11,7 @@ if (state == 3)
 	draw_set_font(fntMainLarge);
 	draw_text(100, 50, currentNote.name);
 	draw_set_font(fntMain);
-	draw_text(100, 100, currentNote.text);
+	draw_text(100, 120, currentNote.text);
 	return;
 }
 
