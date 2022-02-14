@@ -10,6 +10,7 @@ playerLastX = pointer_null;
 playerLastY = pointer_null;
 playerInView = false;
 path = undefined;
+vulnerable = false;
 
 // Start sight check alarm
 alarm[0] = 1;
@@ -21,7 +22,7 @@ function hurt(_dmg)
 {
 	if (_dmg == undefined) return;
 	create_debris(x, y, sBloodParticle, 8, 2, 0.4);
-	enemyHealth -= _dmg;
+	if (vulnerable) enemyHealth -= _dmg;
 	if (enemyHealth <= 0)
 		die();
 }

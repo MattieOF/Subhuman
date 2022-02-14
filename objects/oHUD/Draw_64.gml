@@ -66,3 +66,9 @@ for (var i = 0; i < player.loadoutSize; i++)
 	currentX += loadoutUiWidth;
 }
 draw_set_alpha(1);
+
+if (instance_exists(oSiphonorator) && oSiphonorator.vulnerable)
+{
+	// Draw health bar
+	
+}
