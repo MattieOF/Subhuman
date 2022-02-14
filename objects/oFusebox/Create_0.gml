@@ -4,7 +4,7 @@ inRange = false;
 interactable = true;
 hasFuse = false;
 
-var sprite = instance_create_layer(x, y, layer, oSprite);
+sprite = instance_create_layer(x, y, layer, oSprite);
 sprite.sprite_index = sprite_index;
 sprite.image_xscale = image_xscale;
 sprite.image_yscale = image_yscale;
@@ -31,7 +31,7 @@ function check_item_used(_item)
 function set_has_fuse(_val)
 {
 	hasFuse = _val;
-	image_index = _val ? 1 : 0;
+	sprite.image_index = _val ? 1 : 0;
 	requiresItem = !_val;
 	global.doors[$ doorId].hasFuse = _val;
 }

@@ -69,7 +69,7 @@ if (reloading && reloadTime <= 0)
 if (control_check_pressed(controls.reload))
 	reload_pressed();
 
-if (control_check_pressed(controls.attackPrimary))
+if (control_check(controls.attackPrimary))
 	shoot();
 	
 if (control_check_pressed(controls.weaponNext))

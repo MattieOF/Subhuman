@@ -4,7 +4,7 @@ inRange = false;
 interactable = true;
 keycard = pointer_null;
 
-var sprite = instance_create_layer(x, y, layer, oSprite);
+sprite = instance_create_layer(x, y, layer, oSprite);
 sprite.sprite_index = sprite_index;
 sprite.image_xscale = image_xscale;
 sprite.image_yscale = image_yscale;
@@ -35,7 +35,7 @@ function item_used(_item)
 	if (keycard != pointer_null)
 		oPlayer.inventory_add(keycard);
 	keycard = _item;
-	image_index = image_index == 1 ? 0 : 1;
+	sprite.image_index = image_index == 1 ? 0 : 1;
 	requiresItem = !requiresItem;
 	
 	global.doors[$ doorId].hasKeycard = keycard != pointer_null;

@@ -27,6 +27,7 @@ if (global.debug) loadout[$ 1] = new LoadoutItem(global.weaponDebug);
 if (global.debug) loadout[$ 2] = new LoadoutItem(global.weaponCrowbar);
 if (global.debug) loadout[$ 3] = new LoadoutItem(global.weaponShotgun);
 if (global.debug) loadout[$ 4] = new LoadoutItem(global.weaponProjectileTest);
+if (global.debug) loadout[$ 5] = new LoadoutItem(global.weaponAssaultRifle);
 selectedLoadoutItem = 0;
 update_loadout_size();
 
@@ -81,6 +82,7 @@ function shoot()
 	if (reloading) return; // Currently reloading
 	if (selectedLoadoutItem == -1) return; // No valid weapon selected
 	if (shootCooldown > 0) return; // On shoot cooldown
+	if (!loadout[$selectedLoadoutItem].weapon.auto && !control_check_pressed(controls.attackPrimary)) return; // Non auto weapon, but we're holding the button
 	
 	// Get direction to fire weapon
 	var dir = point_direction(x, y, mouse_x, mouse_y); // Or we could use image_angle?
@@ -107,7 +109,9 @@ function shoot()
 			break;
 		case weaponType.projectile:
 			if (loadout[$selectedLoadoutItem].ammoClip <= 0) return;
-			create_projectile(x + lengthdir_x(16, dir), y + lengthdir_y(16, dir), loadout[$selectedLoadoutItem].weapon.projectile, dir);
+			var spread = loadout[$selectedLoadoutItem].weapon.spread;
+			var shotDir = dir + random_range(-spread, spread);
+			create_projectile(x + lengthdir_x(16, dir), y + lengthdir_y(16, dir), loadout[$selectedLoadoutItem].weapon.projectile, shotDir);
 			shootCooldown = loadout[$selectedLoadoutItem].weapon.rof * room_speed;
 			loadout[$selectedLoadoutItem].ammoClip--;
 			break;
@@ -255,3 +259,9 @@ instance_create_layer(0, 0, layer_create(-300, "HUD"), oHUD).init(id);
 instance_create_layer(0, 0, layer_create(-300, "Crosshair"), oCrosshair).init(id);
 instance_create_layer(0, 0, layer_create(-300, "Instances"), oInventoryUI).init(id);
 window_set_cursor(cr_none);
+
+if (global.debug) inventory_add(global.itemKeycardLvl1);
+if (global.debug) inventory_add(global.itemKeycardLvl2);
+if (global.debug) inventory_add(global.itemKeycardLvl5);
+if (global.debug) inventory_add(global.itemFuse);
+if (global.debug) inventory_add(global.itemFuse);

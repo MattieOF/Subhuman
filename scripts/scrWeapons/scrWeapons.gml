@@ -2,14 +2,16 @@ global.projectileLayer = undefined;
 global.projectileObject = oProjectile;
 
 global.testProjectile = new Projectile(sTestProjectile, 25, 5, sTestDebris);
+global.projectileBullet = new Projectile(sBullet, 25, 10, sBulletDebris);
 
 global.weaponFists = new WeaponMelee("Fists", sTestProjectile, 15, 20, 0.75, new WeaponSounds());
-global.weaponCrowbar = new WeaponMelee("Crowbar", sTestProjectile, 15, 30, 0.5, new WeaponSounds());
+global.weaponCrowbar = new WeaponMelee("Crowbar", sTestProjectile, 15, 30, 0.5, new WeaponSounds(), true);
 global.weaponPistol = new WeaponHitscan("Pistol", sTestProjectile, 20, 1000, 0.5, 1.2, 10, 45, new WeaponSounds());
 global.weaponShotgun = new WeaponHitscan("Shotgun", sTestProjectile, 25, 1000, 1.25, 3, 6, 20, new WeaponSounds(), 4, 10);
 global.weaponDebug = new WeaponHitscan("Debug Weapon", sTestProjectile, 1000, 2000, 0.05, 0.05, 500, 25, new WeaponSounds());
 global.weaponProjectileTest = new WeaponProjectile("Projectile Test", sTestProjectile, global.testProjectile,
 	0.25, 1, 15, 60, new WeaponSounds());
+global.weaponAssaultRifle = new WeaponProjectile("Assault Rifle", sTestProjectile, global.projectileBullet, 0.15, 0.85, 20, 80, new WeaponSounds(), 8, true);
 global.weaponSiphonoratorMelee = new WeaponMelee("Siphonorator Melee", sTestProjectile, 25, 45, 0.75, new WeaponSounds());
 
 enum weaponType
@@ -35,7 +37,7 @@ function WeaponSounds(_shoot = undefined, _reload = undefined) constructor
 	soundReload = _reload;
 }
 
-function WeaponHitscan(_name, _sprite, _damage, _range, _rof, _reloadTime, _clip, _reserve, _sounds, _shots = 1, _spread = 0) constructor
+function WeaponHitscan(_name, _sprite, _damage, _range, _rof, _reloadTime, _clip, _reserve, _sounds, _shots = 1, _spread = 0, _auto = false) constructor
 {
 	type = weaponType.hitscan;
 	name = _name;
@@ -49,12 +51,13 @@ function WeaponHitscan(_name, _sprite, _damage, _range, _rof, _reloadTime, _clip
 	ammoReserve = _reserve;
 	shots = _shots;
 	spread = _spread;
+	auto = _auto;
 	if (!variable_struct_exists(_sounds, "reload")) 
 		log_format_string("In weapon {0}, provided WeaponSounds is invalid.", _name);
 	else sounds = _sounds;
 }
 
-function WeaponProjectile(_name, _sprite, _projectile, _rof, _reloadTime, _clip, _reserve, _sounds) constructor
+function WeaponProjectile(_name, _sprite, _projectile, _rof, _reloadTime, _clip, _reserve, _sounds, _spread = 0, _auto = true) constructor
 {
 	type = weaponType.projectile;
 	name = _name;
@@ -65,12 +68,14 @@ function WeaponProjectile(_name, _sprite, _projectile, _rof, _reloadTime, _clip,
 	reloadTime = _reloadTime;
 	ammoClip = _clip;
 	ammoReserve = _reserve;
+	spread = _spread;
+	auto = _auto;
 	if (!variable_struct_exists(_sounds, "reload")) 
 		log_format_string("In weapon {0}, provided WeaponSounds is invalid.", _name);
 	else sounds = _sounds;
 }
 
-function WeaponMelee(_name, _sprite, _damage, _range, _rof, _sounds) constructor
+function WeaponMelee(_name, _sprite, _damage, _range, _rof, _sounds, _auto = false) constructor
 {
 	type = weaponType.melee;
 	name = _name;
@@ -82,6 +87,7 @@ function WeaponMelee(_name, _sprite, _damage, _range, _rof, _sounds) constructor
 	if (!variable_struct_exists(_sounds, "reload")) 
 		log_format_string("In weapon {0}, provided WeaponSounds is invalid.", _name);
 	else sounds = _sounds;
+	auto = _auto;
 }
 
 function Projectile(_sprite, _damage, _speed, _debrisSprite = undefined) constructor
