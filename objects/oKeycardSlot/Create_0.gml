@@ -6,6 +6,9 @@ keycard = pointer_null;
 
 var sprite = instance_create_layer(x, y, layer, oSprite);
 sprite.sprite_index = sprite_index;
+sprite.image_xscale = image_xscale;
+sprite.image_yscale = image_yscale;
+sprite.image_angle = image_angle;
 sprite_index = sTrigger;
 image_xscale = 0.4;
 image_yscale = 0.4;
