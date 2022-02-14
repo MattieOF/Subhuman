@@ -25,3 +25,14 @@ if (playerInView && attackCooldown <= 0)
 	attack();
 	attackCooldown = attackCooldownTime;
 }
+
+if (vulnerable && place_meeting(x, y, oVentSiphonorator))
+{
+	image_xscale = approach(image_xscale, 0.8, 0.05);
+	image_yscale = approach(image_yscale, 0.8, 0.05);
+}
+else
+{
+	image_xscale = approach(image_xscale, 1.5, 0.05);
+	image_yscale = approach(image_yscale, 1.5, 0.05);
+}
