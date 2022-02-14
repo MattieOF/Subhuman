@@ -4,11 +4,13 @@
 0 = closed
 1 = viewing
 2 = select item
+3 = viewing note
 */
 state = 0;
 bgTint = make_color_rgb(100, 100, 100);
 global.inv = id;
 selectionObj = undefined;
+currentNote = undefined;
 
 normalColor = $1a1a1a;
 hoveredColor = $3b3b3b;
@@ -33,6 +35,27 @@ function use_selected()
 	}
 }
 
+function show_note(_note)
+{
+	with (global.inv)
+	{
+		instance_activate_layer("CloseUI");
+		instance_deactivate_layer("UseUI");
+		currentNote = _note;
+		state = 3;
+	}
+}
+
+function close_note()
+{
+	with (global.inv)
+	{
+		instance_activate_layer("UseUI");
+		instance_deactivate_layer("CloseUI");
+		state = 1;
+	}
+}
+
 function use_in_inv()
 {
 	with (global.inv)
@@ -46,6 +69,9 @@ function use_in_inv()
 				close_inventory();
 				oPlayer.heal(player.inventory[selectedItem].healAmount);
 				player.inventory_remove_index(selectedItem);
+				break;
+			case itemUse.note:
+				show_note(player.inventory[selectedItem]);
 				break;
 		}
 	}
@@ -95,6 +121,12 @@ end_stack();
 instance_deactivate_layer("SelectionUI");
 
 start_stack("UseUI", 100, global.displayHeight - 100, 10, stackDir.horizontal, false);
-add_to_stack(create_button(0, 0, 150, 40, "Use", use_in_inv,,,,,,fa_left));
+useButton = create_button(0, 0, 150, 40, "Use", use_in_inv,,,,,,fa_left);
+add_to_stack(useButton);
 end_stack();
 instance_deactivate_layer("UseUI");
+
+start_stack("CloseUI", 100, global.displayHeight - 100, 10, stackDir.horizontal, false);
+add_to_stack(create_button(0, 0, 150, 40, "Close", close_note,,,,,,fa_left));
+end_stack();
+instance_deactivate_layer("CloseUI");

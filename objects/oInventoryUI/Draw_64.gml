@@ -2,6 +2,19 @@
 
 if (state == 0) return;
 
+if (state == 3)
+{
+	draw_set_color(c_white);
+	draw_set_halign(fa_left);
+	draw_set_valign(fa_top);
+	draw_set_alpha(1);
+	draw_set_font(fntMainLarge);
+	draw_text(100, 50, currentNote.name);
+	draw_set_font(fntMain);
+	draw_text(100, 100, currentNote.text);
+	return;
+}
+
 draw_set_color(c_white);
 draw_set_halign(fa_left);
 draw_set_valign(fa_top);
@@ -42,7 +55,13 @@ for (var i = 0; i < rows; i++)
 				{
 					selectedItem = itemIndex;
 					if (selectionObj == undefined && player.inventory[selectedItem].use != itemUse.none)
+					{
+						if (player.inventory[selectedItem].use == itemUse.note)
+							useButton.text = "Read";
+						else if (player.inventory[selectedItem].use == itemUse.healing)
+							useButton.text = "Use";
 						instance_activate_layer("UseUI");
+					}
 					else
 						instance_deactivate_layer("UseUI");
 				}

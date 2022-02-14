@@ -1,7 +1,8 @@
 enum itemUse
 {
 	none,
-	healing
+	healing,
+	note
 }
 
 function Item(_name, _sprite, _desc) constructor
@@ -10,6 +11,15 @@ function Item(_name, _sprite, _desc) constructor
 	sprite = _sprite;
 	desc = _desc;
 	use = itemUse.none;
+}
+
+function NoteItem(_name, _sprite, _desc, _text) constructor
+{
+	name = _name;
+	sprite = _sprite;
+	desc = _desc;
+	use = itemUse.note;
+	text = _text;
 }
 
 function HealingItem(_name, _sprite, _desc, _healing) constructor
@@ -31,3 +41,4 @@ global.itemKeycardLvl1 = new Item("Level 1 Keycard", sTestItem, "Obtained from a
 global.itemKeycardLvl2 = new Item("Level 2 Keycard", sTestItem, "Obtained from another dead guy");
 global.itemKeycardLvl5 = new Item("Level 5 Keycard", sTestItem, "Obtained from a dead monster");
 global.itemFuse = new Item("Fuse", sTestItem, "Can be used to activate key card readers");
+global.itemTestNote = new NoteItem("Test Note", sTestItem, "Written in blood", "This is a test note.\nFlynn gay lmao\nFlynn gay lmao\nFlynn gay lmao\nFlynn gay lmao");

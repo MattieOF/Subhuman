@@ -79,7 +79,7 @@ function activate_game_layers()
 	for (var i = 0; i < array_length(a); i++;)
 	{
 		var name = layer_get_name(a[i]);
-		if (name == "PauseMenu" || name == "LoadCheckpoint" || name == "Exit" || name == "SelectionUI" || name == "UseUI")
+		if (name == "PauseMenu" || name == "LoadCheckpoint" || name == "Exit" || name == "SelectionUI" || name == "UseUI" || name == "CloseUI")
 			continue;
 		instance_activate_layer(a[i]);
 	}
