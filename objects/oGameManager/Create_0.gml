@@ -46,9 +46,12 @@ function save(filename = "savegame.json")
 	}
 	
 	// Save items
+	gameState.bakedItems = {};
 	with (oItem)
 	{
-		if (pickupable)
+		if (baked && pickupable)
+			oGameManager.gameState.bakedItems[$ id] = true;
+		else if (pickupable)
 		{
 			var itemObject = 
 			{
@@ -110,6 +113,17 @@ function save(filename = "savegame.json")
 	with (oBlockageCorrodible)
 		oGameManager.gameState.corrodibleBlockages[$ id] = image_index;
 		
+	// Save fuseboxes
+	gameState.fuseboxes = {};
+	with (oFusebox)
+		oGameManager.gameState.fuseboxes[$ id] = hasFuse;
+		
+	// Save keycard slots
+	gameState.keycardSlots = {};
+	with (oKeycardSlot)
+		oGameManager.gameState.keycardSlots[$ id] = keycard;
+		
+	// Save the siphonorator
 	gameState.siphonorator = undefined;
 	with (oSiphonorator)
 	{
@@ -167,7 +181,17 @@ function load(filename = "savegame.json")
 	oPlayer.selectedLoadoutItem = gameState.playerSelectedLoadoutItem;
 	oPlayer.inventory = gameState.playerInv;
 	
-	// Reload dropped items
+	// Reload baked dropped items
+	with (oItem)
+	{
+		if (oGameManager.gameState.bakedItems[$ id] != true)
+		{
+			instance_destroy(sprite);
+			instance_destroy(id);
+		}
+	}
+	
+	// Reload dynamic dropped items
 	for (var i = 0; i < array_length(gameState.droppedItems); i++)
 	{
 		var current = gameState.droppedItems[i];
@@ -228,6 +252,17 @@ function load(filename = "savegame.json")
 			done();
 		else
 			set_stage(oGameManager.gameState.corrodibleBlockages[$ id]);
+	}
+	
+	// Load fuseboxes
+	with (oFusebox)
+		if (oGameManager.gameState.fuseboxes[$ id]) item_used();
+		
+	// Load keycard slots
+	with (oKeycardSlot)
+	{
+		if (oGameManager.gameState.keycardSlots[$ id] != pointer_null)
+			item_used(oGameManager.gameState.keycardSlots[$ id]);
 	}
 	
 	// Load siphonorator
