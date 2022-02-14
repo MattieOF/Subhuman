@@ -14,8 +14,8 @@
   "soundFile": "sndGooBallExplode.ogg",
   "duration": 0.770839,
   "parent": {
-    "name": "Sounds",
-    "path": "folders/Sounds.yy",
+    "name": "Game",
+    "path": "folders/Sounds/Game.yy",
   },
   "resourceVersion": "1.0",
   "name": "sndGooBallExplode",

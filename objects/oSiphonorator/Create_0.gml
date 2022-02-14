@@ -70,6 +70,8 @@ attackCooldown = 5 * room_speed;
 
 function throw_goo_ball()
 {
+	audio_play_sound(sndSwing, 0, false);
+	
 	var length = ((sprite_get_width(sprite_index) * image_xscale) / 2) + 5;
 	var _x = lengthdir_x(length, direction);
 	var _y = lengthdir_y(length, direction);

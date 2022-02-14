@@ -6,6 +6,7 @@ event_inherited();
 
 function break_vent()
 {
+	audio_play_sound(sndVentCoverHit, 0, false);
 	instance_change(oSprite, true);
 	sprite_index = sVentCoverBroken;
 }

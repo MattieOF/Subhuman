@@ -8,6 +8,7 @@ playerLastY = pointer_null;
 playerInView = false;
 timeSinceLastSawPlayer = 0;
 latched = false;
+suckSound = undefined;
 
 // Start sight check alarm
 alarm[0] = sightCheckTimer * room_speed;
@@ -18,6 +19,7 @@ alarm[0] = sightCheckTimer * room_speed;
 function hurt(_dmg)
 {
 	if (_dmg == undefined) return;
+	audio_play_sound(sndTickHurt, 0, false);
 	create_debris(x, y, sBloodParticle, 8, 2, 0.4);
 	enemyHealth -= _dmg;
 	if (enemyHealth <= 0)
@@ -26,6 +28,7 @@ function hurt(_dmg)
 
 function die()
 {
+	if (suckSound != undefined) audio_stop_sound(suckSound);
 	instance_destroy(id);
 	oGameManager.gameState.playerScore += value;
 }

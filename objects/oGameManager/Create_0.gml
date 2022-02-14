@@ -22,6 +22,9 @@ alarm[0] = 1;
 finalWeapon = choose(0, 1);
 alarm[1] = 1;
 
+audio_stop_sound(sndAmbient);
+audio_play_sound(sndAmbient, 0, true);
+
 function init_final_weapon()
 {
 	if (instance_exists(oFissuratorBullets))
