@@ -16,6 +16,7 @@
     {"id":{"name":"oLabel","path":"objects/oLabel/oLabel.yy",},"order":2,},
     {"id":{"name":"scrWeapons","path":"scripts/scrWeapons/scrWeapons.yy",},"order":12,},
     {"id":{"name":"scrJsonUtility","path":"scripts/scrJsonUtility/scrJsonUtility.yy",},"order":6,},
+    {"id":{"name":"oFadeIn","path":"objects/oFadeIn/oFadeIn.yy",},"order":7,},
     {"id":{"name":"rmGameOver","path":"rooms/rmGameOver/rmGameOver.yy",},"order":3,},
     {"id":{"name":"oEnemy","path":"objects/oEnemy/oEnemy.yy",},"order":0,},
     {"id":{"name":"oSprite","path":"objects/oSprite/oSprite.yy",},"order":0,},

@@ -19,6 +19,7 @@
         {"properties":[],"isDnd":false,"objectId":{"name":"oScreenshot","path":"objects/oScreenshot/oScreenshot.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":64.0,"y":0.0,"resourceVersion":"1.0","name":"inst_5051A619","tags":[],"resourceType":"GMRInstance",},
         {"properties":[],"isDnd":false,"objectId":{"name":"oCamera","path":"objects/oCamera/oCamera.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":96.0,"y":0.0,"resourceVersion":"1.0","name":"inst_7DEAE961","tags":[],"resourceType":"GMRInstance",},
         {"properties":[],"isDnd":false,"objectId":{"name":"oPauseMenu","path":"objects/oPauseMenu/oPauseMenu.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":128.0,"y":0.0,"resourceVersion":"1.0","name":"inst_7ABE19D8","tags":[],"resourceType":"GMRInstance",},
+        {"properties":[],"isDnd":false,"objectId":{"name":"oFadeIn","path":"objects/oFadeIn/oFadeIn.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":160.0,"y":0.0,"resourceVersion":"1.0","name":"inst_106444A3","tags":[],"resourceType":"GMRInstance",},
       ],"visible":true,"depth":-800,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":32,"gridY":32,"layers":[],"hierarchyFrozen":false,"effectEnabled":true,"effectType":null,"properties":[],"resourceVersion":"1.0","name":"Instances","tags":[],"resourceType":"GMRInstanceLayer",},
     {"visible":true,"depth":-700,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":32,"gridY":32,"layers":[],"hierarchyFrozen":false,"effectEnabled":true,"effectType":"_filter_large_blur","properties":[
         {"type":0,"name":"g_Radius","value":"0",},
@@ -419,6 +420,7 @@
     {"name":"weaponPickup_shotgun","path":"rooms/rmGame/rmGame.yy",},
     {"name":"inst_412C59D6","path":"rooms/rmGame/rmGame.yy",},
     {"name":"inst_78676B12","path":"rooms/rmGame/rmGame.yy",},
+    {"name":"inst_106444A3","path":"rooms/rmGame/rmGame.yy",},
   ],
   "inheritCreationOrder": false,
   "sequenceId": null,
