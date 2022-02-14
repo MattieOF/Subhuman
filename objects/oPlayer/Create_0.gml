@@ -25,9 +25,9 @@ function update_loadout_size()
 loadout[$ 0] = new LoadoutItem(global.weaponFists);
 if (global.debug) loadout[$ 1] = new LoadoutItem(global.weaponDebug);
 if (global.debug) loadout[$ 2] = new LoadoutItem(global.weaponCrowbar);
-// if (global.debug) loadout[$ 3] = new LoadoutItem(global.weaponShotgun);
 if (global.debug) loadout[$ 3] = new LoadoutItem(global.weaponProjectileTest);
-// if (global.debug) loadout[$ 5] = new LoadoutItem(global.weaponAssaultRifle);
+if (global.debug) loadout[$ 4] = new LoadoutItem(global.weaponShotgun);
+if (global.debug) loadout[$ 5] = new LoadoutItem(global.weaponAssaultRifle);
 selectedLoadoutItem = 0;
 update_loadout_size();
 
@@ -91,10 +91,16 @@ function shoot()
 	{
 		case weaponType.melee:
 			cast_hitscan(x + lengthdir_x(16, dir), y + lengthdir_y(16, dir), dir, loadout[$selectedLoadoutItem].weapon,oWall,oHittable,oHittableSolid,true);
+			play_sound_if_exists(loadout[$selectedLoadoutItem].weapon.sounds.soundShoot, 1, false);
 			shootCooldown = loadout[$selectedLoadoutItem].weapon.rof * room_speed;
 			break;
 		case weaponType.hitscan:
-			if (loadout[$selectedLoadoutItem].ammoClip <= 0) return;
+			if (loadout[$selectedLoadoutItem].ammoClip <= 0) 
+			{
+				audio_play_sound(sndDryfire, 0, false);
+				shootCooldown = loadout[$selectedLoadoutItem].weapon.rof * room_speed;
+				return;
+			}
 			
 			repeat (loadout[$selectedLoadoutItem].weapon.shots)
 			{
@@ -104,13 +110,21 @@ function shoot()
 			}
 			
 			
+			play_sound_if_exists(loadout[$selectedLoadoutItem].weapon.sounds.soundShoot, 1, false);
 			shootCooldown = loadout[$selectedLoadoutItem].weapon.rof * room_speed;
 			loadout[$selectedLoadoutItem].ammoClip--;
 			break;
 		case weaponType.projectile:
-			if (loadout[$selectedLoadoutItem].ammoClip <= 0) return;
+			if (loadout[$selectedLoadoutItem].ammoClip <= 0) 
+			{
+				audio_play_sound(sndDryfire, 0, false);
+				shootCooldown = loadout[$selectedLoadoutItem].weapon.rof * room_speed;
+				return;
+			}
+			
 			var spread = loadout[$selectedLoadoutItem].weapon.spread;
 			var shotDir = dir + random_range(-spread, spread);
+			play_sound_if_exists(loadout[$selectedLoadoutItem].weapon.sounds.soundShoot, 1, false);
 			create_projectile(x + lengthdir_x(16, dir), y + lengthdir_y(16, dir), loadout[$selectedLoadoutItem].weapon.projectile, shotDir);
 			shootCooldown = loadout[$selectedLoadoutItem].weapon.rof * room_speed;
 			loadout[$selectedLoadoutItem].ammoClip--;
@@ -126,6 +140,8 @@ function reload_pressed()
 	if (loadout[$selectedLoadoutItem].ammoClip == loadout[$selectedLoadoutItem].weapon.ammoClip) 
 		return;  // Clip is full
 	if (loadout[$selectedLoadoutItem].ammoReserve == 0) return; // Out of reserve ammo
+	
+	play_sound_if_exists(loadout[$selectedLoadoutItem].weapon.sounds.soundReload, 1, false);
 	
 	reloading = true;
 	reloadTime = loadout[$selectedLoadoutItem].weapon.reloadTime * room_speed;
