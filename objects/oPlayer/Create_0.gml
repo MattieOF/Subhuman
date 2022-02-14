@@ -25,6 +25,7 @@ function update_loadout_size()
 loadout[$ 0] = new LoadoutItem(global.weaponFists);
 if (global.debug) loadout[$ 1] = new LoadoutItem(global.weaponDebug);
 if (global.debug) loadout[$ 2] = new LoadoutItem(global.weaponCrowbar);
+if (global.debug) loadout[$ 3] = new LoadoutItem(global.weaponShotgun);
 selectedLoadoutItem = 0;
 update_loadout_size();
 
@@ -92,7 +93,13 @@ function shoot()
 		case weaponType.hitscan:
 			if (loadout[$selectedLoadoutItem].ammoClip <= 0) return;
 			
-			cast_hitscan(x + lengthdir_x(16, dir), y + lengthdir_y(16, dir), dir, loadout[$selectedLoadoutItem].weapon);
+			repeat (loadout[$selectedLoadoutItem].weapon.shots)
+			{
+				var spread = loadout[$selectedLoadoutItem].weapon.spread;
+				var shotDir = dir + random_range(-spread, spread);
+				cast_hitscan(x + lengthdir_x(16, dir), y + lengthdir_y(16, dir), shotDir, loadout[$selectedLoadoutItem].weapon);
+			}
+			
 			
 			shootCooldown = loadout[$selectedLoadoutItem].weapon.rof * room_speed;
 			loadout[$selectedLoadoutItem].ammoClip--;

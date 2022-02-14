@@ -6,6 +6,7 @@ global.testProjectile = new Projectile(sTestProjectile, 25, 5, sTestDebris);
 global.weaponFists = new WeaponMelee("Fists", sTestProjectile, 15, 20, 0.75, new WeaponSounds());
 global.weaponCrowbar = new WeaponMelee("Crowbar", sTestProjectile, 15, 30, 0.5, new WeaponSounds());
 global.weaponPistol = new WeaponHitscan("Pistol", sTestProjectile, 20, 1000, 0.5, 1.2, 10, 45, new WeaponSounds());
+global.weaponShotgun = new WeaponHitscan("Shotgun", sTestProjectile, 25, 1000, 1.25, 3, 6, 20, new WeaponSounds(), 4, 10);
 global.weaponDebug = new WeaponHitscan("Debug Weapon", sTestProjectile, 1000, 2000, 0.05, 0.05, 500, 25, new WeaponSounds());
 global.weaponProjectileTest = new WeaponProjectile("Projectile Test", sTestProjectile, global.testProjectile,
 	0.25, 1, 15, 60, new WeaponSounds());
@@ -34,7 +35,7 @@ function WeaponSounds(_shoot = undefined, _reload = undefined) constructor
 	soundReload = _reload;
 }
 
-function WeaponHitscan(_name, _sprite, _damage, _range, _rof, _reloadTime, _clip, _reserve, _sounds) constructor
+function WeaponHitscan(_name, _sprite, _damage, _range, _rof, _reloadTime, _clip, _reserve, _sounds, _shots = 1, _spread = 0) constructor
 {
 	type = weaponType.hitscan;
 	name = _name;
@@ -46,6 +47,8 @@ function WeaponHitscan(_name, _sprite, _damage, _range, _rof, _reloadTime, _clip
 	reloadTime = _reloadTime;
 	ammoClip = _clip;
 	ammoReserve = _reserve;
+	shots = _shots;
+	spread = _spread;
 	if (!variable_struct_exists(_sounds, "reload")) 
 		log_format_string("In weapon {0}, provided WeaponSounds is invalid.", _name);
 	else sounds = _sounds;
