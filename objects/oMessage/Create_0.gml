@@ -12,11 +12,12 @@ currentTextTime = 0;
 */
 uiState = 0;
 
-function init(_text, _bgAnimTime = 0.25, _textTime = 1)
+function init(_text, _bgAnimTime = 0.25, _textTime = 1, _extent = 30)
 {
 	text = _text;
 	bgAnimTime = _bgAnimTime * room_speed;
 	textTime = _textTime * room_speed;
 	uiState = 1;
+	fullExtent = _extent;
 	audio_play_sound(sndNotif, 0, false);
 }

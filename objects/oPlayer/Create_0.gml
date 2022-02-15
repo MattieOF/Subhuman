@@ -274,7 +274,7 @@ function add_weapon(_weapon, _equip = true, _clip = undefined, _reserve = undefi
 
 // Create hud
 instance_create_layer(0, 0, layer_create(-300, "HUD"), oHUD).init(id);
-instance_create_layer(0, 0, layer_create(-300, "Crosshair"), oCrosshair).init(id);
+instance_create_layer(0, 0, layer_create(-1400, "Crosshair"), oCrosshair).init(id);
 instance_create_layer(0, 0, layer_create(-300, "Instances"), oInventoryUI).init(id);
 window_set_cursor(cr_none);
 

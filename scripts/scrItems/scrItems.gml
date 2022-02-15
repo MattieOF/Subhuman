@@ -46,3 +46,4 @@ global.itemBloodyNote = new NoteItem("Bloody Note", sNote, "The handwriting gets
 	"kill it. You're gonna need a level 2 keycard to get in there." + 
 	"\nTake the gun I left. I don't think you can kill it, but whatever it spawns doesn't have the " + 
 	"same regenerative capabilities.\n\nGood luck.");
+global.itemKey = new Item("Key", sKey, "Used on the living quarters door");

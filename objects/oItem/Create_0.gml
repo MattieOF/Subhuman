@@ -23,6 +23,7 @@ function init(_item)
 	item = _item;
 	sprite = instance_create_layer(x, y, layer, oSprite);
 	sprite.sprite_index = item.sprite;
+	sprite.image_angle = image_angle;
 }
 
 function pickup()

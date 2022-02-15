@@ -132,6 +132,7 @@
     {"id":{"name":"oInventoryUI","path":"objects/oInventoryUI/oInventoryUI.yy",},"order":5,},
     {"id":{"name":"sKeycardLvl1","path":"sprites/sKeycardLvl1/sKeycardLvl1.yy",},"order":28,},
     {"id":{"name":"sBlockageOpening","path":"sprites/sBlockageOpening/sBlockageOpening.yy",},"order":1,},
+    {"id":{"name":"sKey","path":"sprites/sKey/sKey.yy",},"order":33,},
     {"id":{"name":"oAnimation","path":"objects/oAnimation/oAnimation.yy",},"order":5,},
     {"id":{"name":"oSaveLocation","path":"objects/oSaveLocation/oSaveLocation.yy",},"order":2,},
     {"id":{"name":"sFusebox","path":"sprites/sFusebox/sFusebox.yy",},"order":16,},
