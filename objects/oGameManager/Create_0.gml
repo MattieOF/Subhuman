@@ -158,7 +158,9 @@ function save(filename = "savegame.json")
 			pX : playerLastX,
 			pY : playerLastY,
 			hp : enemyHealth,
-			vulnerable : vulnerable
+			vulnerable : vulnerable,
+			xScale : image_xscale,
+			yScale : image_yscale
 		};
 		oGameManager.gameState.siphonorator = siphonorator;
 	}
@@ -316,6 +318,8 @@ function load(filename = "savegame.json")
 		inst.playerLastY = siphonorator.pY;
 		inst.enemyHealth = siphonorator.hp;
 		inst.vulnerable  = siphonorator.vulnerable;
+		inst.image_xscale = siphonorator.xScale;
+		inst.image_yscale = siphonorator.yScale;
 	}
 	
 	// Load ticks

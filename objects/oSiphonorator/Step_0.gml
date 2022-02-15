@@ -29,8 +29,15 @@ if (playerInView && attackCooldown <= 0)
 
 if (place_meeting(x, y, oVentSiphonorator))
 {
+	var prevX = image_xscale;
+	var prevY = image_yscale;
 	image_xscale = approach(image_xscale, 0.8, 0.05);
 	image_yscale = approach(image_yscale, 0.8, 0.05);
+	if (place_meeting(x, y, oWall)) 
+	{
+		image_xscale = prevX;
+		image_yscale = prevY;
+	}
 }
 else
 {
