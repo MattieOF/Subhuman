@@ -18,4 +18,5 @@ function init(_text, _bgAnimTime = 0.25, _textTime = 1)
 	bgAnimTime = _bgAnimTime * room_speed;
 	textTime = _textTime * room_speed;
 	uiState = 1;
+	audio_play_sound(sndNotif, 0, false);
 }

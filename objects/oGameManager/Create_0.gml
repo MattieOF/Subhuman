@@ -196,8 +196,13 @@ function load(filename = "savegame.json")
 	file_text_close(file);
 	
 	// Set player position to current save locs location
-	oPlayer.x = saveLocations[$ gameState.currentSaveLoc].x;
-	oPlayer.y = saveLocations[$ gameState.currentSaveLoc].y;
+	with (oPlayer)
+	{
+		var saveLoc = oGameManager.saveLocations[$ oGameManager.gameState.currentSaveLoc];
+		var pos = random_free_point_in_rect(saveLoc.bbox_left, saveLoc.bbox_top, saveLoc.bbox_right, saveLoc.bbox_bottom, oSolid, 100);
+		x = pos.X;
+		y = pos.Y;
+	}
 	
 	// Set player health
 	oPlayer.playerHealth = max(gameState.playerHealth, 1);

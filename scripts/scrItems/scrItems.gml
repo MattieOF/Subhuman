@@ -41,4 +41,8 @@ global.itemKeycardLvl1 = new Item("Level 1 Keycard", sTestItem, "Obtained from a
 global.itemKeycardLvl2 = new Item("Level 2 Keycard", sTestItem, "Obtained from another dead guy");
 global.itemKeycardLvl5 = new Item("Level 5 Keycard", sTestItem, "Obtained from a dead monster");
 global.itemFuse = new Item("Fuse", sTestItem, "Can be used to activate key card readers");
-global.itemTestNote = new NoteItem("Bloody Note", sNote, "The handwriting gets progressively worse", "There will be text here");
+global.itemBloodyNote = new NoteItem("Bloody Note", sNote, "The handwriting gets progressively worse", 
+	"If anyone reads this, you can use the fissurator bullets in the lab of the rightmost of the sub to " + 
+	"kill it. You're gonna need a level 2 keycard to get in there." + 
+	"\nTake the gun I left. I don't think you can kill it, but whatever it spawns doesn't have the " + 
+	"same regenerative capabilities.\n\nGood luck.");

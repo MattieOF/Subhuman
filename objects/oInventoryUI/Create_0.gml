@@ -79,7 +79,7 @@ function use_in_inv()
 
 function drop(_index)
 {
-	instance_create_layer(player.x, player.y, "Level", oItem).init(player.inventory[_index]);
+	instance_create_layer(player.x, player.y, "Player", oItem).init(player.inventory[_index]);
 	player.inventory_remove_index(_index);
 	if (selectedItem == _index) selectedItem = -1;
 	instance_deactivate_layer("UseUI");

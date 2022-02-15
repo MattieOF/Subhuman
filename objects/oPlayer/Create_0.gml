@@ -1,6 +1,8 @@
 // Create sprite object on the same layer
 playerSprite = instance_create_layer(x, y, layer, oSprite);
-playerSprite.sprite_index = sPlayer;
+playerSprite.sprite_index = sPlayerNormal;
+playerSprite.image_xscale = 1.5;
+playerSprite.image_yscale = 1.5;
 
 // Get layer ids
 hurtEffectLayer = layer_get_id("HurtEffect");

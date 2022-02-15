@@ -1,1 +1,1 @@
-init(global.itemTestNote);
+init(global.itemBloodyNote);
