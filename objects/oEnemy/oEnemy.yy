@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sEnemy",
-    "path": "sprites/sEnemy/sEnemy.yy",
+    "name": "sSiphonorator",
+    "path": "sprites/sSiphonorator/sSiphonorator.yy",
   },
   "solid": false,
   "visible": true,

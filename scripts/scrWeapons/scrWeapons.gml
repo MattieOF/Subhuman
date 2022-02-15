@@ -4,16 +4,16 @@ global.projectileObject = oProjectile;
 global.testProjectile = new Projectile(sTestProjectile, 25, 5, sTestDebris);
 global.projectileBullet = new Projectile(sBullet, 25, 10, sBulletDebris);
 
-global.weaponFists = new WeaponMelee("Fists", sTestProjectile, 15, 20, 0.75, new WeaponSounds(sndSwing));
-global.weaponCrowbar = new WeaponMelee("Crowbar", sTestProjectile, 15, 30, 0.5, new WeaponSounds(sndSwing), true);
-global.weaponPistol = new WeaponHitscan("Pistol", sTestProjectile, 20, 1000, 0.5, 1.2, 10, 45, 
+global.weaponFists = new WeaponMelee("Fists", sFists, 15, 20, 0.75, new WeaponSounds(sndSwing));
+global.weaponCrowbar = new WeaponMelee("Crowbar", sCrowbar, 15, 30, 0.5, new WeaponSounds(sndSwing), true);
+global.weaponPistol = new WeaponHitscan("Pistol", sPistol, 20, 1000, 0.5, 1.2, 10, 45, 
 	new WeaponSounds(sndPistolFire, sndPistolReload));
-global.weaponShotgun = new WeaponHitscan("Shotgun", sTestProjectile, 25, 1000, 1.25, 3, 6, 20, 
+global.weaponShotgun = new WeaponHitscan("Shotgun", sShotgun, 25, 1000, 1.25, 3, 6, 20, 
 	new WeaponSounds(sndShotgunFire, sndShotgunReload), 4, 10);
 global.weaponDebug = new WeaponHitscan("Debug Weapon", sTestProjectile, 1000, 2000, 0.05, 0.05, 500, 25, new WeaponSounds());
 global.weaponProjectileTest = new WeaponProjectile("Projectile Test", sTestProjectile, global.testProjectile,
 	0.25, 1, 15, 60, new WeaponSounds(sndAssaultRifleFire, sndAssaultRifleReload));
-global.weaponAssaultRifle = new WeaponProjectile("Assault Rifle", sTestProjectile, global.projectileBullet, 0.12, 1.5, 20, 80, 
+global.weaponAssaultRifle = new WeaponProjectile("Assault Rifle", sAssaultRifle, global.projectileBullet, 0.12, 1.5, 20, 80, 
 	new WeaponSounds(sndAssaultRifleFire, sndAssaultRifleReload), 8, true);
 global.weaponSiphonoratorMelee = new WeaponMelee("Siphonorator Melee", sTestProjectile, 25, 45, 0.75, new WeaponSounds());
 

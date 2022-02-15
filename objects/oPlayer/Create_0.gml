@@ -92,7 +92,7 @@ function shoot()
 	switch (loadout[$selectedLoadoutItem].weapon.type)
 	{
 		case weaponType.melee:
-			cast_hitscan(x + lengthdir_x(16, dir), y + lengthdir_y(16, dir), dir, loadout[$selectedLoadoutItem].weapon,oWall,oHittable,oHittableSolid,true);
+			cast_hitscan(x + lengthdir_x(16, dir), y + lengthdir_y(16, dir), dir, loadout[$selectedLoadoutItem].weapon,oWall,oHittable,oHittableSolid,false);
 			play_sound_if_exists(loadout[$selectedLoadoutItem].weapon.sounds.soundShoot, 1, false);
 			shootCooldown = loadout[$selectedLoadoutItem].weapon.rof * room_speed;
 			break;

@@ -311,7 +311,7 @@ function load(filename = "savegame.json")
 	if (gameState.siphonorator != pointer_null && gameState.siphonorator != undefined)
 	{
 		var siphonorator = gameState.siphonorator;
-		var inst = instance_create_layer(siphonorator.X, siphonorator.Y, "Level", oSiphonorator);
+		var inst = instance_create_layer(siphonorator.X, siphonorator.Y, "Player", oSiphonorator);
 		inst.playerLastX = siphonorator.pX;
 		inst.playerLastY = siphonorator.pY;
 		inst.enemyHealth = siphonorator.hp;
