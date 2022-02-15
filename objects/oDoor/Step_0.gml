@@ -13,6 +13,7 @@ if (interactable && inRange && control_check_pressed(controls.save))
 {
 	if (open)
 	{
+		// Prevent closing if the sprites bbox contains the player or siphonorator
 		interactable = false;
 		sprite.image_speed = -1;
 		sprite.mask_index = doorSprite;
