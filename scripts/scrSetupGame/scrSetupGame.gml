@@ -1,5 +1,5 @@
 function setup_game()
-{
+{	
 	read_options_to_globals();
 	global.pauseSurface = -1;
 	global.gameOverSurface = -1;

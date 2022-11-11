@@ -18,7 +18,7 @@ if (playerInView && attackCooldown <= 0)
 	if (vulnerable)
 		var attack = choose(throw_goo_ball, summon_tick, goo_pools);
 	else
-		var attack = choose(throw_goo_ball, summon_tick);
+		var attack = choose(throw_goo_ball, throw_goo_ball, summon_tick); // Throw goo ball has 2/3 chance
 		
 	var playerDist = point_distance(x, y, oPlayer.x, oPlayer.y);
 	if (playerDist < 120 && vulnerable) melee();
